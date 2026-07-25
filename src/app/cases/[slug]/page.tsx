@@ -140,6 +140,27 @@ export default async function CaseDetailPage({
           以上案例已经过严格的匿名化处理，所有个人信息、公司名称、具体金额和地点均已调整或替换，以保护当事人隐私。案例的核心事实和欺诈模式是真实的。
         </div>
 
+        {/* Discussion */}
+        <div className="mt-10 bg-[var(--surface)] border border-[var(--rule)] p-8 max-sm:p-6 text-center">
+          <h3 className="font-serif text-[18px] font-bold mb-2">
+            关于这个案例，你怎么看？
+          </h3>
+          <p className="text-[14px] text-[var(--grey)] mb-5 max-w-[440px] mx-auto">
+            有类似经历？有不同看法？欢迎在讨论区分享你的想法。
+          </p>
+          <a
+            href={`https://github.com/LegalRedFlags/legalredflags/discussions/new?category=general&title=${encodeURIComponent(`案例 #${c.num}：${c.title}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[var(--ink)] text-[var(--ground)] text-[14px] font-semibold no-underline hover:opacity-90 transition-opacity"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            参与讨论
+          </a>
+        </div>
+
         {/* Back */}
         <div className="mt-8 pt-8 border-t border-[var(--rule)]">
           <Link
