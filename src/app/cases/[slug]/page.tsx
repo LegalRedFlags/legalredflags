@@ -15,7 +15,7 @@ export async function generateMetadata({
   const c = getCaseBySlug(slug);
   if (!c) return {};
   return {
-    title: `Case #${c.num} ${c.title} — Legal Red Flags`,
+    title: `案例 #${c.num} ${c.title}`,
     description: c.summary.substring(0, 160),
   };
 }
