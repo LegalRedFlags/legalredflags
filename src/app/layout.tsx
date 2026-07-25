@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { I18nProvider } from "@/i18n/context";
 import "./globals.css";
 
-const SITE_URL = "https://legalredflags.org";
+const SITE_URL = "https://legalredflag.org";
 
 export const metadata: Metadata = {
   title: {

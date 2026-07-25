@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { flags } from "@/data/flags";
 import { cases } from "@/data/cases";
 
-const BASE = "https://legalredflags.org";
+const BASE = "https://legalredflag.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
