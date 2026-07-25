@@ -35,20 +35,20 @@ export default function AboutPage() {
             <div>
               <blockquote className="font-serif text-[17px] leading-[1.8] text-[var(--ink-soft)] mb-6">
                 {t(
-                  "六年时间，三个城市，五个律师。其中两个纯骗，一个被对方收买并亲口承认，两个收了高额费用后消极怠工。",
-                  "Six years, three cities, five lawyers. Two were outright frauds. One was bought by the opposing side — and admitted it. Two charged premium fees and did nothing."
+                  "数年时间，多地维权，换过多个律师。有的纯骗，有的被对方收买并亲口承认，有的收了高额费用后消极怠工。",
+                  "Years of fighting, across multiple cities, through multiple lawyers. Some were outright frauds. One was bought by the opposing side — and admitted it. Others charged premium fees and did nothing."
                 )}
               </blockquote>
               <p className="text-[15px] text-[var(--ink-soft)] leading-[1.8] mb-4">
                 {t(
-                  "我不是法律专业出身。六年前，我因为一起公司纠纷不得不开始接触法律行业。那时的我，就像大多数普通人一样——相信律师是专业人士，相信花了钱就能得到专业服务，相信法律会保护正义。",
-                  "I'm not a legal professional. Six years ago, a business dispute forced me into the legal system. Like most people, I believed lawyers were professionals, that paying meant getting professional service, and that the law would protect justice."
+                  "我不是法律专业出身。数年前，我因为一起公司纠纷，衍生了多起诉讼耗时数年，不得不开始接触法律行业。那时的我，就像大多数普通人一样——相信律师是专业人士，相信花了钱就能得到专业服务，相信法律会保护正义。",
+                  "I'm not a legal professional. Years ago, a business dispute spiraled into multiple lawsuits spanning years and forced me into the legal system. Like most people, I believed lawyers were professionals, that paying meant getting professional service, and that the law would protect justice."
                 )}
               </p>
               <p className="text-[15px] text-[var(--ink-soft)] leading-[1.8] mb-4">
                 {t(
-                  "六年后，我花了超过30万元律师费，没有追回一分钱。但我得到了另一样东西：对这个行业中每一种欺诈模式的深刻理解。每一次被骗，每一次走弯路，都让我看清了一个普通人在法律体系中可能遇到的陷阱。",
-                  "Six years and over ¥300,000 in legal fees later, I haven't recovered a single yuan. But I gained something else: a deep understanding of every fraud pattern in this industry. Each scam, each wrong turn revealed the traps an ordinary person can fall into."
+                  "数年后，我花了数十万元律师费，没有追回一分钱，更没有得到任何所谓的正义，赢了官司输了时间输了钱输了人生。但我得到了另一样东西：律师这个行业很黑暗，这个行业中每一种欺诈模式的深刻理解。每一次被骗，每一次走弯路，都让我看清了一个普通人在法律体系中可能遇到的陷阱。",
+                  "Years and hundreds of thousands of yuan in legal fees later, I haven't recovered a single yuan — let alone any so-called justice. I won lawsuits but lost time, money, and years of my life. But I gained something else: the legal industry has a dark side, and I now have a deep understanding of every fraud pattern within it. Each scam, each wrong turn revealed the traps an ordinary person can fall into."
                 )}
               </p>
               <p className="text-[15px] text-[var(--ink-soft)] leading-[1.8]">

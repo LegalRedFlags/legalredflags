@@ -45,12 +45,13 @@ export const flags: Flag[] = [
     description:
       "正规律所收费必须通过对公账户，并开具正式发票。律师以个人账户收费，是最常见、最隐蔽的违规行为之一。一旦出了问题，你很难证明这笔钱是律师费，而非私人转账。",
     realCase:
-      "当事人经人介绍委托了一位律师，对方要求将近12万元打到个人银行账户，没有签正式合同，也没有开发票。后来律师消失，当事人投诉时发现没有任何正式委托记录可以证明法律服务关系。",
+      "当事人经人介绍委托了一位律师，对方要求将近12万元打到个人银行账户，没有签正式合同，也没有开发票。后来律师会主动断联消失，当事人投诉时发现没有任何正式委托记录可以证明法律服务关系。",
     advice: [
       "要求律师提供律所的对公账户，拒绝转账到个人账户",
       "付款后要求开具正式发票，核对金额和内容",
       "如果已经付到个人账户，立即保留转账记录截图",
       "向当地律师协会查询该律师的执业状态",
+      "分辨其获得执照时间，是实习律师、助理律师还是资深律师",
     ],
     signalEn:
       "The lawyer asks you to wire fees to a personal bank account instead of the firm's corporate account",
@@ -65,6 +66,7 @@ export const flags: Flag[] = [
       "After paying, demand an official invoice and verify the amount and description match",
       "If you have already paid into a personal account, immediately save screenshots of the transfer records",
       "Check the lawyer's licensing status with the local bar association",
+      "Check when their license was issued — distinguish between trainee, associate, and senior lawyers",
     ],
   },
   {
@@ -78,7 +80,7 @@ export const flags: Flag[] = [
     description:
       "如果推荐律师的人与你的对手方有利益关系，这位律师很可能不会真正站在你的立场。介绍人可能收取了回扣，或者这位律师本身就是对方安排的棋子。",
     realCase:
-      "当事人在与公司产生纠纷后，经公司一位高管介绍请了律师。这位律师表面代理当事人，实际暗中与对方保持联系，多次建议当事人放弃有利证据。后来律师亲口承认被对方收买。",
+      "当事人在与公司产生纠纷后，经公司一位股东介绍请了律师。这位律师表面代理当事人，实际暗中与对方保持联系，多次建议当事人放弃有利证据，立场中立甚至背后勾结对立方。后来律师亲口承认被对方收买。",
     advice: [
       "独立寻找律师，不要完全依赖他人推荐",
       "通过当地律师协会官网或法律服务平台自行选择",
@@ -92,7 +94,7 @@ export const flags: Flag[] = [
     descriptionEn:
       "If the person who referred the lawyer has a financial relationship with your opposing party, that lawyer is unlikely to genuinely represent your interests. The referrer may be receiving a kickback, or the lawyer may simply be a pawn placed by the other side.",
     realCaseEn:
-      "After a dispute arose with a company, a client hired a lawyer referred by one of the company's executives. On the surface the lawyer represented the client, but secretly stayed in contact with the opposing side and repeatedly advised the client to abandon favorable evidence. The lawyer later admitted to having been paid off by the other side.",
+      "After a dispute arose with a company, a client hired a lawyer referred by one of the company's shareholders. On the surface the lawyer represented the client, but secretly stayed in contact with the opposing side and repeatedly advised the client to abandon favorable evidence — maintaining a neutral stance or even colluding with the opposition behind the scenes. The lawyer later admitted to having been paid off by the other side.",
     adviceEn: [
       "Find your own lawyer independently rather than relying solely on someone else's referral",
       "Select a lawyer yourself through the local bar association's official site or a legal services platform",
@@ -111,9 +113,9 @@ export const flags: Flag[] = [
     description:
       "书面委托合同是律师与当事人法律服务关系的基础凭证。没有合同，出了问题你无法证明服务内容、收费金额、双方权责。口头约定和微信聊天记录在投诉和诉讼中效力有限。",
     realCase:
-      "当事人委托律师处理一起经济纠纷，双方只有微信口头约定，没有签书面合同。律师收取费用后消极怠工，当事人投诉时，律协以「没有正式委托关系证明」为由不予受理。",
+      "当事人委托律师处理一份协议，双方只有微信口头约定，没有签书面合同。律师收取费用后消极怠工，当事人投诉时，律协以「没有正式委托关系证明」为由不予受理。",
     advice: [
-      "在付费之前必须签订书面委托合同",
+      "在付费之前必须签订书面委托合同，且一定不能一次性付款",
       "合同必须明确：服务范围、收费金额、退费条件、指派律师",
       "保留合同原件，拍照备份",
       "如果律师拒绝签合同，立即更换律师",
@@ -124,9 +126,9 @@ export const flags: Flag[] = [
     descriptionEn:
       "A written engagement contract is the foundational proof of a legal services relationship between lawyer and client. Without one, if something goes wrong you cannot prove the scope of services, the fees charged, or each side's rights and obligations. Verbal agreements and chat messages carry limited weight in complaints or litigation.",
     realCaseEn:
-      "A client hired a lawyer to handle a financial dispute based only on a verbal agreement over chat, with no written contract signed. After collecting the fee, the lawyer did little work. When the client filed a complaint, the bar association declined to take it up, citing the absence of proof of a formal engagement.",
+      "A client hired a lawyer to handle a contract agreement based only on a verbal agreement over chat, with no written contract signed. After collecting the fee, the lawyer did little work. When the client filed a complaint, the bar association declined to take it up, citing the absence of proof of a formal engagement.",
     adviceEn: [
-      "A written engagement contract must be signed before any payment is made",
+      "A written engagement contract must be signed before any payment is made — never pay everything upfront in one lump sum",
       "The contract must clearly state: scope of services, fee amount, refund conditions, and the assigned lawyer",
       "Keep the original contract and photograph it as a backup",
       "If the lawyer refuses to sign a contract, switch lawyers immediately",
@@ -143,7 +145,7 @@ export const flags: Flag[] = [
     description:
       "退费条款规定了在什么情况下可以退还律师费。没有这个条款，如果律师中途不做事或你对服务不满意，你很难追回已付费用。这是律师利用信息不对称设置的常见陷阱。",
     realCase:
-      "当事人签了一份没有退费条款的委托合同，支付了19万元律师费。律师在整个代理期间从未出庭，当事人要求退费被拒，因为合同中没有约定退费条件。",
+      "当事人签了一份没有退费条款的委托合同，支付了20万元律师费。律师在官司出现后，消极怠工，不专业；当事人感觉不对要求退费被拒，因为合同中没有约定退费条件。",
     advice: [
       "在签约前要求合同中加入退费条款",
       "明确约定：未提供服务、服务质量不合格等情况下的退费比例",
@@ -156,7 +158,7 @@ export const flags: Flag[] = [
     descriptionEn:
       "A refund clause specifies the conditions under which legal fees can be refunded. Without one, it becomes very hard to recover fees already paid if the lawyer stops working on your case or you're unsatisfied with the service. This is a common trap lawyers exploit through information asymmetry.",
     realCaseEn:
-      "A client signed an engagement contract with no refund clause and paid RMB 190,000 in legal fees. The lawyer never appeared in court during the entire representation. When the client demanded a refund, it was denied because the contract contained no refund conditions.",
+      "A client signed an engagement contract with no refund clause and paid RMB 200,000 in legal fees. After litigation began, the lawyer was negligent and unprofessional. When the client sensed something was wrong and demanded a refund, it was denied because the contract contained no refund conditions.",
     adviceEn: [
       "Insist that a refund clause be added to the contract before signing",
       "Clearly specify refund percentages for cases such as no service rendered or substandard service quality",
@@ -208,12 +210,13 @@ export const flags: Flag[] = [
     description:
       "律师收费后消失是一种严重的失职行为。正常的律师应该定期主动向客户汇报案件进展，至少在关键节点（立案、开庭、判决）前后告知情况。长期不回复可能意味着律师根本没有在处理你的案件。",
     realCase:
-      "当事人支付了19万元律师费后，律师连续数月不回微信、不接电话。当事人后来发现律师在代理期间从未向法院提交过任何文件，开庭也未到场。",
+      "当事人支付了20万元律师费后，当事人后来发现律师在代理期间连续不回微信、不接电话；消极怠工，不专业。更换律师告知原律师根本没有对接法院，当事人的代理律师栏竟然是空白。",
     advice: [
       "发送书面邮件要求律师在指定日期前汇报进展",
       "保留所有联系律师的记录（微信、电话、邮件）",
       "超过两周不回复，考虑向律协投诉",
       "在委托合同中约定律师汇报进展的频率和方式",
+      "一定要在合同约定退款事宜",
     ],
     signalEn:
       "The lawyer stops responding for long periods and doesn't report on case progress",
@@ -222,12 +225,13 @@ export const flags: Flag[] = [
     descriptionEn:
       "A lawyer disappearing after collecting fees is a serious dereliction of duty. A lawyer should proactively update the client on case progress on a regular basis, at minimum around key milestones (filing, hearings, judgment). Long silences may mean the lawyer isn't working on your case at all.",
     realCaseEn:
-      "After paying RMB 190,000 in legal fees, a client's lawyer stopped answering messages and calls for several consecutive months. The client later discovered the lawyer had never filed any documents with the court during the representation and had not appeared at the hearing.",
+      "After paying RMB 200,000 in legal fees, the client discovered the lawyer had gone silent for extended periods — not responding to messages or answering calls, and being negligent and unprofessional. After switching lawyers, the client was told the original lawyer had never even liaised with the court — the client's attorney-of-record field was completely blank.",
     adviceEn: [
       "Send a written email requiring the lawyer to report progress by a specified date",
       "Keep records of all attempts to contact the lawyer (chat messages, calls, emails)",
       "If there's no response for more than two weeks, consider filing a complaint with the bar association",
       "Specify the frequency and method of progress reporting in the engagement contract",
+      "Make sure to include refund terms in the contract",
     ],
   },
   {

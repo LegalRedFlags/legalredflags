@@ -24,21 +24,19 @@ export const cases: CaseStudy[] = [
     tags: ["私账收费", "空白发票", "消极怠工", "利益冲突介绍"],
     tagsEn: ["Private Account Billing", "Blank Invoices", "Ghosting", "Conflicted Referral"],
     summary:
-      "当事人在遭遇公司纠纷、确诊重度抑郁的困境中，经人介绍委托了两名律师。第一位律师用个人账户收取了近12万元费用，没有正式合同；第二位律师收取了19万元，代理期间从未出庭，寄来的发票是空白的。当事人花了六年时间维权，至今一分钱没有追回。",
+      "当事人在遭遇公司纠纷、家人突发重病住院、身心状况极差的困境中，不得已经人介绍第一次委托律师处理可能出现的复杂事务。第一位律师通过个人账户收取了近12万元费用，没有正式合同；第二位律师及其律所提前收取了近20万元，一年半后官司出现，却消极怠工，代理期间从未出庭，且寄来的发票竟是一张空白发票。当事人逐步接触到其他资深律师后，才意识到这两位只是资历尚浅的助理，根本没有能力处理当事人的事务，只是利用当事人的无助和信息不对称收取高额费用。当事人维权多年，至今未追回一分钱。",
     summaryEn:
-      "While dealing with a corporate dispute and a diagnosis of severe depression, the client retained two lawyers on the recommendation of acquaintances. The first lawyer collected nearly RMB 120,000 into a personal bank account with no formal contract; the second collected RMB 190,000, never once appeared in court during the representation, and sent blank invoices. The client has spent six years fighting to recover the money and has not recovered a single yuan to date.",
+      "While dealing with a corporate dispute, a family medical emergency, and severe personal stress, the client retained two lawyers on the recommendation of acquaintances. The first lawyer collected nearly RMB 120,000 into a personal bank account with no formal contract; the second collected RMB 190,000, never once appeared in court during the representation, and sent blank invoices. The client has spent years fighting to recover the money and has not recovered a single yuan to date.",
     timeline: [
-      { date: "第1年", event: "经熟人介绍，委托第一位律师处理经济纠纷。律师要求将律师费打到个人银行账户，没有签书面合同。" },
-      { date: "第1年末", event: "第一位律师收取近12万元后，开始频繁失联，对案件进展不做任何汇报。" },
-      { date: "第2年", event: "对第一位律师失望后，经另一个熟人介绍委托第二位律师。签了合同，支付19万元律师费。" },
-      { date: "第2-3年", event: "第二位律师同样开始消极怠工，多次开庭均未到场，寄来的发票是空白的。" },
-      { date: "第3年", event: "当事人开始自行研究法律知识，发现两位律师的多项违规行为。" },
-      { date: "第4年", event: "向律师协会提交投诉，附上转账记录、微信聊天记录等证据。" },
-      { date: "第5年", event: "律协调解未果。对方律师态度强硬，拒绝退还任何费用。" },
-      { date: "第6年", event: "继续通过法律途径维权。至今未追回任何费用，但积累了大量经验和教训。" },
+      { date: "第1年", event: "当事人遭遇公司被夺权、家人突发重病住院，身心状况极差。在最脆弱的时候，经熟人介绍委托第一位律师处理一份法律文件。该律师只是利用兼职时间写了模板协议，前后一个月要求将近12万元律师费打入个人账户，没有签任何书面合同。随后这位律师又介绍其同事给当事人处理可能出现的经济纠纷，当事人在完全无知的状态下，又委托了第二位律师及其律所，签了正式合同，提前支付近20万元律师费。" },
+      { date: "第2—3年", event: "第一位律师违规收取高额费用后逐渐失联，根本不会关注其起草的协议是否对当事人产生负面影响。第二位律师同样消极怠工，而且在合同中只是助理律师的角色。当事人逐渐意识到被骗，不得已又开始找第三位律师处理官司纠纷。" },
+      { date: "第4年", event: "当事人开始自行研究，发现第一位律师当时可能根本不具备执业资格，属于私自收费；第二位律师收费后从未实际履行代理职责，也没有出庭处理事务。打开之前其寄来的信封，竟然发现寄来的发票是一张空白发票。因疫情反复、身体原因及其他官司纠纷，一直不知道该怎么向这两位无良律师维权。" },
+      { date: "第5年", event: "在其他律师提醒下，当事人才知道可以向律协及司法局进行投诉。但当事人深陷其他官司，又忌惮对方的律师身份，迟迟未能付诸行动。" },
+      { date: "第6年", event: "正式向律师协会提交投诉，附上转账记录、合同、空白发票等证据。投诉后经历了漫长的等待，半年后才被正式立案调查。而且拒绝对第二个律师及其律师事务所立案调查，不得已有向司法局申诉。" },
+      { date: "第7年", event: "向司法行政部门申诉，才对第一个律师、第二个律师及其律师事务所都立案调查。但在被安排调解时，调解员只要求当事人让步，不要求对方表态，两天即宣布调解失败。对方律师从「愿意退费」突然变成「一分不退」。向法院起诉，三次网上立案均被驳回。向上级法院申请立案监督，材料被转回原法院，至今无回音。维权仍在继续，未追回任何费用。" },
     ],
     timelineEn: [
-      { date: "Year 1", event: "On a friend's recommendation, retained the first lawyer to handle an economic dispute. The lawyer asked for fees to be wired to a personal bank account, and no written contract was signed." },
+      { date: "Year 1", event: "While dealing with a corporate dispute and a family medical emergency, the client retained a lawyer on an acquaintance's recommendation to handle a legal document. The lawyer asked for fees to be wired to a personal bank account, and no written contract was signed." },
       { date: "End of Year 1", event: "After collecting nearly RMB 120,000, the first lawyer became increasingly unreachable and stopped reporting on the case's progress." },
       { date: "Year 2", event: "Disillusioned with the first lawyer, retained a second lawyer on another acquaintance's recommendation. A contract was signed and RMB 190,000 in fees was paid." },
       { date: "Years 2-3", event: "The second lawyer likewise began neglecting the case, repeatedly failing to appear at hearings, and sent invoices that were blank." },
@@ -50,7 +48,7 @@ export const cases: CaseStudy[] = [
     redFlags: [
       "#01 私账收费 — 律师要求将费用打到个人账户",
       "#03 无正式合同 — 第一位律师没有签书面委托合同",
-      "#06 消极怠工 — 两位律师都长期失联，不汇报进展",
+      "#06 消极怠工 — 两位律师为实习助理律师，动机不纯，且没有能力主导事务",
       "#10 发票欺诈 — 第二位律师寄来空白发票",
       "#02 利益冲突介绍 — 两位律师都是经他人介绍",
     ],
@@ -148,18 +146,17 @@ export const cases: CaseStudy[] = [
     tags: ["利益冲突", "反向操作", "利益冲突介绍", "信息泄露"],
     tagsEn: ["Conflict of Interest", "Working Against the Client", "Conflicted Referral", "Information Leak"],
     summary:
-      "当事人在维权过程中委托了一位律师，后来发现这位律师与对手方存在私下联系。律师多次给出不利建议，包括放弃关键证据、建议撤诉。当事人自行调查后，律师承认被对方收买。",
+      "当事人在维权过程中委托了一位律师，后来发现这位律师与对手方存在私下联系。律师多次给出不利建议，包括放弃关键证据、建议撤诉、建议和解。",
     summaryEn:
       "While pursuing a legal claim, the client retained a lawyer, then later discovered the lawyer had been secretly in contact with the opposing party. The lawyer repeatedly gave advice that worked against the client's interests, including urging them to abandon key evidence and to withdraw the lawsuit. After the client investigated independently, the lawyer admitted to having been paid off by the other side.",
     timeline: [
       { date: "起初", event: "经第三方介绍委托律师处理纠纷案件，签订了正式合同。" },
-      { date: "代理初期", event: "律师表现正常，按时汇报案件进展。" },
+      { date: "代理初期", event: "律师开始表现正常，积极维权，按时汇报案件进展。" },
       { date: "关键阶段", event: "律师突然建议当事人不要追查对方的某项关键证据，理由是「太复杂，得不偿失」。" },
       { date: "此后", event: "律师多次建议和解，但和解条件明显不利于当事人。当事人拒绝后，律师态度开始冷淡。" },
-      { date: "转折点", event: "当事人自行调查发现律师与对方公司法人有私下聚餐记录。" },
-      { date: "对质", event: "当事人当面质问律师。在证据面前，律师承认对方曾经找过他，并支付了一笔费用。" },
-      { date: "后续", event: "当事人解除委托，更换律师。新律师采用了完全不同的诉讼策略，追查了原律师建议放弃的证据。" },
-      { date: "最终", event: "向律协投诉原律师，同时案件在新律师的代理下取得了重要进展。" },
+      { date: "转折点", event: "当事人觉察不对，去给律师送礼物；律师承认被对方律师邀约多次，原因付费用把当事人摆平。" },
+      { date: "后续", event: "当事人不得已解除委托，又更换律师。" },
+      { date: "最终", event: "鉴于原律师没有造成实质性伤害，放弃追究责任。" },
     ],
     timelineEn: [
       { date: "At the outset", event: "Retained a lawyer through a third-party referral to handle the dispute and signed a formal contract." },
@@ -176,6 +173,7 @@ export const cases: CaseStudy[] = [
       "#07 反向操作 — 律师建议放弃关键证据和撤诉",
       "#08 利益冲突 — 律师的建议客观上有利于对方",
       "#19 信息泄露 — 律师可能向对方透露了当事人的诉讼策略",
+      "#21 警惕律师态度变化 — 律师可能被收买；也可能不想负责到底，虎头蛇尾",
     ],
     redFlagsEn: [
       "#02 Conflicted Referral — engaged through a third party whose background was unclear",
