@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { I18nProvider } from "@/i18n/context";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" className="h-full antialiased">
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <I18nProvider>{children}</I18nProvider>
+      </body>
     </html>
   );
 }

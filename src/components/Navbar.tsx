@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useI18n, LanguageSwitcher } from "@/i18n/context";
 
 export default function Navbar() {
+  const { t } = useI18n();
+
   return (
     <nav className="max-w-[960px] mx-auto px-7 pt-7 flex justify-between items-center">
       <Link href="/" className="flex items-center gap-2.5 no-underline text-[var(--ink)]">
@@ -12,24 +17,27 @@ export default function Navbar() {
           Legal Red Flags
         </span>
       </Link>
-      <ul className="flex gap-7 list-none">
-        {[
-          ["/flags", "危险信号"],
-          ["/cases", "真实案例"],
-          ["/checker", "风险自测"],
-          ["/checklist", "检查清单"],
-          ["/about", "关于我们"],
-        ].map(([href, label]) => (
-          <li key={href}>
-            <Link
-              href={href}
-              className="text-sm text-[var(--grey)] no-underline hover:text-[var(--ink)] transition-colors"
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="flex items-center gap-7">
+        <ul className="flex gap-7 list-none max-sm:hidden">
+          {[
+            ["/flags", t("危险信号", "Red Flags")],
+            ["/cases", t("真实案例", "Cases")],
+            ["/checker", t("风险自测", "Self-Check")],
+            ["/checklist", t("检查清单", "Checklist")],
+            ["/about", t("关于我们", "About")],
+          ].map(([href, label]) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className="text-sm text-[var(--grey)] no-underline hover:text-[var(--ink)] transition-colors"
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <LanguageSwitcher />
+      </div>
     </nav>
   );
 }
