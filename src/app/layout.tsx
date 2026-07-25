@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { I18nProvider } from "@/i18n/context";
 import { WebsiteJsonLd } from "@/components/JsonLd";
 import "./globals.css";
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body className="min-h-full">
         <WebsiteJsonLd />
         <I18nProvider>{children}</I18nProvider>
+        <Analytics />
       </body>
     </html>
   );
