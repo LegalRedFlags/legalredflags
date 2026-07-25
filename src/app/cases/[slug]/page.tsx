@@ -1,8 +1,6 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { cases, getCaseBySlug } from "@/data/cases";
+import CaseDetail from "@/components/CaseDetail";
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
@@ -17,7 +15,7 @@ export async function generateMetadata({
   const c = getCaseBySlug(slug);
   if (!c) return {};
   return {
-    title: `案例 #${c.num} ${c.title} — Legal Red Flags`,
+    title: `Case #${c.num} ${c.title} — Legal Red Flags`,
     description: c.summary.substring(0, 160),
   };
 }
@@ -31,147 +29,5 @@ export default async function CaseDetailPage({
   const c = getCaseBySlug(slug);
   if (!c) notFound();
 
-  return (
-    <>
-      <Navbar />
-      <article className="max-w-[960px] mx-auto px-7 pt-16 pb-20">
-        {/* Breadcrumb */}
-        <div className="text-[13px] text-[var(--grey-light)] mb-8">
-          <Link
-            href="/cases"
-            className="text-[var(--green)] no-underline hover:underline"
-          >
-            真实案例
-          </Link>
-          <span className="mx-2">/</span>
-          <span>案例 #{c.num}</span>
-        </div>
-
-        {/* Header */}
-        <div className="mb-10">
-          <div className="text-[11px] tracking-wider uppercase text-[var(--grey-light)] mb-3">
-            案例 #{c.num}
-          </div>
-          <h1 className="font-serif text-[clamp(24px,4vw,34px)] font-bold leading-snug mb-4">
-            {c.title}
-          </h1>
-          <div className="flex gap-3 flex-wrap">
-            {c.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-[12.5px] text-[var(--grey)] py-1 px-3 bg-[var(--ground-warm)] rounded-sm"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Summary */}
-        <section className="mb-10">
-          <h2 className="font-serif text-[18px] font-bold mb-3">案件概述</h2>
-          <div className="bg-[var(--surface)] border border-[var(--rule)] p-7 max-sm:p-5">
-            <div className="grid grid-cols-[3px_1fr] gap-5">
-              <div className="bg-[var(--red)] rounded-sm" />
-              <p className="font-serif text-[16px] text-[var(--ink-soft)] leading-[1.8]">
-                {c.summary}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Timeline */}
-        <section className="mb-10">
-          <h2 className="font-serif text-[18px] font-bold mb-5">事件经过</h2>
-          <div className="relative pl-8 border-l-2 border-[var(--rule)]">
-            {c.timeline.map((t, i) => (
-              <div key={i} className="mb-6 last:mb-0 relative">
-                <div className="absolute -left-[33px] top-1 w-3 h-3 rounded-full bg-[var(--ground)] border-2 border-[var(--red)]" />
-                <div className="text-[13px] font-bold text-[var(--red)] mb-1">
-                  {t.date}
-                </div>
-                <p className="text-[14.5px] text-[var(--ink-soft)] leading-relaxed">
-                  {t.event}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Red Flags */}
-        <section className="mb-10">
-          <h2 className="font-serif text-[18px] font-bold mb-3">
-            涉及的危险信号
-          </h2>
-          <div className="border border-[var(--rule)]">
-            {c.redFlags.map((rf, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-3 px-6 py-4 bg-[var(--surface)] border-b border-[var(--rule-light)] last:border-b-0 text-[14.5px] text-[var(--ink-soft)] leading-snug"
-              >
-                <div className="w-2 h-2 rounded-full bg-[var(--red)] shrink-0 mt-1.5" />
-                {rf}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Lessons */}
-        <section className="mb-10">
-          <h2 className="font-serif text-[18px] font-bold mb-3">经验教训</h2>
-          <div className="border border-[var(--rule)]">
-            {c.lessons.map((lesson, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-3.5 px-6 py-4 bg-[var(--surface)] border-b border-[var(--rule-light)] last:border-b-0 text-[14.5px] text-[var(--ink-soft)] leading-snug"
-              >
-                <div className="w-5 h-5 rounded-full bg-[var(--green-pale)] text-[var(--green)] text-[12px] font-bold flex items-center justify-center shrink-0 mt-0.5">
-                  {i + 1}
-                </div>
-                {lesson}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Disclaimer */}
-        <div className="bg-[var(--ground-warm)] border border-[var(--rule)] p-6 text-[13px] text-[var(--grey)] leading-relaxed">
-          <strong className="text-[var(--ink-soft)]">声明：</strong>
-          以上案例已经过严格的匿名化处理，所有个人信息、公司名称、具体金额和地点均已调整或替换，以保护当事人隐私。案例的核心事实和欺诈模式是真实的。
-        </div>
-
-        {/* Discussion */}
-        <div className="mt-10 bg-[var(--surface)] border border-[var(--rule)] p-8 max-sm:p-6 text-center">
-          <h3 className="font-serif text-[18px] font-bold mb-2">
-            关于这个案例，你怎么看？
-          </h3>
-          <p className="text-[14px] text-[var(--grey)] mb-5 max-w-[440px] mx-auto">
-            有类似经历？有不同看法？欢迎在讨论区分享你的想法。
-          </p>
-          <a
-            href={`https://github.com/LegalRedFlags/legalredflags/discussions/new?category=general&title=${encodeURIComponent(`案例 #${c.num}：${c.title}`)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[var(--ink)] text-[var(--ground)] text-[14px] font-semibold no-underline hover:opacity-90 transition-opacity"
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-            </svg>
-            参与讨论
-          </a>
-        </div>
-
-        {/* Back */}
-        <div className="mt-8 pt-8 border-t border-[var(--rule)]">
-          <Link
-            href="/cases"
-            className="text-sm text-[var(--green)] no-underline hover:underline"
-          >
-            &larr; 返回全部案例
-          </Link>
-        </div>
-      </article>
-      <Footer />
-    </>
-  );
+  return <CaseDetail c={c} />;
 }

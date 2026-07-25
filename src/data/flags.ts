@@ -9,6 +9,12 @@ export interface Flag {
   description: string;
   realCase: string;
   advice: string[];
+  signalEn: string;
+  categoryEn: string;
+  stageEn: string;
+  descriptionEn: string;
+  realCaseEn: string;
+  adviceEn: string[];
 }
 
 export const stages: Record<string, string> = {
@@ -17,6 +23,14 @@ export const stages: Record<string, string> = {
   contracts: "合同与交易",
   enforcement: "执行与破产",
   recourse: "投诉与维权",
+};
+
+export const stagesEn: Record<string, string> = {
+  hiring: "Hiring Stage",
+  representation: "During Representation",
+  contracts: "Contracts & Deals",
+  enforcement: "Enforcement & Bankruptcy",
+  recourse: "Complaints & Recourse",
 };
 
 export const flags: Flag[] = [
@@ -38,6 +52,20 @@ export const flags: Flag[] = [
       "如果已经付到个人账户，立即保留转账记录截图",
       "向当地律师协会查询该律师的执业状态",
     ],
+    signalEn:
+      "The lawyer asks you to wire fees to a personal bank account instead of the firm's corporate account",
+    categoryEn: "Off-book Payment Fraud",
+    stageEn: "Hiring Stage",
+    descriptionEn:
+      "Legitimate law firms must collect fees through a corporate account and issue an official invoice. Billing through a personal account is one of the most common and hardest-to-detect forms of misconduct. If something goes wrong, it becomes very difficult to prove the money was a legal fee rather than a private transfer.",
+    realCaseEn:
+      "A client was referred to a lawyer and asked to wire nearly RMB 120,000 to a personal bank account, with no formal contract signed and no invoice issued. The lawyer later disappeared. When the client tried to file a complaint, there was no formal engagement record proving a legal services relationship ever existed.",
+    adviceEn: [
+      "Require the lawyer to provide the firm's corporate account; refuse to transfer to a personal account",
+      "After paying, demand an official invoice and verify the amount and description match",
+      "If you have already paid into a personal account, immediately save screenshots of the transfer records",
+      "Check the lawyer's licensing status with the local bar association",
+    ],
   },
   {
     slug: "02",
@@ -56,6 +84,20 @@ export const flags: Flag[] = [
       "通过当地律师协会官网或法律服务平台自行选择",
       "同时咨询 2-3 位律师，对比他们的专业判断",
       "调查介绍人与对手方是否有利益关系",
+    ],
+    signalEn:
+      "The lawyer was referred to you by your opposing party or someone connected to them",
+    categoryEn: "Conflict-of-Interest Referral",
+    stageEn: "Hiring Stage",
+    descriptionEn:
+      "If the person who referred the lawyer has a financial relationship with your opposing party, that lawyer is unlikely to genuinely represent your interests. The referrer may be receiving a kickback, or the lawyer may simply be a pawn placed by the other side.",
+    realCaseEn:
+      "After a dispute arose with a company, a client hired a lawyer referred by one of the company's executives. On the surface the lawyer represented the client, but secretly stayed in contact with the opposing side and repeatedly advised the client to abandon favorable evidence. The lawyer later admitted to having been paid off by the other side.",
+    adviceEn: [
+      "Find your own lawyer independently rather than relying solely on someone else's referral",
+      "Select a lawyer yourself through the local bar association's official site or a legal services platform",
+      "Consult 2-3 lawyers at once and compare their professional judgment",
+      "Investigate whether the referrer has any financial relationship with the opposing party",
     ],
   },
   {
@@ -76,6 +118,19 @@ export const flags: Flag[] = [
       "保留合同原件，拍照备份",
       "如果律师拒绝签合同，立即更换律师",
     ],
+    signalEn: "The lawyer won't sign a formal written engagement contract with you",
+    categoryEn: "No Formal Contract",
+    stageEn: "Hiring Stage",
+    descriptionEn:
+      "A written engagement contract is the foundational proof of a legal services relationship between lawyer and client. Without one, if something goes wrong you cannot prove the scope of services, the fees charged, or each side's rights and obligations. Verbal agreements and chat messages carry limited weight in complaints or litigation.",
+    realCaseEn:
+      "A client hired a lawyer to handle a financial dispute based only on a verbal agreement over chat, with no written contract signed. After collecting the fee, the lawyer did little work. When the client filed a complaint, the bar association declined to take it up, citing the absence of proof of a formal engagement.",
+    adviceEn: [
+      "A written engagement contract must be signed before any payment is made",
+      "The contract must clearly state: scope of services, fee amount, refund conditions, and the assigned lawyer",
+      "Keep the original contract and photograph it as a backup",
+      "If the lawyer refuses to sign a contract, switch lawyers immediately",
+    ],
   },
   {
     slug: "04",
@@ -94,6 +149,19 @@ export const flags: Flag[] = [
       "明确约定：未提供服务、服务质量不合格等情况下的退费比例",
       "如果律师拒绝加入退费条款，这本身就是一个警告信号",
       "了解当地律师协会关于律师费退还的相关规定",
+    ],
+    signalEn: "The engagement contract contains no refund clause",
+    categoryEn: "No Refund Clause",
+    stageEn: "Hiring Stage",
+    descriptionEn:
+      "A refund clause specifies the conditions under which legal fees can be refunded. Without one, it becomes very hard to recover fees already paid if the lawyer stops working on your case or you're unsatisfied with the service. This is a common trap lawyers exploit through information asymmetry.",
+    realCaseEn:
+      "A client signed an engagement contract with no refund clause and paid RMB 190,000 in legal fees. The lawyer never appeared in court during the entire representation. When the client demanded a refund, it was denied because the contract contained no refund conditions.",
+    adviceEn: [
+      "Insist that a refund clause be added to the contract before signing",
+      "Clearly specify refund percentages for cases such as no service rendered or substandard service quality",
+      "If the lawyer refuses to include a refund clause, that alone is a warning sign",
+      "Learn the local bar association's rules regarding refunds of legal fees",
     ],
   },
   {
@@ -114,6 +182,20 @@ export const flags: Flag[] = [
       "如果发现实际处理人与合同不符，有权要求更换或退费",
       "定期要求负责律师本人汇报进展",
     ],
+    signalEn:
+      "The lawyer named on the contract is not the one actually working on your case",
+    categoryEn: "Ghost Representation",
+    stageEn: "Hiring Stage",
+    descriptionEn:
+      "Some firms use a senior lawyer's name on the contract to attract clients, then hand the actual work to a less experienced junior lawyer or intern. You pay a senior lawyer's rate but receive junior-level service.",
+    realCaseEn:
+      "A client signed an engagement contract drawn in by a senior lawyer's reputation. After signing, it turned out that all document preparation and court appearances were handled by a junior lawyer who had just entered practice — the lawyer named on the contract never touched the case.",
+    adviceEn: [
+      "Before signing, insist on meeting the lawyer who will actually handle your case",
+      "Have the contract clearly state the name of the responsible lawyer",
+      "If the actual handler doesn't match the contract, you have the right to demand a change or a refund",
+      "Regularly require the responsible lawyer, in person, to report on progress",
+    ],
   },
   {
     slug: "06",
@@ -132,6 +214,20 @@ export const flags: Flag[] = [
       "保留所有联系律师的记录（微信、电话、邮件）",
       "超过两周不回复，考虑向律协投诉",
       "在委托合同中约定律师汇报进展的频率和方式",
+    ],
+    signalEn:
+      "The lawyer stops responding for long periods and doesn't report on case progress",
+    categoryEn: "Neglect of Duty",
+    stageEn: "During Representation",
+    descriptionEn:
+      "A lawyer disappearing after collecting fees is a serious dereliction of duty. A lawyer should proactively update the client on case progress on a regular basis, at minimum around key milestones (filing, hearings, judgment). Long silences may mean the lawyer isn't working on your case at all.",
+    realCaseEn:
+      "After paying RMB 190,000 in legal fees, a client's lawyer stopped answering messages and calls for several consecutive months. The client later discovered the lawyer had never filed any documents with the court during the representation and had not appeared at the hearing.",
+    adviceEn: [
+      "Send a written email requiring the lawyer to report progress by a specified date",
+      "Keep records of all attempts to contact the lawyer (chat messages, calls, emails)",
+      "If there's no response for more than two weeks, consider filing a complaint with the bar association",
+      "Specify the frequency and method of progress reporting in the engagement contract",
     ],
   },
   {
@@ -152,6 +248,20 @@ export const flags: Flag[] = [
       "寻求第二位独立律师的意见进行对比",
       "不要在压力下做出放弃权利的决定",
     ],
+    signalEn:
+      "The lawyer advises you to withdraw your suit or waive your rights but gives no written reasoning",
+    categoryEn: "Working Against You",
+    stageEn: "During Representation",
+    descriptionEn:
+      "A lawyer is entitled to give professional advice, but any major recommendation — withdrawing a suit, settling, abandoning an appeal — should rest on a written legal analysis. If the lawyer only verbally urges you to give up and refuses to put an opinion in writing, the advice may not be serving your interests.",
+    realCaseEn:
+      "During a second-instance appeal, a lawyer suddenly advised the client to abandon the appeal, citing \"low chances of winning,\" but refused to provide a written legal opinion. After switching lawyers, the client won the appeal on reversal. It later emerged that the original lawyer had been in private contact with the opposing side.",
+    adviceEn: [
+      "Require the lawyer to produce a written legal opinion explaining the reasoning and legal basis for recommending you give up",
+      "If the lawyer refuses to provide a written opinion, that alone is a major warning sign",
+      "Seek a second, independent lawyer's opinion for comparison",
+      "Do not make a decision to waive your rights under pressure",
+    ],
   },
   {
     slug: "08",
@@ -170,6 +280,20 @@ export const flags: Flag[] = [
       "寻求第二位独立律师的意见",
       "如果两位律师的建议完全相反，深入了解原因",
       "调查律师与对方当事人是否存在关联",
+    ],
+    signalEn:
+      "The lawyer's advice objectively benefits the other side more than you",
+    categoryEn: "Conflict of Interest",
+    stageEn: "During Representation",
+    descriptionEn:
+      "If your lawyer repeatedly advises you to abandon evidence that favors you, drop pursuit of key issues, or make concessions when you hold the advantage, this may not be professional judgment but a sign of conflicted interest. The lawyer may have been paid off by the other side, or may have some undisclosed relationship with them.",
+    realCaseEn:
+      "A lawyer repeatedly advised the client not to pursue the opposing company's concealed assets, calling it \"too complicated.\" After the client found the evidence independently, the lawyer still advised dropping it. The lawyer later admitted to having a personal relationship with the opposing company's legal representative.",
+    adviceEn: [
+      "Keep a record of every piece of unfavorable advice the lawyer gives",
+      "Seek a second, independent lawyer's opinion",
+      "If two lawyers' recommendations are completely opposite, dig into why",
+      "Investigate whether your lawyer has any connection to the opposing party",
     ],
   },
   {
@@ -190,6 +314,20 @@ export const flags: Flag[] = [
       "保留律师索取额外费用的证据（微信记录、录音等）",
       "向律协和司法局举报",
     ],
+    signalEn:
+      "The lawyer asks for an extra \"facilitation fee\" or \"connections fee\"",
+    categoryEn: "Solicitation of Bribes",
+    stageEn: "During Representation",
+    descriptionEn:
+      "Any fee framed as \"greasing the wheels\" or \"paying off the judge\" is illegal. A legitimate lawyer will not and should not ask a client for money of this kind. The act itself is unlawful, and your money will most likely never actually go toward any such \"facilitation.\"",
+    realCaseEn:
+      "Citing a need to \"treat the judge to dinner\" and \"pay off the court clerk,\" a lawyer solicited tens of thousands of RMB in extra fees from a client. Nothing came of it, and when the client demanded the money back, the lawyer flatly denied ever having received it.",
+    adviceEn: [
+      "Refuse any fee not specified in the contract",
+      "Any fee framed as \"facilitation\" or \"connections\" is 100% a scam",
+      "Keep evidence of the lawyer soliciting extra fees (chat records, recordings, etc.)",
+      "Report it to the bar association and the judicial administration bureau",
+    ],
   },
   {
     slug: "10",
@@ -208,6 +346,20 @@ export const flags: Flag[] = [
       "核对发票上的金额、内容、日期是否与合同一致",
       "空白发票或金额不符的发票要拒收，要求重开",
       "保留所有发票原件和付款凭证",
+    ],
+    signalEn:
+      "The invoice the lawyer sends is blank or the amount doesn't match",
+    categoryEn: "Invoice Fraud",
+    stageEn: "During Representation",
+    descriptionEn:
+      "A legitimate legal fee invoice should clearly state the amount, the services rendered, and the date. A blank invoice, a mismatched amount, or no invoice at all indicates the fee never entered the firm's formal accounting system — a form of misconduct.",
+    realCaseEn:
+      "After repeatedly asking for an invoice, a client received one that was blank — no amount or description of services filled in. When the client complained, the firm shifted blame, claiming the invoice was the lawyer's personal act rather than the firm's.",
+    adviceEn: [
+      "Demand an official invoice immediately after payment",
+      "Check that the amount, description, and date on the invoice match the contract",
+      "Refuse blank invoices or ones with mismatched amounts and demand a corrected one",
+      "Keep all original invoices and proof of payment",
     ],
   },
   {
@@ -228,6 +380,20 @@ export const flags: Flag[] = [
       "了解「连带责任」和「一般保证」的区别",
       "如果已签担保，留意担保期限和追偿权",
     ],
+    signalEn:
+      "Someone asks you to personally guarantee a company's debt",
+    categoryEn: "Personal Guarantee Trap",
+    stageEn: "Contracts & Deals",
+    descriptionEn:
+      "A personal guarantee means you pledge your entire personal estate — real estate, savings, wages — as joint-and-several liability for a company's debt. If the company can't pay, creditors can pursue you directly. Many people sign guarantee agreements without understanding the consequences and end up shouldering enormous debts.",
+    realCaseEn:
+      "A client was asked to provide a personal joint-and-several guarantee for a transaction between companies. The counterparty company later became insolvent, and creditors sued the client personally, freezing their bank accounts and real estate. The client is still repaying a debt they never personally benefited from.",
+    adviceEn: [
+      "Never sign a personal guarantee unless you fully understand the consequences",
+      "Consult an independent lawyer before signing to confirm the scope of risk",
+      "Understand the difference between \"joint-and-several liability\" and a \"general guarantee\"",
+      "If you've already signed a guarantee, pay attention to its term and any rights of recourse",
+    ],
   },
   {
     slug: "12",
@@ -246,6 +412,20 @@ export const flags: Flag[] = [
       "不要被对方的催促所迫，合理的签约应该给你充足的审阅时间",
       "特别注意违约金条款、争议解决条款和担保条款",
       "对方起草的合同你有权要求修改",
+    ],
+    signalEn:
+      "The contract was drafted by the other side, and they are pressuring you to sign quickly",
+    categoryEn: "One-Sided Drafting",
+    stageEn: "Contracts & Deals",
+    descriptionEn:
+      "A contract drafted by the other party naturally tends to protect their interests. If they push you to sign quickly without giving you enough time to review, be especially wary. Every clause in a contract can affect your rights.",
+    realCaseEn:
+      "A general manager at the counterparty company sent over a contract and pressured the client to sign it that same day. The client signed without careful review, only to later discover clauses on arbitration and liquidated damages that were extremely unfavorable.",
+    adviceEn: [
+      "Any contract should be reviewed by your own lawyer first",
+      "Don't let the other side's urgency pressure you — a reasonable signing process gives you adequate time to review",
+      "Pay particular attention to liquidated-damages clauses, dispute-resolution clauses, and guarantee clauses",
+      "You have the right to request changes to a contract drafted by the other party",
     ],
   },
   {
@@ -266,6 +446,20 @@ export const flags: Flag[] = [
       "请独立律师逐条审查合同内容",
       "特别关注：担保方式、违约条件、争议管辖、放弃权利等条款",
     ],
+    signalEn:
+      "The contract contains professional terminology or complex clauses you don't understand",
+    categoryEn: "Clause Trap",
+    stageEn: "Contracts & Deals",
+    descriptionEn:
+      "Legal jargon can conceal terms that work against you. Signing without understanding is effectively surrendering your rights blindly. You have the right to demand an explanation of any clause you don't understand.",
+    realCaseEn:
+      "A contract contained a clause waiving the \"defense of prior demand,\" which the client signed without understanding. It later turned out this meant creditors could pursue the client personally without first going after the company.",
+    adviceEn: [
+      "You have the right to demand an explanation for anything in a contract you don't understand",
+      "Don't pretend to understand out of embarrassment",
+      "Have an independent lawyer review the contract clause by clause",
+      "Pay special attention to guarantee terms, default conditions, dispute jurisdiction, and rights-waiver clauses",
+    ],
   },
   {
     slug: "14",
@@ -284,6 +478,20 @@ export const flags: Flag[] = [
       "调查对方公司近期的股权变更和资产变动",
       "向法院举报虚假破产行为",
       "关注对方法人是否在破产期间开设新公司",
+    ],
+    signalEn:
+      "The company suddenly files for bankruptcy, but you know it still has assets",
+    categoryEn: "Sham Bankruptcy",
+    stageEn: "Enforcement & Bankruptcy",
+    descriptionEn:
+      "Sham bankruptcy is an unlawful scheme to evade debt by fabricating the appearance of insolvency. A company may transfer its assets to affiliated companies or individuals and then file for bankruptcy to write off its debts.",
+    realCaseEn:
+      "After losing the case, the opposing company suddenly filed for bankruptcy, claiming it had no assets left to enforce against. The client's own investigation found that, two months before filing, the company had transferred large amounts of assets at deeply discounted prices to a new company set up by the legal representative's relatives.",
+    adviceEn: [
+      "The moment you spot signs of asset transfer, apply for a property preservation order immediately",
+      "Investigate the opposing company's recent equity changes and asset movements",
+      "Report suspected sham bankruptcy to the court",
+      "Watch whether the opposing legal representative sets up a new company during the bankruptcy process",
     ],
   },
   {
@@ -304,6 +512,20 @@ export const flags: Flag[] = [
       "向法院提供对方可执行财产的线索",
       "对方有能力而拒不执行的，可以申请追究刑事责任",
     ],
+    signalEn:
+      "After the judgment takes effect, the other party transfers or hides assets",
+    categoryEn: "Evading Enforcement",
+    stageEn: "Enforcement & Bankruptcy",
+    descriptionEn:
+      "Winning a judgment doesn't mean getting paid. If the judgment debtor transfers property into someone else's name or hides assets after the ruling, your judgment can become worthless paper. This conduct may constitute the crime of refusing to enforce a judgment or ruling.",
+    realCaseEn:
+      "After winning and applying for enforcement, a client discovered the other party had already transferred their real estate to relatives and drained their bank account to zero. The court issued a consumption-restriction order, but the debtor kept spending through other people's accounts, with no real impact on their lifestyle.",
+    adviceEn: [
+      "Apply for enforcement as soon as you win, without giving the other side time to move assets",
+      "You can apply for property preservation as early as the litigation stage",
+      "Provide the court with leads on the other party's enforceable assets",
+      "If the other side has the means but refuses to comply, you can pursue criminal liability",
+    ],
   },
   {
     slug: "16",
@@ -322,6 +544,20 @@ export const flags: Flag[] = [
       "自行收集债务人转移资产的证据提交给法院",
       "联合其他债权人共同监督管理人的行为",
       "如果管理人严重失职，可以申请更换",
+    ],
+    signalEn:
+      "The bankruptcy administrator's conduct clearly favors the debtor",
+    categoryEn: "Administrator Misconduct",
+    stageEn: "Enforcement & Bankruptcy",
+    descriptionEn:
+      "A bankruptcy administrator is supposed to handle proceedings independently and impartially. If the administrator fails to actively trace the debtor's hidden assets, doesn't investigate suspicious related-party transactions, or even helps the debtor evade repayment, this may point to an improper transfer of benefits.",
+    realCaseEn:
+      "A bankruptcy administrator turned a blind eye to large asset transfers the debtor made in the six months before filing and did not investigate suspicious assets held personally by the legal representative. Creditors repeatedly requested an investigation but were refused each time, citing \"lack of evidence.\"",
+    adviceEn: [
+      "Closely monitor the administrator's work reports and raise objections",
+      "Independently gather evidence of the debtor's asset transfers and submit it to the court",
+      "Join with other creditors to jointly monitor the administrator's conduct",
+      "If the administrator's misconduct is serious, you can apply to have them replaced",
     ],
   },
   {
@@ -342,6 +578,20 @@ export const flags: Flag[] = [
       "如果律协不作为，可以向上级司法行政部门投诉",
       "行政途径之外还有民事诉讼途径",
     ],
+    signalEn:
+      "After filing a complaint, the regulatory agency stalls indefinitely or lets it quietly drop",
+    categoryEn: "Administrative Inaction",
+    stageEn: "Complaints & Recourse",
+    descriptionEn:
+      "If a complaint filed with the bar association or judicial bureau produces no result for a long time, or the investigation is handled perfunctorily, it may reflect agency inaction — or it may mean the accused lawyer has \"connections.\" Don't give up; other avenues for recourse remain available.",
+    realCaseEn:
+      "A client filed a complaint with the bar association over off-book billing and neglect of duty. After waiting eight months, they received only a vague reply — \"investigation found no violations\" — with no explanation of what the investigation actually covered.",
+    adviceEn: [
+      "Attach complete supporting evidence to your complaint, including transfer records, the contract, and communication logs",
+      "Record when your complaint was accepted; you can follow up once the statutory deadline is exceeded",
+      "If the bar association fails to act, you can escalate to the higher judicial administrative authority",
+      "Beyond administrative channels, civil litigation remains an option",
+    ],
   },
   {
     slug: "18",
@@ -360,6 +610,19 @@ export const flags: Flag[] = [
       "调解失败不代表你输了，这只是一种解决方式",
       "调解过程中的陈述不会影响后续诉讼",
       "如果调解人明显偏袒对方，可以拒绝调解",
+    ],
+    signalEn: "In mediation, only you are being pressured to make concessions",
+    categoryEn: "Biased Mediation",
+    stageEn: "Complaints & Recourse",
+    descriptionEn:
+      "Mediation should be a process of negotiation between both sides. If the mediator only pushes you to lower your demands and make concessions while the other side faces no pressure at all, the mediation may not be fair. A failed mediation doesn't mean you've lost — litigation remains an option.",
+    realCaseEn:
+      "In mediation presided over by the bar association, the mediator repeatedly pressured the client to lower their compensation demands while downplaying the lawyer's misconduct. The client was pressured toward an unfavorable settlement but ultimately refused and continued pursuing the matter through legal channels.",
+    adviceEn: [
+      "Know your bottom line clearly and don't make concessions under pressure",
+      "A failed mediation doesn't mean you've lost — it's simply one method of resolution",
+      "Statements made during mediation generally do not affect subsequent litigation",
+      "If the mediator is clearly biased toward the other side, you can decline mediation",
     ],
   },
   {
@@ -380,6 +643,20 @@ export const flags: Flag[] = [
       "保留关键证据到最合适的时机使用",
       "如果怀疑信息泄露，立即评估影响并调整策略",
     ],
+    signalEn:
+      "After you disclose a weakness in your evidence, the other side's attitude suddenly shifts",
+    categoryEn: "Information Leak",
+    stageEn: "Complaints & Recourse",
+    descriptionEn:
+      "If you disclose a weakness in your evidence to a mediator, an administrative official, or anyone else, and the other side's posture noticeably changes afterward — suddenly hardening or shifting strategy — this strongly suggests your information was leaked.",
+    realCaseEn:
+      "During mediation, a client told the mediator that a key document had not been retained. The very next day, the opposing lawyer cited exactly that to refuse settlement, and later attacked this specific weakness during the hearing.",
+    adviceEn: [
+      "Only disclose evidentiary weaknesses to your own lawyer, never to any third party",
+      "Don't reveal your full hand during mediation or complaint proceedings",
+      "Hold key evidence back until the most advantageous moment to use it",
+      "If you suspect a leak, immediately assess the impact and adjust your strategy",
+    ],
   },
   {
     slug: "20",
@@ -398,6 +675,20 @@ export const flags: Flag[] = [
       "要求律师评估对方提出的程序申请是否合理",
       "不要因为时间长就轻易放弃或让步",
       "在经济上做好打持久战的准备",
+    ],
+    signalEn:
+      "The other side uses procedural tactics to drag out the case and wear you down",
+    categoryEn: "Procedural Delay",
+    stageEn: "Complaints & Recourse",
+    descriptionEn:
+      "Some opposing parties deliberately exploit procedural tools — jurisdictional objections, counterclaims, requests for re-appraisal — to stall proceedings. The goal is to drain your time, energy, and money, pressuring you to give up or accept an unfavorable settlement.",
+    realCaseEn:
+      "The other side raised a jurisdictional objection, then requested recusal, then requested re-appraisal — each one delaying the case by months. Over three years of delay, the client spent enormous time, energy, and legal fees, and financial pressure eventually forced them to accept a settlement far below what they had expected.",
+    adviceEn: [
+      "Learn the common delay tactics used in litigation and prepare yourself mentally and financially",
+      "Ask your lawyer to assess whether the other side's procedural motions are legitimate",
+      "Don't give up or make concessions simply because the process is dragging on",
+      "Prepare financially for a long fight",
     ],
   },
 ];
