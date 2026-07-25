@@ -1,12 +1,55 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useI18n } from "@/i18n/context";
 
 export default function ContactPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const isZh = locale === "zh";
+
+  const [form, setForm] = useState({
+    type: "",
+    message: "",
+    contact: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const typeOptions = [
+    { zh: "内容纠错", en: "Content Correction", email: "feedback@legalredflags.org" },
+    { zh: "专业合作", en: "Professional Collaboration", email: "collaborate@legalredflags.org" },
+    { zh: "媒体咨询", en: "Media Inquiry", email: "hello@legalredflags.org" },
+    { zh: "其他", en: "Other", email: "hello@legalredflags.org" },
+  ];
+
+  function handleSubmit() {
+    const selected = typeOptions.find(
+      (o) => (isZh ? o.zh : o.en) === form.type
+    );
+    const toEmail = selected?.email || "hello@legalredflags.org";
+
+    const body = [
+      `【${isZh ? "类型" : "Type"}】${form.type}`,
+      "",
+      `【${isZh ? "内容" : "Message"}】`,
+      form.message,
+      "",
+      `【${isZh ? "联系方式" : "Contact"}】${form.contact || (isZh ? "匿名" : "Anonymous")}`,
+    ].join("\n");
+
+    const subject = encodeURIComponent(
+      isZh ? `[Legal Red Flags] ${form.type}` : `[Legal Red Flags] ${form.type}`
+    );
+    const mailBody = encodeURIComponent(body);
+    window.location.href = `mailto:${toEmail}?subject=${subject}&body=${mailBody}`;
+    setSubmitted(true);
+  }
+
+  const inputClass =
+    "w-full p-4 bg-[var(--ground)] border border-[var(--rule)] text-[15px] text-[var(--ink)] placeholder:text-[var(--grey-light)] focus:outline-none focus:border-[var(--green)] transition-colors";
+  const labelClass = "block text-[15px] font-semibold text-[var(--ink)] mb-2";
 
   return (
     <>
@@ -22,6 +65,7 @@ export default function ContactPage() {
           )}
         </p>
 
+        {/* Quick links */}
         <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-6 mb-12">
           {[
             {
@@ -29,7 +73,7 @@ export default function ContactPage() {
               desc: t("分享你的法律维权经历，帮助更多人识别风险。", "Share your legal experience to help others identify risks."),
               email: "submit@legalredflags.org",
               link: "/submit",
-              linkText: t("了解提交流程 →", "Learn about the process →"),
+              linkText: t("前往提交页面 →", "Go to submission page →"),
             },
             {
               title: t("内容纠错", "Content Corrections"),
@@ -68,6 +112,109 @@ export default function ContactPage() {
               )}
             </div>
           ))}
+        </div>
+
+        {/* Contact form */}
+        <div className="mb-12">
+          <h2 className="font-serif text-[22px] font-bold mb-6">
+            {t("在线留言", "Send a Message")}
+          </h2>
+
+          {submitted ? (
+            <div className="bg-[var(--surface)] border border-[var(--green)] p-12 text-center">
+              <div className="text-[48px] mb-4">✉️</div>
+              <h3 className="font-serif text-[20px] font-bold mb-3">
+                {t("感谢你的留言", "Thank You")}
+              </h3>
+              <p className="text-[15px] text-[var(--grey)] mb-6 max-w-[480px] mx-auto">
+                {t(
+                  "你的邮件客户端应该已经打开了。如果没有，请直接发送邮件到对应邮箱。",
+                  "Your email client should have opened. If not, please send your message directly to the relevant email address above."
+                )}
+              </p>
+              <button
+                onClick={() => setSubmitted(false)}
+                className="text-[var(--green)] text-sm underline cursor-pointer bg-transparent border-none"
+              >
+                {t("再发一条", "Send another")}
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-6">
+              <div>
+                <label className={labelClass}>
+                  {t("留言类型", "Message type")}
+                  <span className="text-[var(--red)] ml-1">*</span>
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {typeOptions.map((o) => {
+                    const label = isZh ? o.zh : o.en;
+                    const selected = form.type === label;
+                    return (
+                      <button
+                        key={o.en}
+                        type="button"
+                        onClick={() => setForm((prev) => ({ ...prev, type: label }))}
+                        className={`px-4 py-2.5 text-[14px] border cursor-pointer transition-all ${
+                          selected
+                            ? "border-[var(--green)] bg-[var(--green-pale)] text-[var(--ink)] font-semibold"
+                            : "border-[var(--rule)] bg-[var(--ground)] text-[var(--ink-soft)] hover:border-[var(--grey)]"
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div>
+                <label className={labelClass}>
+                  {t("留言内容", "Your message")}
+                  <span className="text-[var(--red)] ml-1">*</span>
+                </label>
+                <textarea
+                  value={form.message}
+                  onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
+                  rows={6}
+                  placeholder={t(
+                    "请描述你想说的内容……",
+                    "Tell us what's on your mind..."
+                  )}
+                  className={inputClass + " resize-y"}
+                />
+              </div>
+
+              <div>
+                <label className={labelClass}>
+                  {t("联系方式（选填）", "Contact info (optional)")}
+                </label>
+                <input
+                  type="text"
+                  value={form.contact}
+                  onChange={(e) => setForm((prev) => ({ ...prev, contact: e.target.value }))}
+                  placeholder={t("邮箱、微信或其他", "Email, WeChat, or other")}
+                  className={inputClass}
+                />
+              </div>
+
+              <div className="flex items-center justify-between max-sm:flex-col max-sm:gap-4 pt-4 border-t border-[var(--rule)]">
+                <p className="text-[13px] text-[var(--grey-light)] max-w-[400px]">
+                  {t(
+                    "点击发送后会打开你的邮件客户端，内容已自动填入。",
+                    "Clicking send will open your email client with the message pre-filled."
+                  )}
+                </p>
+                <button
+                  onClick={handleSubmit}
+                  disabled={!form.type || !form.message}
+                  className="px-8 py-3.5 bg-[var(--green)] text-white text-[15px] font-semibold cursor-pointer border-none hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
+                >
+                  {t("发送留言", "Send Message")}
+                </button>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="bg-[var(--ground-warm)] border border-[var(--rule)] p-7 text-[14px] text-[var(--grey)] leading-relaxed">
