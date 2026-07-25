@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://legalredflags.vercel.app/sitemap.xml",
+    sitemap: "https://legalredflags.org/sitemap.xml",
   };
 }
