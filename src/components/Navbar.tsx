@@ -13,6 +13,7 @@ export default function Navbar() {
     ["/cases", t("真实案例", "Cases")],
     ["/checker", t("风险自测", "Self-Check")],
     ["/checklist", t("检查清单", "Checklist")],
+    ["/guides", t("话术指南", "Scripts")],
     ["/about", t("关于我们", "About")],
   ];
 

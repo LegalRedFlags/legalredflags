@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { flags, getFlagBySlug } from "@/data/flags";
+import { FAQJsonLd } from "@/components/JsonLd";
 import FlagDetail from "@/components/FlagDetail";
 
 export function generateStaticParams() {
@@ -33,5 +34,21 @@ export default async function FlagDetailPage({
   const prev = currentIndex > 0 ? flags[currentIndex - 1] : null;
   const next = currentIndex < flags.length - 1 ? flags[currentIndex + 1] : null;
 
-  return <FlagDetail flag={flag} prev={prev} next={next} />;
+  const faqItems = [
+    {
+      question: flag.signalEn,
+      answer: `${flag.descriptionEn} Advice: ${flag.adviceEn.join(". ")}.`,
+    },
+    {
+      question: flag.signal,
+      answer: `${flag.description} 建议：${flag.advice.join("；")}。`,
+    },
+  ];
+
+  return (
+    <>
+      <FAQJsonLd items={faqItems} />
+      <FlagDetail flag={flag} prev={prev} next={next} />
+    </>
+  );
 }

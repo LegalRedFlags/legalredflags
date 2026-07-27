@@ -1,8 +1,44 @@
 "use client";
 
+import { useState, useEffect, useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useI18n } from "@/i18n/context";
+
+const STORAGE_KEY = "checklist-progress";
+
+function useChecklistState(totalItems: number) {
+  const [checked, setChecked] = useState<Record<string, boolean>>({});
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) setChecked(JSON.parse(saved));
+    } catch {}
+    setLoaded(true);
+  }, []);
+
+  const toggle = useCallback(
+    (key: string) => {
+      setChecked((prev) => {
+        const next = { ...prev, [key]: !prev[key] };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+        return next;
+      });
+    },
+    []
+  );
+
+  const clearAll = useCallback(() => {
+    setChecked({});
+    localStorage.removeItem(STORAGE_KEY);
+  }, []);
+
+  const checkedCount = Object.values(checked).filter(Boolean).length;
+
+  return { checked, toggle, clearAll, checkedCount, totalItems, loaded };
+}
 
 const checklistsZh = [
   {
@@ -107,6 +143,8 @@ const checklistsEn = [
 export default function ChecklistPage() {
   const { t, locale } = useI18n();
   const checklists = locale === "zh" ? checklistsZh : checklistsEn;
+  const totalItems = checklists.reduce((sum, list) => sum + list.items.length, 0);
+  const { checked, toggle, clearAll, checkedCount, loaded } = useChecklistState(totalItems);
 
   return (
     <>
@@ -121,12 +159,25 @@ export default function ChecklistPage() {
             "From finding a lawyer to signing contracts — every stage has items you must verify. Follow them step by step."
           )}
         </p>
-        <p className="text-[13px] text-[var(--grey-light)] mb-12">
-          {t(
-            "提示：你可以截图保存这个清单，在实际操作时逐项核对。",
-            "Tip: Screenshot this checklist and verify items one by one in practice."
-          )}
-        </p>
+
+        {loaded && (
+          <div className="flex items-center gap-4 mb-12">
+            <div className="text-[13px] text-[var(--grey-light)]">
+              {t(
+                `进度：${checkedCount} / ${totalItems} 项已完成`,
+                `Progress: ${checkedCount} / ${totalItems} completed`
+              )}
+            </div>
+            {checkedCount > 0 && (
+              <button
+                onClick={clearAll}
+                className="text-[12px] text-[var(--grey-light)] border border-[var(--rule)] px-2 py-0.5 bg-transparent cursor-pointer hover:text-[var(--red)] hover:border-[var(--red)] transition-colors"
+              >
+                {t("清除进度", "Reset")}
+              </button>
+            )}
+          </div>
+        )}
 
         {checklists.map((list, li) => (
           <div key={li} className="mb-14">
@@ -136,15 +187,39 @@ export default function ChecklistPage() {
             <h2 className="font-serif text-[22px] font-bold mb-2">{list.title}</h2>
             <p className="text-[15px] text-[var(--grey)] max-w-[540px] leading-relaxed mb-6">{list.desc}</p>
             <div className="border border-[var(--rule)]">
-              {list.items.map((item, i) => (
-                <div key={i} className="flex items-start gap-4 px-6 py-5 bg-[var(--surface)] border-b border-[var(--rule-light)] last:border-b-0">
-                  <div className="w-[20px] h-[20px] border-2 border-[var(--rule)] rounded-[3px] shrink-0 mt-0.5" />
-                  <div>
-                    <div className="text-[15px] font-semibold text-[var(--ink)] leading-snug mb-1">{item.text}</div>
-                    <div className="text-[13px] text-[var(--grey-light)] leading-relaxed">{item.why}</div>
-                  </div>
-                </div>
-              ))}
+              {list.items.map((item, i) => {
+                const key = `${li}-${i}`;
+                const isChecked = !!checked[key];
+                return (
+                  <button
+                    key={i}
+                    onClick={() => toggle(key)}
+                    className={`flex items-start gap-4 px-6 py-5 w-full text-left border-b border-[var(--rule-light)] last:border-b-0 cursor-pointer transition-colors ${
+                      isChecked ? "bg-[var(--green-pale)]" : "bg-[var(--surface)] hover:bg-[var(--bg)]"
+                    }`}
+                  >
+                    <div
+                      className={`w-[20px] h-[20px] border-2 rounded-[3px] shrink-0 mt-0.5 flex items-center justify-center transition-colors ${
+                        isChecked
+                          ? "border-[var(--green)] bg-[var(--green)] text-white"
+                          : "border-[var(--rule)]"
+                      }`}
+                    >
+                      {isChecked && (
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                    </div>
+                    <div>
+                      <div className={`text-[15px] font-semibold leading-snug mb-1 transition-colors ${isChecked ? "text-[var(--grey)] line-through" : "text-[var(--ink)]"}`}>
+                        {item.text}
+                      </div>
+                      <div className="text-[13px] text-[var(--grey-light)] leading-relaxed">{item.why}</div>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
           </div>
         ))}
