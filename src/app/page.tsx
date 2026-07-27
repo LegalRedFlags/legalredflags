@@ -86,7 +86,7 @@ export default function Home() {
       <div className="max-w-[960px] mx-auto px-7">
         <div className="grid grid-cols-3 max-sm:grid-cols-1 border-t border-b border-[var(--rule)]">
           {[
-            ["20+", t("已识别的危险信号", "Red flags identified")],
+            ["36", t("已识别的危险信号", "Red flags identified")],
             ["5", t("个阶段覆盖", "Stages covered")],
             ["100%", t("来自真实案例", "From real cases")],
           ].map(([num, label], i) => (
@@ -146,7 +146,7 @@ export default function Home() {
               href="/flags"
               className="text-sm text-[var(--green)] no-underline font-semibold hover:underline"
             >
-              {t("查看全部 20+ 条危险信号", "View all 20+ red flags")} &rarr;
+              {t("查看全部 36 条危险信号", "View all 36 red flags")} &rarr;
             </Link>
           </div>
         </div>
@@ -174,8 +174,8 @@ export default function Home() {
               iconClass: "bg-[var(--red-pale)] text-[var(--red)]",
               title: t("危险信号", "Red Flags"),
               desc: t(
-                "20+ 条结构化的预警信号，按「找律师 → 代理中 → 签合同 → 执行 → 维权」五个阶段分类。每条信号配有真实案例和应对建议。",
-                "20+ structured warning signals classified across five stages: hiring → representation → contracts → enforcement → recourse. Each with real cases and actionable advice."
+                "36 条结构化的预警信号，按「找律师 → 代理中 → 签合同 → 执行 → 维权」五个阶段分类。每条信号配有真实案例和应对建议。",
+                "36 structured warning signals classified across five stages: hiring → representation → contracts → enforcement → recourse. Each with real cases and actionable advice."
               ),
             },
             {

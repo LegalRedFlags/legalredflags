@@ -26,8 +26,8 @@ export default function FlagsPage() {
         </h1>
         <p className="text-[17px] text-[var(--grey)] leading-relaxed max-w-[600px] mb-12">
           {t(
-            "20 条结构化的预警信号，来自有证据支撑的真实案例。按法律纠纷的五个阶段分类，帮你在正确的时间点识别风险。",
-            "20 structured warning signals from evidence-backed real cases. Classified across five stages of a legal dispute to help you spot risks at the right moment."
+            "36 条结构化的预警信号，来自有证据支撑的真实案例。按法律纠纷的五个阶段分类，帮你在正确的时间点识别风险。",
+            "36 structured warning signals from evidence-backed real cases. Classified across five stages of a legal dispute to help you spot risks at the right moment."
           )}
         </p>
 

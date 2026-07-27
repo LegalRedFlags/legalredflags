@@ -695,6 +695,536 @@ export const flags: Flag[] = [
       "Prepare financially for a long fight",
     ],
   },
+  {
+    slug: "21",
+    num: "21",
+    signal: "律师声称有「特殊关系」能保证胜诉",
+    category: "虚假承诺",
+    stage: "找律师阶段",
+    stageKey: "hiring",
+    risk: "high",
+    description:
+      "没有任何律师能够保证案件结果。声称与法官、检察官有「特殊关系」或「包赢」的律师，不是在骗你的钱，就是在暗示自己会行贿——这两种情况都极其危险。",
+    realCase:
+      "律师声称自己和主审法官是同学，「保证胜诉」。当事人因此支付了高额律师费。最终败诉后，律师以「关系没用上」为由拒绝退费，当事人发现律师根本不认识法官。",
+    advice: [
+      "任何保证胜诉的承诺都不可信",
+      "法律规定律师不得对案件结果作出承诺",
+      "声称有关系的律师更不值得信任",
+      "选择律师应看专业能力，而非所谓的人脉",
+    ],
+    signalEn:
+      "The lawyer claims to have 'special connections' and guarantees you'll win",
+    categoryEn: "False Promises",
+    stageEn: "Hiring Stage",
+    descriptionEn:
+      "No lawyer can guarantee the outcome of a case. A lawyer who claims to have 'special relationships' with judges or prosecutors, or who promises a sure win, is either scamming you or implying they'll bribe someone — both are extremely dangerous.",
+    realCaseEn:
+      "A lawyer claimed to be a former classmate of the presiding judge and 'guaranteed a win.' The client paid a high fee. After losing, the lawyer refused a refund, saying 'the connection didn't pan out.' The client later discovered the lawyer didn't know the judge at all.",
+    adviceEn: [
+      "Any promise of guaranteed victory is not to be trusted",
+      "Lawyers are legally prohibited from promising case outcomes",
+      "A lawyer who claims to have connections is even less trustworthy",
+      "Choose a lawyer based on professional competence, not supposed connections",
+    ],
+  },
+  {
+    slug: "22",
+    num: "22",
+    signal: "律师曾经代理过你的对手方或其关联方的案件",
+    category: "隐性利益冲突",
+    stage: "找律师阶段",
+    stageKey: "hiring",
+    risk: "high",
+    description:
+      "即使律师目前没有在代理对方，过去的代理关系也可能让律师掌握对方的内部信息或保持某种默契。这种隐性利益冲突比直接介绍关系更难发现，但同样危险。",
+    realCase:
+      "当事人委托了一位律师打官司，后来发现这位律师去年曾代理过对方公司的另一起案件。律师在庭审中表现异常消极，关键证据也没有提交。调查后发现律师与对方公司保持着长期合作关系。",
+    advice: [
+      "委托前询问律师是否曾代理过对方或其关联方",
+      "通过裁判文书网搜索律师过往代理的案件",
+      "如果发现利益冲突，立即更换律师",
+      "在合同中加入利益冲突的声明条款",
+    ],
+    signalEn:
+      "The lawyer has previously represented your opposing party or their affiliates",
+    categoryEn: "Hidden Conflict of Interest",
+    stageEn: "Hiring Stage",
+    descriptionEn:
+      "Even if a lawyer isn't currently representing the other side, a past engagement may mean they hold insider information or maintain an implicit understanding with the opposition. This hidden conflict is harder to detect than a direct referral but equally dangerous.",
+    realCaseEn:
+      "A client hired a lawyer, only to discover later that the same lawyer had represented the opposing company in a different case the previous year. The lawyer was noticeably passive in court and failed to submit key evidence. Investigation revealed the lawyer had an ongoing business relationship with the opposing company.",
+    adviceEn: [
+      "Before hiring, ask the lawyer whether they have ever represented the opposing party or its affiliates",
+      "Search the lawyer's past cases on public court record databases",
+      "If you discover a conflict of interest, switch lawyers immediately",
+      "Include a conflict-of-interest disclosure clause in the engagement contract",
+    ],
+  },
+  {
+    slug: "23",
+    num: "23",
+    signal: "律师在网上的评价全是好评、零差评",
+    category: "虚假口碑",
+    stage: "找律师阶段",
+    stageKey: "hiring",
+    risk: "medium",
+    description:
+      "真正有经验的律师不可能做到零差评。如果一位律师在各平台上只有清一色的好评，而且评价内容空洞、风格雷同，很可能是花钱刷出来的。虚假口碑本身就说明这位律师的职业诚信有问题。",
+    realCase:
+      "当事人在法律咨询平台上看到一位律师有上百条五星好评，评价内容几乎都是「专业、负责、推荐」。委托后发现律师根本不专业，连基本的法律程序都搞错了。",
+    advice: [
+      "不要只看好评数量，关注评价内容是否具体、真实",
+      "警惕清一色的好评和雷同的评价用语",
+      "优先参考裁判文书网上的实际案件记录",
+      "通过多个渠道交叉验证律师的口碑",
+    ],
+    signalEn:
+      "The lawyer's online reviews are all positive with zero negative feedback",
+    categoryEn: "Fake Reputation",
+    stageEn: "Hiring Stage",
+    descriptionEn:
+      "No experienced lawyer has zero negative reviews. If a lawyer has only glowing reviews across platforms, and the content is vague and formulaic, they are likely paid-for fakes. Fake reviews are themselves a sign of questionable professional integrity.",
+    realCaseEn:
+      "A client found a lawyer with hundreds of five-star reviews on a legal platform, almost all saying 'professional, responsible, recommended.' After hiring, the client discovered the lawyer was anything but professional — they even got basic legal procedures wrong.",
+    adviceEn: [
+      "Don't just look at the number of positive reviews — check whether the content is specific and authentic",
+      "Be wary of uniformly positive reviews with identical phrasing",
+      "Prioritize actual case records from public court databases",
+      "Cross-verify the lawyer's reputation through multiple channels",
+    ],
+  },
+  {
+    slug: "24",
+    num: "24",
+    signal: "一次性全额付款，不接受分阶段付费",
+    category: "一次性收费陷阱",
+    stage: "合同与交易",
+    stageKey: "contracts",
+    risk: "high",
+    description:
+      "分阶段付费是保护当事人最重要的手段之一。一次性全额付款后，律师的服务动力会大幅下降，甚至可能收钱后消极怠工、背叛当事人。分阶段付费让你在每个阶段都有谈判筹码。",
+    realCase:
+      "当事人一次性支付了全部律师费后，律师的态度明显转变——回复越来越慢，开庭准备越来越敷衍，甚至在关键阶段建议当事人放弃。当事人想更换律师，但费用已全部付出，进退两难。",
+    advice: [
+      "坚持分阶段付费：签约付一部分，立案付一部分，开庭付一部分，结案付尾款",
+      "合同中明确约定每个阶段的付款金额和条件",
+      "永远不要一次性支付全部律师费",
+      "如果律师坚持全额预付，换一个律师",
+      "分阶段付费是你保持控制力的最好方式",
+    ],
+    signalEn:
+      "The lawyer demands full payment upfront and refuses staged billing",
+    categoryEn: "Lump-Sum Payment Trap",
+    stageEn: "Contracts & Deals",
+    descriptionEn:
+      "Staged payments are one of the most important safeguards for a client. After paying everything upfront, a lawyer's motivation to deliver drops sharply — they may become negligent or even work against you. Staged payments keep you with leverage at every phase.",
+    realCaseEn:
+      "After paying the full legal fee upfront, a client watched the lawyer's attitude visibly shift — responses grew slower, hearing preparation sloppier, and at a critical stage the lawyer even suggested giving up. The client wanted to switch lawyers but had already paid in full, leaving them stuck.",
+    adviceEn: [
+      "Insist on staged payments: a portion at signing, a portion at filing, a portion at hearing, and the balance at case close",
+      "Clearly specify the amount and conditions for each stage in the contract",
+      "Never pay the full legal fee in one lump sum",
+      "If the lawyer insists on full prepayment, find a different lawyer",
+      "Staged payment is the best way to maintain your leverage",
+    ],
+  },
+  {
+    slug: "25",
+    num: "25",
+    signal: "律师频繁追加费用，每次都有新理由",
+    category: "挤牙膏式收费",
+    stage: "代理过程中",
+    stageKey: "representation",
+    risk: "high",
+    description:
+      "签合同时说好的费用之外，律师不断以各种理由追加收费——「需要请专家」「要做额外调查」「案件比预想复杂」。每次金额不大，但累积起来远超预期。这是典型的挤牙膏式收费陷阱。",
+    realCase:
+      "当事人签约时约定律师费5万元。之后律师先后以「调查取证费」「专家咨询费」「加急处理费」等名目追加了4次费用，总计又多付了3万多元。但案件质量并没有因为多付钱而提高。",
+    advice: [
+      "签约时明确约定所有费用，包括可能产生的额外费用",
+      "拒绝合同之外的任何费用，除非有书面说明和合理依据",
+      "每次追加费用时，要求律师出具书面的费用明细和理由",
+      "如果频繁追加费用，考虑是否需要更换律师",
+    ],
+    signalEn:
+      "The lawyer keeps adding fees with a new justification each time",
+    categoryEn: "Drip-Feed Billing",
+    stageEn: "During Representation",
+    descriptionEn:
+      "Beyond the fees agreed in the contract, the lawyer keeps adding charges under various pretexts — 'need an expert,' 'extra investigation required,' 'case more complex than expected.' Each amount is small, but they add up to far more than planned. This is classic drip-feed billing.",
+    realCaseEn:
+      "A client agreed to a RMB 50,000 legal fee at signing. The lawyer then added four separate charges for 'investigation fees,' 'expert consultation,' and 'expedited processing,' totaling over RMB 30,000 more. The quality of the case work didn't improve despite the extra payments.",
+    adviceEn: [
+      "At signing, clearly agree on all fees, including any potential additional costs",
+      "Refuse any charges outside the contract unless there is written justification",
+      "For each additional fee, demand a written breakdown and explanation from the lawyer",
+      "If fees are being added frequently, consider whether you need to switch lawyers",
+    ],
+  },
+  {
+    slug: "26",
+    num: "26",
+    signal: "风险代理合同中律师把「胜诉」标准定得极低",
+    category: "风险代理陷阱",
+    stage: "合同与交易",
+    stageKey: "contracts",
+    risk: "high",
+    description:
+      "风险代理是指律师先不收费或少收费，胜诉后按比例抽成。但有些律师会在合同中把「胜诉」定义得极为宽泛——只要对方还了一分钱就算胜诉，律师就能拿走高额提成。你赢了官司却亏了钱。",
+    realCase:
+      "当事人签了风险代理合同，约定「胜诉后」支付追回金额的30%。但合同中将「胜诉」定义为「法院作出有利判决或对方支付任何款项」。最终法院判决支持了部分诉求，对方只还了很少一部分钱，但律师仍然按全额判决金额的30%收费。",
+    advice: [
+      "仔细审查风险代理合同中对「胜诉」的定义",
+      "明确约定律师提成的计算基数是实际到手金额，而非判决金额",
+      "对比风险代理和固定收费哪种更划算",
+      "警惕律师费比例过高的风险代理合同",
+    ],
+    signalEn:
+      "In a contingency fee contract, the lawyer sets an extremely low bar for 'winning'",
+    categoryEn: "Contingency Fee Trap",
+    stageEn: "Contracts & Deals",
+    descriptionEn:
+      "A contingency fee arrangement means the lawyer charges little or nothing upfront and takes a percentage after winning. But some lawyers define 'winning' so broadly — any payment from the other side counts — that even a token recovery triggers a hefty fee. You win the case but lose money.",
+    realCaseEn:
+      "A client signed a contingency fee agreement to pay 30% of recovered amounts 'upon winning.' But the contract defined 'winning' as 'any favorable judgment or any payment from the opposing party.' The court ruled partially in the client's favor, the opponent paid only a fraction, but the lawyer still charged 30% based on the full judgment amount.",
+    adviceEn: [
+      "Carefully review how 'winning' is defined in the contingency fee contract",
+      "Clearly specify that the lawyer's fee is calculated on the amount actually received, not the judgment amount",
+      "Compare whether contingency or fixed-fee billing is more cost-effective for your case",
+      "Be wary of contingency contracts with excessively high percentage fees",
+    ],
+  },
+  {
+    slug: "27",
+    num: "27",
+    signal: "合同中违约金条款只约束你，不约束律师",
+    category: "单方面条款",
+    stage: "合同与交易",
+    stageKey: "contracts",
+    risk: "medium",
+    description:
+      "公平的合同应该对双方有同等的约束力。如果合同中规定你违约要赔偿，但律师违约没有任何后果，这说明合同本身就是不公平的。这种单方面条款往往是律师利用信息不对称故意设置的。",
+    realCase:
+      "当事人签的委托合同中约定：当事人中途解约需赔偿律师费50%作为违约金，但律师终止服务不需要任何补偿。当事人因律师不作为想解约时，被迫面对高额违约金。",
+    advice: [
+      "签约前仔细检查违约金和解约条款",
+      "要求合同中的违约责任对双方平等",
+      "如果律师拒绝修改不公平条款，这本身就是一个警告",
+      "拒绝签署明显不对等的合同",
+    ],
+    signalEn:
+      "The contract's penalty clauses apply only to you, not to the lawyer",
+    categoryEn: "One-Sided Terms",
+    stageEn: "Contracts & Deals",
+    descriptionEn:
+      "A fair contract binds both parties equally. If the contract penalizes you for breach but imposes no consequences on the lawyer for breach, the contract itself is unfair. Such one-sided terms are often deliberately inserted by lawyers who exploit information asymmetry.",
+    realCaseEn:
+      "A client's engagement contract stipulated that early termination by the client required paying 50% of the legal fee as a penalty, while the lawyer could terminate services without any compensation. When the client wanted out due to the lawyer's inaction, they were trapped by the hefty penalty.",
+    adviceEn: [
+      "Before signing, carefully review penalty and termination clauses",
+      "Demand that breach-of-contract responsibilities apply equally to both sides",
+      "If the lawyer refuses to amend unfair clauses, that itself is a warning sign",
+      "Refuse to sign any obviously one-sided contract",
+    ],
+  },
+  {
+    slug: "28",
+    num: "28",
+    signal: "律师让你签署空白文件或授权书",
+    category: "空白文件陷阱",
+    stage: "代理过程中",
+    stageKey: "representation",
+    risk: "high",
+    description:
+      "签署空白文件极其危险——一旦签字，内容可以被任意填写。你可能在不知情的情况下签下了不利的和解协议、撤诉申请，甚至是借条。任何空白文件都不应签署，无论律师给出什么理由。",
+    realCase:
+      "律师以「法院要求格式特殊」为由让当事人签了一份空白授权书。后来当事人发现律师用这份授权书代替自己签了一份极为不利的和解协议，放弃了大部分诉讼请求。",
+    advice: [
+      "绝对不签任何空白文件，无论理由是什么",
+      "所有文件必须填写完整后再签字",
+      "签字前仔细阅读每一页，确认没有空白页",
+      "如果律师坚持要求签空白文件，立即更换律师并向律协举报",
+    ],
+    signalEn:
+      "The lawyer asks you to sign blank documents or powers of attorney",
+    categoryEn: "Blank Document Trap",
+    stageEn: "During Representation",
+    descriptionEn:
+      "Signing a blank document is extremely dangerous — once signed, anything can be written in. You could unknowingly sign an unfavorable settlement, a withdrawal of your case, or even a promissory note. No blank document should ever be signed, regardless of the lawyer's excuse.",
+    realCaseEn:
+      "A lawyer convinced a client to sign a blank power of attorney, claiming 'the court requires a special format.' The client later discovered the lawyer had used it to sign a highly unfavorable settlement on their behalf, waiving most of the claims.",
+    adviceEn: [
+      "Never sign any blank document, regardless of the reason given",
+      "All documents must be completely filled in before you sign",
+      "Read every page carefully before signing — make sure there are no blank pages",
+      "If the lawyer insists on blank documents, switch lawyers immediately and report to the bar association",
+    ],
+  },
+  {
+    slug: "29",
+    num: "29",
+    signal: "律师未经你同意擅自做出重大决定",
+    category: "越权代理",
+    stage: "代理过程中",
+    stageKey: "representation",
+    risk: "high",
+    description:
+      "律师的代理权限有边界。和解、撤诉、放弃部分诉求等重大决定必须经当事人同意。如果律师未经你授权就擅自做出这些决定，属于越权代理，你有权追究律师责任。",
+    realCase:
+      "律师在当事人不知情的情况下与对方达成了和解协议，放弃了当事人的违约金请求。当事人在收到法院通知后才知道自己的案子已经和解结案了。",
+    advice: [
+      "在合同中明确约定哪些事项必须经你书面同意",
+      "要求律师在做出任何重大决定前通知你",
+      "如果律师越权代理，保留证据并向律协投诉",
+      "定期与法院确认案件状态，不要完全依赖律师",
+    ],
+    signalEn:
+      "The lawyer makes major decisions without your consent",
+    categoryEn: "Unauthorized Actions",
+    stageEn: "During Representation",
+    descriptionEn:
+      "A lawyer's authority has boundaries. Major decisions like settling, withdrawing a case, or waiving claims require the client's consent. If a lawyer makes these decisions without authorization, it's unauthorized practice, and you can hold them accountable.",
+    realCaseEn:
+      "Without the client's knowledge, a lawyer reached a settlement with the opposing side and waived the client's claim for liquidated damages. The client only found out after receiving a court notice that their case had been settled and closed.",
+    adviceEn: [
+      "Specify in the contract which matters require your written consent",
+      "Require the lawyer to notify you before making any major decisions",
+      "If the lawyer acts beyond their authority, preserve evidence and file a complaint with the bar association",
+      "Periodically check the case status with the court directly — don't rely solely on the lawyer",
+    ],
+  },
+  {
+    slug: "30",
+    num: "30",
+    signal: "律师将你的案件信息泄露给第三方",
+    category: "违反保密义务",
+    stage: "代理过程中",
+    stageKey: "representation",
+    risk: "high",
+    description:
+      "律师有法定的保密义务，不得向任何第三方泄露当事人的案件信息和个人隐私。如果你发现对方知道了你只告诉律师的信息，或者律师在公开场合讨论你的案件细节，这是严重的违规行为。",
+    realCase:
+      "当事人发现对方在庭审中准确引用了自己只在微信上告诉律师的策略细节。事后调查发现律师与对方律师在同一个律所的不同部门工作，信息被内部泄露。",
+    advice: [
+      "注意观察对方是否掌握了你只告诉律师的信息",
+      "敏感信息尽量通过加密方式传递",
+      "如果确认律师泄密，立即更换律师并保留证据",
+      "向律协投诉律师违反保密义务的行为",
+    ],
+    signalEn:
+      "The lawyer leaks your case information to third parties",
+    categoryEn: "Breach of Confidentiality",
+    stageEn: "During Representation",
+    descriptionEn:
+      "Lawyers have a legal duty of confidentiality — they must not disclose a client's case information or personal details to any third party. If you discover the other side knows something you only told your lawyer, or that your lawyer discussed your case details publicly, this is a serious breach.",
+    realCaseEn:
+      "A client discovered that the opposing side accurately cited strategy details during a hearing that the client had shared only with their lawyer via private messages. Investigation revealed both lawyers worked in different departments of the same firm, and the information had been leaked internally.",
+    adviceEn: [
+      "Watch for signs that the other side knows information you shared only with your lawyer",
+      "Communicate sensitive information through encrypted channels where possible",
+      "If you confirm a confidentiality breach, switch lawyers immediately and preserve evidence",
+      "Report the breach of confidentiality to the bar association",
+    ],
+  },
+  {
+    slug: "31",
+    num: "31",
+    signal: "律师在法庭上表现明显不专业",
+    category: "严重失职",
+    stage: "代理过程中",
+    stageKey: "representation",
+    risk: "high",
+    description:
+      "律师迟到、材料没准备好、对案情不熟悉、在法庭上表现得手忙脚乱——这些都说明律师没有认真对待你的案件。你付出了高额律师费，有权获得专业的服务。",
+    realCase:
+      "律师在开庭时迟到了30分钟，提交的证据材料缺少关键附件，面对法官的提问多次答非所问。法官当庭要求律师补交材料，导致案件延期。当事人事后才知道律师同时在处理十几个案件，根本没有时间准备。",
+    advice: [
+      "开庭前与律师确认准备情况，要求看拟提交的材料",
+      "如果律师在法庭上表现明显不专业，庭后立即沟通",
+      "考虑更换律师——法庭表现直接影响案件结果",
+      "保留法庭记录作为律师失职的证据",
+    ],
+    signalEn:
+      "The lawyer is clearly unprofessional in court",
+    categoryEn: "Gross Negligence",
+    stageEn: "During Representation",
+    descriptionEn:
+      "Showing up late, submitting incomplete materials, being unfamiliar with the case, fumbling through the hearing — all signs the lawyer isn't taking your case seriously. You paid a significant fee and are entitled to professional service.",
+    realCaseEn:
+      "A lawyer arrived 30 minutes late to the hearing, submitted evidence missing key attachments, and repeatedly gave irrelevant answers to the judge's questions. The judge ordered supplementary filings on the spot, causing the case to be postponed. The client later learned the lawyer was juggling over a dozen cases simultaneously and had no time to prepare.",
+    adviceEn: [
+      "Before the hearing, confirm the lawyer's preparation and ask to review the materials they plan to submit",
+      "If the lawyer is clearly unprofessional in court, address it immediately after the hearing",
+      "Consider switching lawyers — courtroom performance directly affects the outcome",
+      "Keep court records as evidence of the lawyer's negligence",
+    ],
+  },
+  {
+    slug: "32",
+    num: "32",
+    signal: "律师告诉你「没办法了」但不出具书面意见",
+    category: "甩案",
+    stage: "投诉与维权",
+    stageKey: "recourse",
+    risk: "medium",
+    description:
+      "「没办法了」「这个案子就这样了」——如果律师用口头方式告诉你放弃，却拒绝出具书面法律意见，很可能是想甩掉这个案子。正当的专业判断不怕写在纸上。",
+    realCase:
+      "律师口头告诉当事人「这个案子赢不了，别折腾了」，但拒绝出具书面意见。当事人换了律师后，新律师认为案件仍有胜诉可能，最终改判成功。",
+    advice: [
+      "任何重大结论都必须要求律师出具书面法律意见",
+      "不要轻信口头的「没办法了」",
+      "寻求第二位律师的独立意见",
+      "如果律师拒绝出具书面意见，这本身就说明问题",
+    ],
+    signalEn:
+      "The lawyer says 'there's nothing more we can do' but won't put it in writing",
+    categoryEn: "Case Dumping",
+    stageEn: "Complaints & Recourse",
+    descriptionEn:
+      "If a lawyer verbally tells you to give up — 'there's nothing more we can do,' 'this is as far as it goes' — but refuses to put their opinion in writing, they may be trying to dump your case. Legitimate professional judgment isn't afraid of being documented.",
+    realCaseEn:
+      "A lawyer verbally told a client 'this case can't be won, stop wasting your time' but refused to provide a written opinion. After switching lawyers, the new lawyer believed the case was still winnable and ultimately succeeded on appeal.",
+    adviceEn: [
+      "Demand a written legal opinion for any major conclusion from the lawyer",
+      "Don't take a verbal 'nothing more we can do' at face value",
+      "Seek an independent second opinion from another lawyer",
+      "A refusal to put an opinion in writing is itself telling",
+    ],
+  },
+  {
+    slug: "33",
+    num: "33",
+    signal: "律师建议你接受明显不合理的和解方案",
+    category: "可疑和解",
+    stage: "投诉与维权",
+    stageKey: "recourse",
+    risk: "high",
+    description:
+      "如果律师极力劝你接受一个远低于合理预期的和解方案，而且催得很急，这可能不是专业判断——律师可能已经和对方达成了某种默契，或者想尽快结案收钱走人。",
+    realCase:
+      "当事人的诉求金额为100万元，证据充分。律师却反复建议接受对方提出的20万元和解方案，理由是「能拿到手最重要」。当事人拒绝后更换了律师，最终判决获得了80万元。",
+    advice: [
+      "不要在压力下仓促接受和解",
+      "要求律师出具书面意见，说明建议接受和解的法律依据",
+      "对比和解金额与你的实际诉求和证据强度",
+      "寻求第二位律师的独立评估",
+    ],
+    signalEn:
+      "The lawyer urges you to accept a clearly unreasonable settlement",
+    categoryEn: "Suspicious Settlement",
+    stageEn: "Complaints & Recourse",
+    descriptionEn:
+      "If a lawyer pushes you hard to accept a settlement far below reasonable expectations, and does so urgently, this may not be professional advice — the lawyer may have reached an understanding with the other side, or may just want to close the case quickly and collect their fee.",
+    realCaseEn:
+      "A client's claim was for RMB 1,000,000 with strong evidence. The lawyer kept urging them to accept the opponent's RMB 200,000 settlement offer, arguing 'getting something in hand is what matters.' The client refused, switched lawyers, and ultimately won a judgment for RMB 800,000.",
+    adviceEn: [
+      "Don't accept a settlement hastily under pressure",
+      "Ask the lawyer to provide a written opinion explaining the legal basis for recommending the settlement",
+      "Compare the settlement amount against your actual claim and the strength of your evidence",
+      "Get an independent assessment from a second lawyer",
+    ],
+  },
+  {
+    slug: "34",
+    num: "34",
+    signal: "投诉律师后原律师突然主动联系你要「和解」",
+    category: "撤诉换退款",
+    stage: "投诉与维权",
+    stageKey: "recourse",
+    risk: "medium",
+    description:
+      "你向律协投诉后，被投诉的律师突然变得友好，主动联系你提出退一部分费用来「和解」。这通常是为了让你撤回投诉——一旦撤诉，律协就不会继续调查，律师也逃过了处分。",
+    realCase:
+      "当事人向律协投诉后，律师突然主动联系并提出退还30%律师费，条件是当事人撤回投诉。当事人接受后撤回了投诉，律师最终只退了承诺金额的一半，当事人再次投诉时被告知不能重复受理。",
+    advice: [
+      "不要因为小额退款就撤回投诉",
+      "如果要和解，先拿到全额退款再考虑撤诉",
+      "和解协议必须书面明确，包括退款金额、时间和方式",
+      "考虑投诉的目的不仅是退款，也是防止律师伤害其他人",
+    ],
+    signalEn:
+      "After you file a complaint, the lawyer suddenly reaches out offering to 'settle'",
+    categoryEn: "Withdraw-for-Refund Ploy",
+    stageEn: "Complaints & Recourse",
+    descriptionEn:
+      "After you file a bar complaint, the accused lawyer suddenly becomes friendly and offers to refund part of the fee in exchange for dropping the complaint. This is usually designed to get you to withdraw — once withdrawn, the bar stops investigating and the lawyer escapes disciplinary action.",
+    realCaseEn:
+      "After the client filed a bar complaint, the lawyer suddenly offered to refund 30% of the fee in exchange for withdrawing the complaint. The client agreed, but the lawyer only paid half the promised amount. When the client tried to complain again, they were told the case could not be reopened.",
+    adviceEn: [
+      "Don't withdraw a complaint for a small refund",
+      "If you do settle, secure the full refund before considering withdrawal",
+      "Any settlement must be in writing, specifying the refund amount, timeline, and method",
+      "Remember that the complaint's purpose isn't just a refund — it also protects others from the same lawyer",
+    ],
+  },
+  {
+    slug: "35",
+    num: "35",
+    signal: "线上法律平台推荐的律师收费远低于市场价",
+    category: "低价陷阱",
+    stage: "找律师阶段",
+    stageKey: "hiring",
+    risk: "medium",
+    description:
+      "线上法律平台推荐的「特价律师」往往是引流手段。极低的报价吸引你签约后，律师会以各种名目追加费用，或者服务质量极差。便宜的律师最终可能是最贵的选择。",
+    realCase:
+      "当事人在某法律咨询平台上找到一位报价只有市场价三分之一的律师。签约后律师以「案件复杂需要团队协助」为由多次追加费用，总费用最终超过了市场价。而且服务质量很差，连基本的法律文书都有错误。",
+    advice: [
+      "了解当地同类案件的律师费市场价格区间",
+      "远低于市场价的报价要追问原因",
+      "优先选择律所推荐而非平台推荐的律师",
+      "价格只是选择律师的因素之一，专业能力和口碑更重要",
+    ],
+    signalEn:
+      "A lawyer recommended by an online platform charges far below market rate",
+    categoryEn: "Low-Price Trap",
+    stageEn: "Hiring Stage",
+    descriptionEn:
+      "A 'bargain lawyer' recommended by an online legal platform is often a lead-generation tactic. An extremely low quote lures you into signing, after which the lawyer adds fees under various pretexts, or delivers terrible service. The cheapest lawyer may end up being the most expensive choice.",
+    realCaseEn:
+      "A client found a lawyer on a legal platform quoting one-third of the market rate. After signing, the lawyer repeatedly added charges citing 'case complexity requiring team support,' and the total cost ultimately exceeded the market rate. The service quality was poor — even basic legal filings contained errors.",
+    adviceEn: [
+      "Research the local market rate for legal fees in similar cases",
+      "If a quote is far below market price, ask why",
+      "Prefer lawyers recommended by law firms rather than platforms",
+      "Price is just one factor — professional competence and reputation matter more",
+    ],
+  },
+  {
+    slug: "36",
+    num: "36",
+    signal: "律师在法庭外暗示你的案子「已经安排好了」",
+    category: "暗箱操作暗示",
+    stage: "代理过程中",
+    stageKey: "representation",
+    risk: "high",
+    description:
+      "律师暗示案件结果已经「搞定了」或「不用担心」，但不说明具体做了什么。这种暗示可能是在骗你安心付钱，也可能是真的在行贿——无论哪种情况，你都在巨大的风险中。",
+    realCase:
+      "律师在开庭前告诉当事人「放心，都安排好了」。当事人追问细节时律师含糊其辞。最终败诉后律师矢口否认说过这些话。当事人怀疑律师从未做过任何「安排」，只是为了让自己安心付钱。",
+    advice: [
+      "任何暗示「安排好了」的律师都不可信",
+      "要求律师具体说明做了哪些工作",
+      "律师暗示行贿本身就是违法行为，你也可能被牵连",
+      "保留律师暗示「搞定」的证据（录音、微信记录）",
+    ],
+    signalEn:
+      "Outside the courtroom, the lawyer hints that your case is 'all arranged'",
+    categoryEn: "Backroom Deal Hints",
+    stageEn: "During Representation",
+    descriptionEn:
+      "The lawyer hints that the result is 'taken care of' or 'nothing to worry about,' but won't say what they actually did. This hint could be a ploy to keep you paying, or it could mean actual bribery — either way, you're in serious danger.",
+    realCaseEn:
+      "Before a hearing, a lawyer told the client 'relax, it's all arranged.' When the client pressed for details, the lawyer was evasive. After losing the case, the lawyer flatly denied ever saying it. The client suspected the lawyer had never 'arranged' anything and was simply keeping them calm to keep the money flowing.",
+    adviceEn: [
+      "Never trust a lawyer who hints things are 'arranged'",
+      "Demand the lawyer explain specifically what work they've done",
+      "A lawyer hinting at bribery is itself illegal — you could be implicated too",
+      "Preserve evidence of the lawyer's 'arranged' hints (recordings, chat logs)",
+    ],
+  },
 ];
 
 export function getFlagBySlug(slug: string): Flag | undefined {
