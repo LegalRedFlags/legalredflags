@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mt-8 pt-5 border-t border-[var(--rule-light)] text-xs text-[var(--grey-light)]">
-        &copy; 2026 Legal Red Flags &middot; legalredflags.org &middot;{" "}
+        &copy; 2026 Legal Red Flags &middot; legalredflag.org &middot;{" "}
         {t("本项目为公益性质，不以营利为目的", "A public interest project, not for profit")}
       </div>
     </footer>

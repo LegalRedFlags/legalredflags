@@ -102,7 +102,7 @@ export default function SubmitPage() {
       isZh ? "提交我的经历" : "Sharing My Story"
     );
     const mailBody = encodeURIComponent(body);
-    window.location.href = `mailto:submit@legalredflags.org?subject=${subject}&body=${mailBody}`;
+    window.location.href = `mailto:submit@legalredflag.org?subject=${subject}&body=${mailBody}`;
     setSubmitted(true);
   }
 
@@ -150,8 +150,8 @@ export default function SubmitPage() {
             </h2>
             <p className="text-[15px] text-[var(--grey)] mb-6 max-w-[480px] mx-auto">
               {t(
-                "你的邮件客户端应该已经打开了。如果没有，请直接发送邮件到 submit@legalredflags.org。我们会在收到后尽快回复。",
-                "Your email client should have opened. If not, please send your story directly to submit@legalredflags.org. We'll respond as soon as possible."
+                "你的邮件客户端应该已经打开了。如果没有，请直接发送邮件到 submit@legalredflag.org。我们会在收到后尽快回复。",
+                "Your email client should have opened. If not, please send your story directly to submit@legalredflag.org. We'll respond as soon as possible."
               )}
             </p>
             <button

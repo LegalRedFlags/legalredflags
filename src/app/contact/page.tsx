@@ -18,17 +18,17 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const typeOptions = [
-    { zh: "内容纠错", en: "Content Correction", email: "feedback@legalredflags.org" },
-    { zh: "专业合作", en: "Professional Collaboration", email: "collaborate@legalredflags.org" },
-    { zh: "媒体咨询", en: "Media Inquiry", email: "hello@legalredflags.org" },
-    { zh: "其他", en: "Other", email: "hello@legalredflags.org" },
+    { zh: "内容纠错", en: "Content Correction", email: "feedback@legalredflag.org" },
+    { zh: "专业合作", en: "Professional Collaboration", email: "collaborate@legalredflag.org" },
+    { zh: "媒体咨询", en: "Media Inquiry", email: "hello@legalredflag.org" },
+    { zh: "其他", en: "Other", email: "hello@legalredflag.org" },
   ];
 
   function handleSubmit() {
     const selected = typeOptions.find(
       (o) => (isZh ? o.zh : o.en) === form.type
     );
-    const toEmail = selected?.email || "hello@legalredflags.org";
+    const toEmail = selected?.email || "hello@legalredflag.org";
 
     const body = [
       `【${isZh ? "类型" : "Type"}】${form.type}`,
@@ -71,24 +71,24 @@ export default function ContactPage() {
             {
               title: t("提交经历", "Share Your Story"),
               desc: t("分享你的法律维权经历，帮助更多人识别风险。", "Share your legal experience to help others identify risks."),
-              email: "submit@legalredflags.org",
+              email: "submit@legalredflag.org",
               link: "/submit",
               linkText: t("前往提交页面 →", "Go to submission page →"),
             },
             {
               title: t("内容纠错", "Content Corrections"),
               desc: t("发现内容有误或不准确？请告诉我们，我们重视每一条反馈。", "Found something inaccurate? Let us know — we value every piece of feedback."),
-              email: "feedback@legalredflags.org",
+              email: "feedback@legalredflag.org",
             },
             {
               title: t("专业合作", "Professional Collaboration"),
               desc: t("法律专业人士、学者、记者——你的专业知识可以让这个平台更准确。", "Legal professionals, academics, journalists — your expertise can make this platform more accurate."),
-              email: "collaborate@legalredflags.org",
+              email: "collaborate@legalredflag.org",
             },
             {
               title: t("其他事务", "General Inquiries"),
               desc: t("任何其他问题或建议。", "Any other questions or suggestions."),
-              email: "hello@legalredflags.org",
+              email: "hello@legalredflag.org",
             },
           ].map((item) => (
             <div
