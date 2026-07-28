@@ -198,6 +198,62 @@ export const cases: CaseStudy[] = [
       "A lawyer being bought off is egregious but not rare — staying vigilant is necessary",
     ],
   },
+  {
+    slug: "overpromise-then-abandon",
+    num: 4,
+    title: "夸大能力 + 全额收费后消极怠工",
+    titleEn: "Overpromise, Collect in Full, Then Abandon",
+    tags: ["一次性收费", "虚假承诺", "消极怠工", "甩案"],
+    tagsEn: ["Lump-Sum Payment", "False Promises", "Negligence", "Case Dumping"],
+    summary:
+      "律师经熟人介绍，夸大自己的能力，承诺「包办到底」，一次性收取全部律师费。一年后开始消极怠工，对案件越来越不上心，最终迫使当事人不得不更换律师。律师是否与对方勾结，已无从得知。",
+    summaryEn:
+      "Introduced by an acquaintance, the lawyer exaggerated their capabilities and promised to see the matter through to the end, collecting the full fee upfront. A year later, the lawyer became negligent and increasingly passive, ultimately forcing the client to switch counsel. Whether the lawyer colluded with the opposing party will never be known.",
+    timeline: [
+      { date: "起初", event: "经熟人介绍委托律师。律师夸大自身能力，承诺「包办到底」。当事人一次性支付了全部律师费。" },
+      { date: "第1年", event: "律师表现尚可，积极处理案件事务。" },
+      { date: "第2年", event: "律师开始懈怠——回复变慢、准备工作敷衍、对案件细节越来越不熟悉。注意力可能已转向新客户。" },
+      { date: "此后", event: "律师消极怠工愈发严重，导致当事人不得不投入更多时间和精力自行跟进案件。" },
+      { date: "最终", event: "当事人被迫更换律师，但已全额支付的费用无法追回。律师是否与对方存在勾结，已无从考证。" },
+    ],
+    timelineEn: [
+      { date: "At the outset", event: "Retained a lawyer through an acquaintance's referral. The lawyer exaggerated their capabilities and promised to handle everything. The client paid the full fee upfront." },
+      { date: "Year 1", event: "The lawyer performed reasonably well and actively handled the case." },
+      { date: "Year 2", event: "The lawyer started slacking — responses grew slower, preparation became sloppy, and familiarity with case details declined. Their attention may have shifted to newer clients." },
+      { date: "Afterward", event: "The lawyer's negligence worsened, forcing the client to spend more time and effort following up on the case independently." },
+      { date: "Outcome", event: "The client was forced to switch lawyers, but the full fee already paid was unrecoverable. Whether the lawyer had colluded with the opposing party will never be known." },
+    ],
+    redFlags: [
+      "#24 一次性收费陷阱 — 律师要求一次性支付全部费用，收钱后失去服务动力",
+      "#21 虚假承诺 — 律师夸大能力、承诺包办到底",
+      "#06 消极怠工 — 收费后逐渐懈怠，不再认真处理案件",
+      "#32 甩案 — 律师实质上放弃了当事人的案件",
+      "#27 单方面条款 — 合同对当事人不利，无法追回已付费用",
+    ],
+    redFlagsEn: [
+      "#24 Lump-Sum Payment Trap — the lawyer demanded full payment upfront and lost motivation to deliver",
+      "#21 False Promises — the lawyer exaggerated their abilities and promised to see it through",
+      "#06 Neglect of Duty — became increasingly negligent after collecting the fee",
+      "#32 Case Dumping — the lawyer effectively abandoned the client's case",
+      "#27 One-Sided Terms — the contract gave the client no recourse to recover fees paid",
+    ],
+    lessons: [
+      "永远不要一次性支付全部律师费——分阶段付费是保护自己最有效的手段",
+      "律师本质上也是销售——喜新厌旧，新客户可能比你优先",
+      "不要对律师抱有绝对信任，要持续监督案件进展",
+      "律师的承诺只有写进合同才有约束力",
+      "一旦律师开始懈怠，立刻采取行动，不要等情况恶化",
+      "律师永远是潜在的对手方——保持警惕，保留所有证据",
+    ],
+    lessonsEn: [
+      "Never pay the full legal fee in one lump sum — staged payments are the most effective way to protect yourself",
+      "At their core, lawyers are salespeople — they may prioritize newer clients over you",
+      "Don't place absolute trust in a lawyer; continuously monitor case progress",
+      "A lawyer's promises are only binding if written into the contract",
+      "The moment a lawyer starts slacking, take action immediately — don't wait for things to get worse",
+      "A lawyer is always a potential adversary — stay vigilant and preserve all evidence",
+    ],
+  },
 ];
 
 export function getCaseBySlug(slug: string): CaseStudy | undefined {
