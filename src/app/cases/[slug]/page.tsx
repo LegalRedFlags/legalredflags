@@ -15,8 +15,8 @@ export async function generateMetadata({
   const c = getCaseBySlug(slug);
   if (!c) return {};
   return {
-    title: `案例 #${c.num} ${c.title}`,
-    description: c.summary.substring(0, 160),
+    title: `Case #${c.num} ${c.titleEn} — 案例 #${c.num} ${c.title}`,
+    description: `${c.summaryEn.substring(0, 120)} — ${c.summary.substring(0, 80)}`,
   };
 }
 

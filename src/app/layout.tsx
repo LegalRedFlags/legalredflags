@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     siteName: "Legal Red Flags",
     title: "Legal Red Flags — 法律防骗指南",
     description:
-      "20条结构化预警信号，来自真实案例。帮你在法律纠纷中识别欺诈、保护权益。",
+      "36条结构化预警信号，来自真实案例。帮你在法律纠纷中识别欺诈、保护权益。36 structured warning signals from real cases — spot fraud in legal disputes.",
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
     title: "Legal Red Flags — 法律防骗指南",
     description:
-      "20条结构化预警信号，来自真实案例。帮你在法律纠纷中识别欺诈、保护权益。",
+      "36条结构化预警信号，来自真实案例。帮你在法律纠纷中识别欺诈、保护权益。36 structured warning signals from real cases — spot fraud in legal disputes.",
   },
   alternates: {
     canonical: SITE_URL,
