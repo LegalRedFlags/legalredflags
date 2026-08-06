@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "真实案例 Real Cases",
+  title: "Real Cases — 真实案例",
   description:
-    "来自当事人亲历的真实法律案例，匿名化处理后呈现。Real legal cases from firsthand experience, presented after anonymization.",
+    "Real legal cases from firsthand experience, presented after anonymization. 来自当事人亲历的真实法律案例，匿名化处理后呈现。",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

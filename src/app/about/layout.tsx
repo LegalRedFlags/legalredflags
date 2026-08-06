@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "关于我们 About",
+  title: "About — 关于我们",
   description:
-    "Legal Red Flags 的创建背景和使命。The story and mission behind Legal Red Flags.",
+    "The story and mission behind Legal Red Flags. Legal Red Flags 的创建背景和使命。",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
