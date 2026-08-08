@@ -3,13 +3,12 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { flags, stages, stagesEn } from "@/data/flags";
+import { flags, stages, stagesEn, stagesJa } from "@/data/flags";
 import { useI18n } from "@/i18n/context";
 
 export default function FlagsPage() {
   const { t, locale } = useI18n();
-  const isZh = locale === "zh";
-  const stageMap = isZh ? stages : stagesEn;
+  const stageMap = locale === "zh" ? stages : locale === "ja" ? stagesJa : stagesEn;
 
   const grouped = Object.entries(stageMap).map(([key, label]) => ({
     key,
@@ -22,13 +21,14 @@ export default function FlagsPage() {
       <Navbar />
       <section className="max-w-[960px] mx-auto px-7 pt-20 pb-16">
         <h1 className="font-serif text-[clamp(28px,5vw,38px)] font-bold leading-tight mb-4">
-          {t("全部危险信号", "All Red Flags")}
+          {t({ zh: "全部危险信号", en: "All Red Flags", ja: "すべての危険信号" })}
         </h1>
         <p className="text-[17px] text-[var(--grey)] leading-relaxed max-w-[600px] mb-12">
-          {t(
-            "36 条结构化的预警信号，来自有证据支撑的真实案例。按法律纠纷的五个阶段分类，帮你在正确的时间点识别风险。",
-            "36 structured warning signals from evidence-backed real cases. Classified across five stages of a legal dispute to help you spot risks at the right moment."
-          )}
+          {t({
+            zh: "36 条结构化的预警信号，来自有证据支撑的真实案例。按法律纠纷的五个阶段分类，帮你在正确的时间点识别风险。",
+            en: "36 structured warning signals from evidence-backed real cases. Classified across five stages of a legal dispute to help you spot risks at the right moment.",
+            ja: "証拠に基づく実際の事例から抽出された36の構造化された警告信号。法的紛争の5つの段階に分類され、適切なタイミングでリスクを見極める手助けをします。",
+          })}
         </p>
 
         {grouped.map((group) => (
@@ -36,7 +36,7 @@ export default function FlagsPage() {
             <div className="flex items-center gap-3 mb-4">
               <h2 className="font-serif text-[20px] font-bold">{group.label}</h2>
               <span className="text-[12px] text-[var(--grey-light)] border border-[var(--rule)] py-0.5 px-2">
-                {group.items.length} {isZh ? "条" : "flags"}
+                {group.items.length} {locale === "zh" ? "条" : locale === "ja" ? "件" : "flags"}
               </span>
             </div>
             <div className="grid gap-px bg-[var(--rule-light)] border border-[var(--rule)]">
@@ -51,10 +51,10 @@ export default function FlagsPage() {
                   </div>
                   <div>
                     <div className="text-[15px] font-semibold text-[var(--ink)] leading-snug mb-1">
-                      {isZh ? f.signal : f.signalEn}
+                      {locale === "zh" ? f.signal : locale === "ja" ? (f.signalJa ?? f.signalEn) : f.signalEn}
                     </div>
                     <div className="text-[12.5px] text-[var(--grey-light)]">
-                      {isZh ? f.category : f.categoryEn}
+                      {locale === "zh" ? f.category : locale === "ja" ? (f.categoryJa ?? f.categoryEn) : f.categoryEn}
                     </div>
                   </div>
                   <div
@@ -64,7 +64,9 @@ export default function FlagsPage() {
                         : "border-[var(--rule)] text-[var(--grey-light)]"
                     }`}
                   >
-                    {f.risk === "high" ? t("高风险", "High Risk") : t("中风险", "Medium Risk")}
+                    {f.risk === "high"
+                      ? t({ zh: "高风险", en: "High Risk", ja: "高リスク" })
+                      : t({ zh: "中风险", en: "Medium Risk", ja: "中リスク" })}
                   </div>
                 </Link>
               ))}

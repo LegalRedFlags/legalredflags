@@ -13,49 +13,54 @@ export default function AboutPage() {
       <Navbar />
       <section className="max-w-[960px] mx-auto px-7 pt-20 pb-16">
         <h1 className="font-serif text-[clamp(28px,5vw,38px)] font-bold leading-tight mb-4">
-          {t("关于我们", "About Us")}
+          {t({ zh: "关于我们", en: "About Us", ja: "私たちについて" })}
         </h1>
         <p className="text-[17px] text-[var(--grey)] leading-relaxed max-w-[600px] mb-16">
-          {t(
-            "Legal Red Flags 不是一个法律服务机构。我们是一群被法律行业伤害过的人，用自己的经历帮助更多人避免同样的弯路。",
-            "Legal Red Flags is not a law firm. We are people who were harmed by the legal industry, using our experience to help others avoid the same traps."
-          )}
+          {t({
+            zh: "Legal Red Flags 不是一个法律服务机构。我们是一群被法律行业伤害过的人，用自己的经历帮助更多人避免同样的弯路。",
+            en: "Legal Red Flags is not a law firm. We are people who were harmed by the legal industry, using our experience to help others avoid the same traps.",
+            ja: "Legal Red Flagsは法律事務所ではありません。私たちは法律業界で被害を受けた経験者であり、自らの体験を通じて他の人が同じ罠に陥らないよう手助けしています。",
+          })}
         </p>
 
         {/* Origin Story */}
         <div className="mb-14">
           <div className="text-[11px] tracking-[0.12em] uppercase text-[var(--grey-light)] mb-2">
-            {t("缘起", "Origin")}
+            {t({ zh: "缘起", en: "Origin", ja: "きっかけ" })}
           </div>
           <h2 className="font-serif text-[22px] font-bold mb-4">
-            {t("为什么做这件事", "Why We Do This")}
+            {t({ zh: "为什么做这件事", en: "Why We Do This", ja: "なぜこの活動をしているのか" })}
           </h2>
           <div className="bg-[var(--surface)] border border-[var(--rule)] p-9 max-sm:p-6 grid grid-cols-[3px_1fr] gap-7">
             <div className="bg-[var(--red)] rounded-sm" />
             <div>
               <blockquote className="font-serif text-[17px] leading-[1.8] text-[var(--ink-soft)] mb-6">
-                {t(
-                  "数年时间，多地维权，换过多个律师。有的纯骗，有的被对方收买并亲口承认，有的收了高额费用后消极怠工。",
-                  "Years of fighting, across multiple cities, through multiple lawyers. Some were outright frauds. One was bought by the opposing side — and admitted it. Others charged premium fees and did nothing."
-                )}
+                {t({
+                  zh: "数年时间，多地维权，换过多个律师。有的纯骗，有的被对方收买并亲口承认，有的收了高额费用后消极怠工。",
+                  en: "Years of fighting, across multiple cities, through multiple lawyers. Some were outright frauds. One was bought by the opposing side — and admitted it. Others charged premium fees and did nothing.",
+                  ja: "数年にわたり、複数の都市で、何人もの弁護士を替えながら闘いました。まったくの詐欺師もいれば、相手方に買収され本人が認めた者もいました。高額な報酬を受け取りながら何もしない弁護士もいました。",
+                })}
               </blockquote>
               <p className="text-[15px] text-[var(--ink-soft)] leading-[1.8] mb-4">
-                {t(
-                  "我不是法律专业出身。数年前，我因为一起公司纠纷，衍生了多起诉讼耗时数年，不得不开始接触法律行业。那时的我，就像大多数普通人一样——相信律师是专业人士，相信花了钱就能得到专业服务，相信法律会保护正义。",
-                  "I'm not a legal professional. Years ago, a business dispute spiraled into multiple lawsuits spanning years and forced me into the legal system. Like most people, I believed lawyers were professionals, that paying meant getting professional service, and that the law would protect justice."
-                )}
+                {t({
+                  zh: "我不是法律专业出身。数年前，我因为一起公司纠纷，衍生了多起诉讼耗时数年，不得不开始接触法律行业。那时的我，就像大多数普通人一样——相信律师是专业人士，相信花了钱就能得到专业服务，相信法律会保护正义。",
+                  en: "I'm not a legal professional. Years ago, a business dispute spiraled into multiple lawsuits spanning years and forced me into the legal system. Like most people, I believed lawyers were professionals, that paying meant getting professional service, and that the law would protect justice.",
+                  ja: "私は法律の専門家ではありません。数年前、会社の紛争がきっかけで複数の訴訟に発展し、数年を費やすことになり、法律業界と関わらざるを得なくなりました。当時の私は多くの一般の人々と同じように、弁護士は専門家であり、お金を払えば専門的なサービスが受けられ、法律が正義を守ってくれると信じていました。",
+                })}
               </p>
               <p className="text-[15px] text-[var(--ink-soft)] leading-[1.8] mb-4">
-                {t(
-                  "数年后，我花了数十万元律师费，没有追回一分钱，更没有得到任何所谓的正义，赢了官司输了时间输了钱输了人生。但我得到了另一样东西：律师这个行业很黑暗，这个行业中每一种欺诈模式的深刻理解。每一次被骗，每一次走弯路，都让我看清了一个普通人在法律体系中可能遇到的陷阱。",
-                  "Years and hundreds of thousands of yuan in legal fees later, I haven't recovered a single yuan — let alone any so-called justice. I won lawsuits but lost time, money, and years of my life. But I gained something else: the legal industry has a dark side, and I now have a deep understanding of every fraud pattern within it. Each scam, each wrong turn revealed the traps an ordinary person can fall into."
-                )}
+                {t({
+                  zh: "数年后，我花了数十万元律师费，没有追回一分钱，更没有得到任何所谓的正义，赢了官司输了时间输了钱输了人生。但我得到了另一样东西：律师这个行业很黑暗，这个行业中每一种欺诈模式的深刻理解。每一次被骗，每一次走弯路，都让我看清了一个普通人在法律体系中可能遇到的陷阱。",
+                  en: "Years and hundreds of thousands of yuan in legal fees later, I haven't recovered a single yuan — let alone any so-called justice. I won lawsuits but lost time, money, and years of my life. But I gained something else: the legal industry has a dark side, and I now have a deep understanding of every fraud pattern within it. Each scam, each wrong turn revealed the traps an ordinary person can fall into.",
+                  ja: "数年後、数十万元の弁護士費用を費やしましたが、1円も取り戻せず、いわゆる正義も得られませんでした。裁判には勝ちましたが、時間もお金も人生の大切な時間も失いました。しかし別のものを手に入れました。法律業界には暗い側面があり、この業界のあらゆる詐欺パターンを深く理解するようになりました。騙されるたびに、回り道をするたびに、一般の人が法律制度の中で遭遇しうる罠が見えてきました。",
+                })}
               </p>
               <p className="text-[15px] text-[var(--ink-soft)] leading-[1.8]">
-                {t(
-                  "这个网站的每一条危险信号、每一个案例、每一条建议，都来自真实的经历——不是教科书上的理论，不是律师写的套话，而是一个普通人用钱和时间换来的教训。如果这些教训能让哪怕一个人少走一段弯路，这件事就值得做。",
-                  "Every red flag, every case, every piece of advice on this site comes from real experience — not textbook theory, not lawyer boilerplate, but lessons an ordinary person paid for with money and time. If these lessons save even one person from a single wrong turn, it's worth it."
-                )}
+                {t({
+                  zh: "这个网站的每一条危险信号、每一个案例、每一条建议，都来自真实的经历——不是教科书上的理论，不是律师写的套话，而是一个普通人用钱和时间换来的教训。如果这些教训能让哪怕一个人少走一段弯路，这件事就值得做。",
+                  en: "Every red flag, every case, every piece of advice on this site comes from real experience — not textbook theory, not lawyer boilerplate, but lessons an ordinary person paid for with money and time. If these lessons save even one person from a single wrong turn, it's worth it.",
+                  ja: "このサイトのすべての危険信号、すべての事例、すべてのアドバイスは、実体験から生まれたものです。教科書の理論でも弁護士の定型文でもなく、一般の人間がお金と時間を代償に得た教訓です。この教訓がたった一人でも回り道を減らすことができれば、やる価値があります。",
+                })}
               </p>
             </div>
           </div>
@@ -64,15 +69,15 @@ export default function AboutPage() {
         {/* Mission */}
         <div className="mb-14">
           <div className="text-[11px] tracking-[0.12em] uppercase text-[var(--grey-light)] mb-2">
-            {t("使命", "Mission")}
+            {t({ zh: "使命", en: "Mission", ja: "ミッション" })}
           </div>
           <h2 className="font-serif text-[22px] font-bold mb-4">
-            {t("我们做什么", "What We Do")}
+            {t({ zh: "我们做什么", en: "What We Do", ja: "私たちの取り組み" })}
           </h2>
           <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-5">
             {[
               {
-                title: t("我们做的", "What we do"),
+                title: t({ zh: "我们做的", en: "What we do", ja: "私たちがやること" }),
                 color: "var(--green)",
                 items: locale === "zh"
                   ? [
@@ -80,6 +85,13 @@ export default function AboutPage() {
                       "帮助你在请律师之前了解该注意什么",
                       "提供匿名化的真实案例复盘",
                       "提供结构化的自查工具和检查清单",
+                    ]
+                  : locale === "ja"
+                  ? [
+                      "実際の事例に基づくリスク識別教育の提供",
+                      "弁護士を雇う前に注意すべきことを知る手助け",
+                      "匿名化された実際の事例の振り返り",
+                      "構造化されたセルフチェックツールとチェックリスト",
                     ]
                   : [
                       "Risk identification education based on real cases",
@@ -89,7 +101,7 @@ export default function AboutPage() {
                     ],
               },
               {
-                title: t("我们不做的", "What we don't do"),
+                title: t({ zh: "我们不做的", en: "What we don't do", ja: "私たちがやらないこと" }),
                 color: "var(--red)",
                 items: locale === "zh"
                   ? [
@@ -97,6 +109,13 @@ export default function AboutPage() {
                       "不提供具体的法律建议",
                       "不替代专业律师的服务",
                       "不收集或出售任何用户数据",
+                    ]
+                  : locale === "ja"
+                  ? [
+                      "弁護士の推薦や紹介は行いません",
+                      "具体的な法的助言は提供しません",
+                      "専門の弁護士のサービスに代わるものではありません",
+                      "ユーザーデータの収集や販売は行いません",
                     ]
                   : [
                       "We don't recommend or refer any lawyers",
@@ -138,36 +157,39 @@ export default function AboutPage() {
         {/* Principles */}
         <div className="mb-14">
           <div className="text-[11px] tracking-[0.12em] uppercase text-[var(--grey-light)] mb-2">
-            {t("原则", "Principles")}
+            {t({ zh: "原则", en: "Principles", ja: "原則" })}
           </div>
           <h2 className="font-serif text-[22px] font-bold mb-4">
-            {t("我们的承诺", "Our Commitments")}
+            {t({ zh: "我们的承诺", en: "Our Commitments", ja: "私たちの約束" })}
           </h2>
           <div className="grid grid-cols-3 max-sm:grid-cols-1 gap-5">
             {[
               {
                 num: "01",
-                title: t("真实", "Authentic"),
-                desc: t(
-                  "所有内容来自真实经历，不编造、不夸大。每一条危险信号都有真实案例支撑。",
-                  "All content comes from real experience — nothing fabricated or exaggerated. Every red flag is backed by a real case."
-                ),
+                title: t({ zh: "真实", en: "Authentic", ja: "真実" }),
+                desc: t({
+                  zh: "所有内容来自真实经历，不编造、不夸大。每一条危险信号都有真实案例支撑。",
+                  en: "All content comes from real experience — nothing fabricated or exaggerated. Every red flag is backed by a real case.",
+                  ja: "すべてのコンテンツは実体験に基づいており、捏造や誇張はありません。すべての危険信号は実際の事例に裏付けられています。",
+                }),
               },
               {
                 num: "02",
-                title: t("独立", "Independent"),
-                desc: t(
-                  "我们不接受任何律所或法律机构的赞助。不推荐、不介绍、不为任何律师背书。",
-                  "We accept no sponsorship from law firms or legal institutions. We don't recommend, refer, or endorse any lawyer."
-                ),
+                title: t({ zh: "独立", en: "Independent", ja: "独立" }),
+                desc: t({
+                  zh: "我们不接受任何律所或法律机构的赞助。不推荐、不介绍、不为任何律师背书。",
+                  en: "We accept no sponsorship from law firms or legal institutions. We don't recommend, refer, or endorse any lawyer.",
+                  ja: "法律事務所や法的機関からのスポンサーシップは一切受けません。弁護士の推薦、紹介、推奨は行いません。",
+                }),
               },
               {
                 num: "03",
-                title: t("免费", "Free"),
-                desc: t(
-                  "核心内容永远免费。这是一个公益项目，不以营利为目的。",
-                  "Core content is free forever. This is a public interest project, not for profit."
-                ),
+                title: t({ zh: "免费", en: "Free", ja: "無料" }),
+                desc: t({
+                  zh: "核心内容永远免费。这是一个公益项目，不以营利为目的。",
+                  en: "Core content is free forever. This is a public interest project, not for profit.",
+                  ja: "コアコンテンツは永久に無料です。これは営利目的ではない公益プロジェクトです。",
+                }),
               },
             ].map((p) => (
               <div
@@ -191,26 +213,27 @@ export default function AboutPage() {
         {/* CTA */}
         <div className="bg-[var(--ground-warm)] border border-[var(--rule)] p-12 max-sm:p-8 text-center">
           <h2 className="font-serif text-[22px] font-bold mb-3">
-            {t("加入我们", "Join Us")}
+            {t({ zh: "加入我们", en: "Join Us", ja: "参加しませんか" })}
           </h2>
           <p className="text-[15px] text-[var(--grey)] mb-7 max-w-[480px] mx-auto">
-            {t(
-              "如果你有类似的经历，你的故事可以帮助更多人。如果你是法律专业人士，你的专业知识可以让这个平台更加准确。",
-              "If you've had a similar experience, your story can help others. If you're a legal professional, your expertise can make this platform more accurate."
-            )}
+            {t({
+              zh: "如果你有类似的经历，你的故事可以帮助更多人。如果你是法律专业人士，你的专业知识可以让这个平台更加准确。",
+              en: "If you've had a similar experience, your story can help others. If you're a legal professional, your expertise can make this platform more accurate.",
+              ja: "同じような経験があれば、あなたの体験が他の人の役に立ちます。法律の専門家であれば、あなたの知識がこのプラットフォームをより正確にします。",
+            })}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link
               href="/submit"
               className="inline-flex items-center gap-2 px-7 py-3 bg-[var(--green)] text-white text-[15px] font-semibold no-underline hover:opacity-90 transition-opacity"
             >
-              {t("提交你的经历", "Share Your Story")}
+              {t({ zh: "提交你的经历", en: "Share Your Story", ja: "体験を投稿する" })}
             </Link>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3 bg-transparent text-[var(--ink-soft)] text-[15px] font-medium no-underline border border-[var(--rule)] hover:border-[var(--grey)] transition-colors"
             >
-              {t("联系我们", "Contact Us")}
+              {t({ zh: "联系我们", en: "Contact Us", ja: "お問い合わせ" })}
             </Link>
           </div>
         </div>

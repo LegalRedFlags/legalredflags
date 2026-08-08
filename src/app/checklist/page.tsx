@@ -140,9 +140,59 @@ const checklistsEn = [
   },
 ];
 
+const checklistsJa = [
+  {
+    title: "弁護士を雇う前に", eyebrow: "第1段階",
+    desc: "弁護士に依頼する前に、以下の項目を確認しましょう。リスク防止に最も効果的な時期です。",
+    items: [
+      { text: "弁護士会のウェブサイトで弁護士の登録番号と資格状態を確認する", why: "弁護士が有効な資格を持ち、懲戒処分や登録取消を受けていないことを確認します。" },
+      { text: "弁護士が相手方や関係者からの紹介でないことを確認する", why: "紹介者が相手方と利害関係にある場合、弁護士があなたの味方にならない可能性があります。" },
+      { text: "2〜3人の弁護士に同時に相談し、意見を比較する", why: "意見の違いから、不合理なアドバイスを見抜くことができます。" },
+      { text: "弁護士の過去の担当案件と評判を調査する", why: "裁判記録やその他の情報源で弁護士の実力を把握しましょう。" },
+      { text: "弁護士に類似案件の経験があることを確認する", why: "法律分野は細分化されており、専門分野が合った弁護士がより効果的です。" },
+    ],
+  },
+  {
+    title: "契約書に署名する前に", eyebrow: "第2段階",
+    desc: "署名・支払いの前に、以下を一つずつ確認しましょう。署名後に問題を発見しても手遅れです。",
+    items: [
+      { text: "必ず正式な書面による委任契約書を締結する", why: "口頭やチャットでの合意は、法的拘束力が限定的です。" },
+      { text: "費用の振込先が事務所の法人口座であり、個人口座でないことを確認する", why: "個人口座への請求は最も一般的な違反であり、後の救済の最大の障害です。" },
+      { text: "契約書に明確な返金条項が含まれていることを確認する", why: "返金条項がなければ、サービスに不満があっても費用を取り戻せません。" },
+      { text: "契約書の弁護士が実際に案件を担当する人物であることを確認する", why: "「ベテラン弁護士が契約し、実習生が作業する」という名義貸しを防ぎます。" },
+      { text: "契約書にサービス範囲と弁護士の義務が明確に記載されていることを確認する", why: "曖昧なサービス記述は、弁護士が何もしない余地を残します。" },
+      { text: "正式な領収書を要求し、内容を確認する", why: "領収書は適正な請求の重要な証拠です。" },
+      { text: "すべての条項を注意深く読み、わからない点は質問する", why: "法律用語の中に不利な条件が隠れている場合があります。" },
+    ],
+  },
+  {
+    title: "代理中", eyebrow: "第3段階",
+    desc: "弁護士に依頼した後も、以下の事項を継続的に確認しましょう。お金を払って任せきりにしないでください。",
+    items: [
+      { text: "定期的に案件の進捗報告を求める（少なくとも2週間に1回）", why: "長期間報告がないのは、弁護士があなたの案件に取り組んでいない可能性があります。" },
+      { text: "弁護士からの重要なアドバイスをすべて記録する", why: "後にアドバイスに問題があったと判明した場合、これらの記録が苦情申立の根拠になります。" },
+      { text: "訴訟の取下げや放棄を勧められた場合、書面での法的意見書を求める", why: "正当な専門的アドバイスは書面にすることを恐れません。" },
+      { text: "弁護士のアドバイスが客観的に相手方に有利でないか注視する", why: "利益相反の兆候かもしれません。" },
+      { text: "「関係者への根回し」名目での追加請求を拒否する", why: "このような請求は100%違法であり、ほぼ確実に詐欺です。" },
+      { text: "弁護士とのすべてのやり取りの記録を保管する", why: "チャット、メール、通話録音は後に必要となる証拠です。" },
+    ],
+  },
+  {
+    title: "契約書や保証書に署名する時", eyebrow: "特別注意",
+    desc: "商業契約や保証書類への署名に関わる場合、以下の事項はあなたの全財産の安全に関わります。",
+    items: [
+      { text: "独立した弁護士の審査なしに、いかなる契約書にも署名しない", why: "相手方が起草した契約書は、当然相手方の利益を守るようにできています。" },
+      { text: "「連帯保証責任」の意味を理解してから署名を決める", why: "個人保証は、あなたの全個人資産で債務に責任を負うことを意味します。" },
+      { text: "相手方からの署名を急がせる圧力に屈しない", why: "合理的な取引であれば十分な検討時間が与えられます。急かすこと自体が警告です。" },
+      { text: "契約書の管轄条項と紛争解決方法に注意する", why: "不利な管轄条項により、相手方の地域で訴訟を行わされる可能性があります。" },
+      { text: "契約書の原本とすべての添付書類のコピーを保管する", why: "紛争が発生した場合、契約書が最も重要な証拠です。" },
+    ],
+  },
+];
+
 export default function ChecklistPage() {
   const { t, locale } = useI18n();
-  const checklists = locale === "zh" ? checklistsZh : checklistsEn;
+  const checklists = locale === "zh" ? checklistsZh : locale === "ja" ? checklistsJa : checklistsEn;
   const totalItems = checklists.reduce((sum, list) => sum + list.items.length, 0);
   const { checked, toggle, clearAll, checkedCount, loaded } = useChecklistState(totalItems);
 
@@ -151,29 +201,31 @@ export default function ChecklistPage() {
       <Navbar />
       <section className="max-w-[960px] mx-auto px-7 pt-20 pb-16">
         <h1 className="font-serif text-[clamp(28px,5vw,38px)] font-bold leading-tight mb-4">
-          {t("检查清单", "Checklists")}
+          {t({ zh: "检查清单", en: "Checklists", ja: "チェックリスト" })}
         </h1>
         <p className="text-[17px] text-[var(--grey)] leading-relaxed max-w-[600px] mb-4">
-          {t(
-            "从找律师到签合同，每个阶段都有你必须确认的事项。照着做，不遗漏。",
-            "From finding a lawyer to signing contracts — every stage has items you must verify. Follow them step by step."
-          )}
+          {t({
+            zh: "从找律师到签合同，每个阶段都有你必须确认的事项。照着做，不遗漏。",
+            en: "From finding a lawyer to signing contracts — every stage has items you must verify. Follow them step by step.",
+            ja: "弁護士探しから契約締結まで、各段階で確認すべき事項があります。一つずつ漏れなくチェックしましょう。",
+          })}
         </p>
 
         {loaded && (
           <div className="flex items-center gap-4 mb-12">
             <div className="text-[13px] text-[var(--grey-light)]">
-              {t(
-                `进度：${checkedCount} / ${totalItems} 项已完成`,
-                `Progress: ${checkedCount} / ${totalItems} completed`
-              )}
+              {t({
+                zh: `進度：${checkedCount} / ${totalItems} 项已完成`,
+                en: `Progress: ${checkedCount} / ${totalItems} completed`,
+                ja: `進捗：${checkedCount} / ${totalItems} 件完了`,
+              })}
             </div>
             {checkedCount > 0 && (
               <button
                 onClick={clearAll}
                 className="text-[12px] text-[var(--grey-light)] border border-[var(--rule)] px-2 py-0.5 bg-transparent cursor-pointer hover:text-[var(--red)] hover:border-[var(--red)] transition-colors"
               >
-                {t("清除进度", "Reset")}
+                {t({ zh: "清除进度", en: "Reset", ja: "リセット" })}
               </button>
             )}
           </div>

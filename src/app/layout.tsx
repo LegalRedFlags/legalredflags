@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    alternateLocale: "zh_CN",
+    alternateLocale: ["zh_CN", "ja_JP"],
     siteName: "Legal Red Flags",
     title: "Legal Red Flags — 法律防骗指南",
     description:

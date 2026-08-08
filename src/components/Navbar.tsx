@@ -9,12 +9,12 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const links = [
-    ["/flags", t("危险信号", "Red Flags")],
-    ["/cases", t("真实案例", "Cases")],
-    ["/checker", t("风险自测", "Self-Check")],
-    ["/checklist", t("检查清单", "Checklist")],
-    ["/guides", t("话术指南", "Scripts")],
-    ["/about", t("关于我们", "About")],
+    ["/flags", t({ zh: "危险信号", en: "Red Flags", ja: "危険信号" })],
+    ["/cases", t({ zh: "真实案例", en: "Cases", ja: "事例" })],
+    ["/checker", t({ zh: "风险自测", en: "Self-Check", ja: "リスク自己診断" })],
+    ["/checklist", t({ zh: "检查清单", en: "Checklist", ja: "チェックリスト" })],
+    ["/guides", t({ zh: "话术指南", en: "Scripts", ja: "スクリプト＆ガイド" })],
+    ["/about", t({ zh: "关于我们", en: "About", ja: "概要" })],
   ];
 
   return (

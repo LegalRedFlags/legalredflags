@@ -15,6 +15,12 @@ export interface Flag {
   descriptionEn: string;
   realCaseEn: string;
   adviceEn: string[];
+  signalJa: string;
+  categoryJa: string;
+  stageJa: string;
+  descriptionJa: string;
+  realCaseJa: string;
+  adviceJa: string[];
 }
 
 export const stages: Record<string, string> = {
@@ -31,6 +37,14 @@ export const stagesEn: Record<string, string> = {
   contracts: "Contracts & Deals",
   enforcement: "Enforcement & Bankruptcy",
   recourse: "Complaints & Recourse",
+};
+
+export const stagesJa: Record<string, string> = {
+  hiring: "弁護士選び段階",
+  representation: "代理中",
+  contracts: "契約・取引",
+  enforcement: "執行・破産",
+  recourse: "苦情・権利救済",
 };
 
 export const flags: Flag[] = [
@@ -68,6 +82,21 @@ export const flags: Flag[] = [
       "Check the lawyer's licensing status with the local bar association",
       "Check when their license was issued — distinguish between trainee, associate, and senior lawyers",
     ],
+    signalJa:
+      "弁護士が法律事務所の法人口座ではなく、個人の銀行口座に費用を振り込むよう求める",
+    categoryJa: "私的口座での不正請求",
+    stageJa: "弁護士選び段階",
+    descriptionJa:
+      "正規の法律事務所は法人口座を通じて費用を受け取り、正式な領収書を発行しなければなりません。個人口座での請求は、最も一般的で発見しにくい不正行為の一つです。問題が起きた場合、その送金が弁護士費用であり私的な送金ではないことを証明するのが非常に困難になります。",
+    realCaseJa:
+      "依頼者は紹介を通じて弁護士に依頼し、約12万人民元を個人の銀行口座に振り込むよう求められました。正式な契約書も領収書もありませんでした。その後、弁護士は連絡を絶って失踪し、依頼者が苦情を申し立てた際、法的サービス関係を証明する正式な委任記録が一切存在しないことが判明しました。",
+    adviceJa: [
+      "弁護士に法律事務所の法人口座を提示するよう求め、個人口座への振込を拒否する",
+      "支払い後、正式な領収書を要求し、金額と内容を確認する",
+      "すでに個人口座に支払ってしまった場合は、直ちに送金記録のスクリーンショットを保存する",
+      "地域の弁護士会で当該弁護士の登録状況を確認する",
+      "免許取得時期を確認し、実習弁護士、アソシエイト弁護士、シニア弁護士のいずれかを見分ける",
+    ],
   },
   {
     slug: "02",
@@ -101,6 +130,20 @@ export const flags: Flag[] = [
       "Consult 2-3 lawyers at once and compare their professional judgment",
       "Investigate whether the referrer has any financial relationship with the opposing party",
     ],
+    signalJa:
+      "弁護士が相手方、またはその関係者から紹介された",
+    categoryJa: "利益相反の紹介",
+    stageJa: "弁護士選び段階",
+    descriptionJa:
+      "弁護士を紹介した人物が相手方と利害関係にある場合、その弁護士があなたの利益を真に代理する可能性は低いです。紹介者がキックバックを受け取っている場合もあれば、弁護士自体が相手方に送り込まれた駒である可能性もあります。",
+    realCaseJa:
+      "依頼者は会社との紛争が発生した後、その会社の株主の一人から紹介された弁護士を雇いました。表面上は依頼者を代理していましたが、裏では相手方と連絡を取り続け、有利な証拠を放棄するよう繰り返し助言し、中立的な立場を取るどころか裏で相手方と結託していました。後にその弁護士は相手方から買収されていたことを認めました。",
+    adviceJa: [
+      "他人の紹介だけに頼らず、自分で独立して弁護士を探す",
+      "地域の弁護士会の公式サイトや法律サービスプラットフォームで自分で選ぶ",
+      "2～3人の弁護士に同時に相談し、専門的な判断を比較する",
+      "紹介者と相手方の間に利害関係がないか調査する",
+    ],
   },
   {
     slug: "03",
@@ -132,6 +175,20 @@ export const flags: Flag[] = [
       "The contract must clearly state: scope of services, fee amount, refund conditions, and the assigned lawyer",
       "Keep the original contract and photograph it as a backup",
       "If the lawyer refuses to sign a contract, switch lawyers immediately",
+    ],
+    signalJa:
+      "弁護士が正式な書面の委任契約を結ぼうとしない",
+    categoryJa: "正式な契約なし",
+    stageJa: "弁護士選び段階",
+    descriptionJa:
+      "書面の委任契約は、弁護士と依頼者の法的サービス関係を証明する基本的な書類です。契約がなければ、問題が発生した際にサービスの範囲、請求金額、双方の権利と義務を証明できません。口頭の合意やチャットメッセージは、苦情申立てや訴訟において効力が限定的です。",
+    realCaseJa:
+      "依頼者はチャットでの口頭の合意のみで弁護士に契約書の処理を依頼し、書面の契約は交わしませんでした。費用を受け取った後、弁護士はほとんど仕事をしませんでした。依頼者が苦情を申し立てた際、弁護士会は正式な委任関係の証明がないことを理由に受理を拒否しました。",
+    adviceJa: [
+      "支払い前に必ず書面の委任契約を締結すること。一括での全額前払いは絶対にしない",
+      "契約書にはサービスの範囲、費用額、返金条件、担当弁護士を明記すること",
+      "契約書の原本を保管し、写真でバックアップを取る",
+      "弁護士が契約の締結を拒否する場合は、直ちに弁護士を変更する",
     ],
   },
   {
@@ -165,6 +222,20 @@ export const flags: Flag[] = [
       "If the lawyer refuses to include a refund clause, that alone is a warning sign",
       "Learn the local bar association's rules regarding refunds of legal fees",
     ],
+    signalJa:
+      "委任契約に返金条項が含まれていない",
+    categoryJa: "返金条項なし",
+    stageJa: "弁護士選び段階",
+    descriptionJa:
+      "返金条項は、弁護士費用が返金される条件を規定します。この条項がなければ、弁護士が業務を中断したりサービスに不満がある場合でも、支払い済みの費用を取り戻すことが非常に困難になります。これは弁護士が情報の非対称性を利用した典型的な罠です。",
+    realCaseJa:
+      "依頼者は返金条項のない委任契約を締結し、20万人民元の弁護士費用を支払いました。訴訟が始まった後、弁護士は怠慢で非専門的でした。依頼者が異変を感じて返金を求めましたが、契約に返金条件が記載されていなかったため拒否されました。",
+    adviceJa: [
+      "契約締結前に返金条項の追加を主張する",
+      "サービス未提供やサービス品質不良の場合の返金割合を明確に規定する",
+      "弁護士が返金条項の追加を拒否する場合、それ自体が警告サインである",
+      "弁護士費用の返金に関する地域の弁護士会の規定を確認する",
+    ],
   },
   {
     slug: "05",
@@ -197,6 +268,20 @@ export const flags: Flag[] = [
       "Have the contract clearly state the name of the responsible lawyer",
       "If the actual handler doesn't match the contract, you have the right to demand a change or a refund",
       "Regularly require the responsible lawyer, in person, to report on progress",
+    ],
+    signalJa:
+      "契約書に記載された弁護士と実際に担当する弁護士が異なる",
+    categoryJa: "名義貸し代理",
+    stageJa: "弁護士選び段階",
+    descriptionJa:
+      "一部の事務所では、顧客を獲得するために契約書にベテラン弁護士の名前を使用し、実際の業務は経験の浅い若手弁護士やインターンに任せています。ベテラン弁護士の料金を支払いながら、初級レベルのサービスしか受けられません。",
+    realCaseJa:
+      "依頼者はベテラン弁護士の評判に惹かれて委任契約を締結しました。契約後、すべての書類準備や出廷は入所したばかりの若手弁護士が担当し、契約書に記載された弁護士は一度も案件に関与しませんでした。",
+    adviceJa: [
+      "契約前に、実際に案件を担当する弁護士との面談を求める",
+      "契約書に担当弁護士の氏名を明記させる",
+      "実際の担当者が契約と異なる場合、変更または返金を求める権利がある",
+      "定期的に担当弁護士本人に進捗報告を求める",
     ],
   },
   {
@@ -233,6 +318,21 @@ export const flags: Flag[] = [
       "Specify the frequency and method of progress reporting in the engagement contract",
       "Make sure to include refund terms in the contract",
     ],
+    signalJa:
+      "弁護士が長期間連絡を返さず、案件の進捗を報告しない",
+    categoryJa: "職務怠慢",
+    stageJa: "代理中",
+    descriptionJa:
+      "費用を受け取った後に連絡が取れなくなるのは、深刻な職務怠慢です。弁護士は定期的に依頼者に案件の進捗を報告すべきであり、少なくとも重要な節目（提訴、審理、判決）の前後には状況を知らせるべきです。長期間の音信不通は、弁護士が案件に全く取り組んでいない可能性を示唆しています。",
+    realCaseJa:
+      "20万人民元の弁護士費用を支払った後、依頼者は弁護士が長期間メッセージに返信せず、電話にも出ず、怠慢で非専門的であることを発見しました。弁護士を交代した後、元の弁護士が裁判所との連絡を一切行っておらず、依頼者の代理弁護士欄が空白であったことが判明しました。",
+    adviceJa: [
+      "書面でメールを送り、指定日までに進捗を報告するよう弁護士に求める",
+      "弁護士への連絡の記録をすべて保存する（メッセージ、電話、メール）",
+      "2週間以上返信がない場合、弁護士会への苦情申立てを検討する",
+      "委任契約で進捗報告の頻度と方法を明記する",
+      "契約書に必ず返金条項を含める",
+    ],
   },
   {
     slug: "07",
@@ -265,6 +365,20 @@ export const flags: Flag[] = [
       "If the lawyer refuses to provide a written opinion, that alone is a major warning sign",
       "Seek a second, independent lawyer's opinion for comparison",
       "Do not make a decision to waive your rights under pressure",
+    ],
+    signalJa:
+      "弁護士が訴えの取り下げや権利の放棄を勧めるが、書面の理由を示さない",
+    categoryJa: "不利益な助言",
+    stageJa: "代理中",
+    descriptionJa:
+      "弁護士は専門的な助言を行う権利がありますが、訴えの取り下げ、和解、上訴の放棄などの重大な決定の勧告には、書面の法的分析に基づくべきです。弁護士が口頭でのみ放棄を勧め、書面での意見提出を拒否する場合、その助言はあなたの利益のためではない可能性があります。",
+    realCaseJa:
+      "控訴審の段階で、弁護士が突然「勝つ見込みが低い」として上訴の放棄を勧めましたが、書面の法的意見書の提供を拒否しました。弁護士を交代した後、依頼者は控訴審で逆転勝訴しました。後に元の弁護士が相手方と密かに連絡を取っていたことが判明しました。",
+    adviceJa: [
+      "放棄を勧める理由と法的根拠を説明した書面の法的意見書を弁護士に要求する",
+      "弁護士が書面の意見提出を拒否する場合、それ自体が重大な警告サインである",
+      "比較のために、別の独立した弁護士の意見を求める",
+      "プレッシャーの下で権利を放棄する決定をしない",
     ],
   },
   {
@@ -299,6 +413,20 @@ export const flags: Flag[] = [
       "If two lawyers' recommendations are completely opposite, dig into why",
       "Investigate whether your lawyer has any connection to the opposing party",
     ],
+    signalJa:
+      "弁護士の助言が客観的にあなたよりも相手方に有利である",
+    categoryJa: "利益相反",
+    stageJa: "代理中",
+    descriptionJa:
+      "あなたの弁護士が、あなたに有利な証拠の放棄、重要な問題の追及の中止、優位な状況での譲歩を繰り返し勧める場合、それは専門的判断ではなく利益相反の兆候かもしれません。弁護士は相手方に買収されているか、何らかの未開示の関係がある可能性があります。",
+    realCaseJa:
+      "弁護士は依頼者に、相手方企業の隠匿資産の追及を「複雑すぎる」として繰り返し止めるよう助言しました。依頼者が独自に証拠を発見した後も、弁護士は取り下げを勧めました。後にその弁護士は相手方企業の法定代理人と個人的な関係があったことを認めました。",
+    adviceJa: [
+      "弁護士が行う不利な助言をすべて記録する",
+      "別の独立した弁護士の意見を求める",
+      "2人の弁護士の助言が完全に正反対の場合、その理由を深く調査する",
+      "弁護士と相手方との間に何らかの関係がないか調査する",
+    ],
   },
   {
     slug: "09",
@@ -331,6 +459,20 @@ export const flags: Flag[] = [
       "Any fee framed as \"facilitation\" or \"connections\" is 100% a scam",
       "Keep evidence of the lawyer soliciting extra fees (chat records, recordings, etc.)",
       "Report it to the bar association and the judicial administration bureau",
+    ],
+    signalJa:
+      "弁護士が「裏工作費」「コネ代」などの追加費用を要求する",
+    categoryJa: "賄賂の要求",
+    stageJa: "代理中",
+    descriptionJa:
+      "「根回し」や「裁判官への付け届け」という名目の費用はすべて違法です。正規の弁護士はこのような費用を依頼者に要求することはありませんし、すべきでもありません。この行為自体が違法であり、あなたのお金がそのような「工作」に使われる可能性はほぼありません。",
+    realCaseJa:
+      "弁護士は「裁判官を食事に招待する必要がある」「書記官に付け届けが必要」として、依頼者から数万人民元の追加費用を要求しました。何の効果もなく、依頼者が返金を求めると、弁護士はそのお金を受け取ったことを全面的に否定しました。",
+    adviceJa: [
+      "契約に記載されていない費用はすべて拒否する",
+      "「裏工作」「コネ」名目の費用は100%詐欺である",
+      "弁護士が追加費用を要求した証拠を保存する（チャット記録、録音など）",
+      "弁護士会および司法行政局に報告する",
     ],
   },
   {
@@ -365,6 +507,20 @@ export const flags: Flag[] = [
       "Refuse blank invoices or ones with mismatched amounts and demand a corrected one",
       "Keep all original invoices and proof of payment",
     ],
+    signalJa:
+      "弁護士から届いた領収書が空白、または金額が合わない",
+    categoryJa: "領収書の不正",
+    stageJa: "代理中",
+    descriptionJa:
+      "正規の弁護士費用の領収書には、金額、提供サービスの内容、日付が明記されるべきです。空白の領収書、金額の不一致、または領収書が一切発行されない場合、その費用は事務所の正式な会計システムを通っておらず、不正行為に該当します。",
+    realCaseJa:
+      "依頼者が繰り返し領収書を請求した後、届いた領収書は空白で、金額もサービス内容も記載されていませんでした。依頼者が苦情を申し立てると、事務所は「領収書は弁護士個人の行為であり事務所の責任ではない」と責任を転嫁しました。",
+    adviceJa: [
+      "支払い後、直ちに正式な領収書を要求する",
+      "領収書の金額、内容、日付が契約と一致しているか確認する",
+      "空白の領収書や金額が合わない領収書は受け取りを拒否し、再発行を求める",
+      "すべての領収書原本と支払い証明を保管する",
+    ],
   },
   {
     slug: "11",
@@ -397,6 +553,20 @@ export const flags: Flag[] = [
       "Consult an independent lawyer before signing to confirm the scope of risk",
       "Understand the difference between \"joint-and-several liability\" and a \"general guarantee\"",
       "If you've already signed a guarantee, pay attention to its term and any rights of recourse",
+    ],
+    signalJa:
+      "会社の債務に対して個人名義で保証するよう求められる",
+    categoryJa: "個人保証の罠",
+    stageJa: "契約・取引",
+    descriptionJa:
+      "個人保証とは、不動産、預金、給与などの個人財産すべてを会社の債務の連帯責任として差し出すことを意味します。会社が支払えなければ、債権者はあなたに直接請求できます。多くの人が結果を理解せずに保証契約に署名し、最終的に莫大な債務を負うことになります。",
+    realCaseJa:
+      "依頼者は企業間取引の個人連帯保証を提供するよう求められました。相手方企業がその後債務超過に陥り、債権者が依頼者個人を訴え、銀行口座と不動産が凍結されました。依頼者は自分が恩恵を受けていない債務を今なお返済し続けています。",
+    adviceJa: [
+      "結果を完全に理解しない限り、個人保証には絶対に署名しない",
+      "署名前に独立した弁護士に相談し、リスクの範囲を確認する",
+      "「連帯責任」と「一般保証」の違いを理解する",
+      "すでに保証に署名している場合は、保証期間と求償権に注意する",
     ],
   },
   {
@@ -431,6 +601,20 @@ export const flags: Flag[] = [
       "Pay particular attention to liquidated-damages clauses, dispute-resolution clauses, and guarantee clauses",
       "You have the right to request changes to a contract drafted by the other party",
     ],
+    signalJa:
+      "契約書が相手方によって作成され、早く署名するよう圧力をかけられている",
+    categoryJa: "一方的な起草",
+    stageJa: "契約・取引",
+    descriptionJa:
+      "相手方が作成した契約書は、当然ながら相手方の利益を守る傾向があります。十分な確認時間を与えず早急に署名を迫る場合は、特に警戒が必要です。契約書のすべての条項があなたの権利に影響を与える可能性があります。",
+    realCaseJa:
+      "相手方企業の総支配人が契約書を送り、その日のうちに署名するよう依頼者に圧力をかけました。依頼者は十分な確認をせずに署名し、後になって仲裁条項と違約金条項が極めて不利であることが判明しました。",
+    adviceJa: [
+      "すべての契約書は、まず自分の弁護士に確認してもらうべきである",
+      "相手方の急かしに屈しない。合理的な契約プロセスでは十分な確認時間が与えられる",
+      "違約金条項、紛争解決条項、保証条項に特に注意する",
+      "相手方が作成した契約書に対して修正を要求する権利がある",
+    ],
   },
   {
     slug: "13",
@@ -463,6 +647,20 @@ export const flags: Flag[] = [
       "Don't pretend to understand out of embarrassment",
       "Have an independent lawyer review the contract clause by clause",
       "Pay special attention to guarantee terms, default conditions, dispute jurisdiction, and rights-waiver clauses",
+    ],
+    signalJa:
+      "契約書に理解できない専門用語や複雑な条項が含まれている",
+    categoryJa: "条項の罠",
+    stageJa: "契約・取引",
+    descriptionJa:
+      "法律用語には、あなたに不利な条件が隠されていることがあります。理解せずに署名することは、事実上自分の権利を無自覚に放棄することと同じです。理解できない条項については説明を求める権利があります。",
+    realCaseJa:
+      "契約書に「先訴の抗弁権の放棄」という条項が含まれていましたが、依頼者はその意味を理解せずに署名しました。後になって、これは債権者がまず会社に請求することなく、直接個人に対して債務を追及できることを意味すると判明しました。",
+    adviceJa: [
+      "契約書で理解できない内容については説明を求める権利がある",
+      "恥ずかしいからといって理解したふりをしない",
+      "独立した弁護士に契約書を条項ごとに確認してもらう",
+      "保証条件、債務不履行条件、紛争管轄、権利放棄条項に特に注意する",
     ],
   },
   {
@@ -497,6 +695,20 @@ export const flags: Flag[] = [
       "Report suspected sham bankruptcy to the court",
       "Watch whether the opposing legal representative sets up a new company during the bankruptcy process",
     ],
+    signalJa:
+      "会社が突然破産申請をしたが、まだ資産があることを知っている",
+    categoryJa: "偽装破産",
+    stageJa: "執行・破産",
+    descriptionJa:
+      "偽装破産は、債務不履行の外観を捏造して債務を逃れる違法行為です。会社は資産を関連会社や個人名義に移転した上で破産を申請し、債務を帳消しにしようとすることがあります。",
+    realCaseJa:
+      "敗訴後、相手方企業は突然破産を申請し、執行可能な資産がないと主張しました。依頼者が独自に調査したところ、破産申請の2か月前に、大量の資産が法定代理人の親族が設立した新会社に大幅に値引きされた価格で移転されていたことが判明しました。",
+    adviceJa: [
+      "資産移転の兆候を発見したら、直ちに財産保全命令を申請する",
+      "相手方企業の最近の株式変更や資産の動きを調査する",
+      "偽装破産の疑いを裁判所に報告する",
+      "相手方の法定代理人が破産手続き中に新会社を設立していないか監視する",
+    ],
   },
   {
     slug: "15",
@@ -529,6 +741,20 @@ export const flags: Flag[] = [
       "You can apply for property preservation as early as the litigation stage",
       "Provide the court with leads on the other party's enforceable assets",
       "If the other side has the means but refuses to comply, you can pursue criminal liability",
+    ],
+    signalJa:
+      "判決が確定した後、相手方が財産を移転または隠匿する",
+    categoryJa: "執行逃れ",
+    stageJa: "執行・破産",
+    descriptionJa:
+      "勝訴判決を得ることは、お金を受け取ることと同じではありません。被執行者が判決後に財産を他人名義に移転したり資産を隠匿したりすれば、あなたの判決書はただの紙切れになりかねません。この行為は「判決・決定の執行拒否罪」に該当する可能性があります。",
+    realCaseJa:
+      "依頼者は勝訴後に強制執行を申請しましたが、相手方はすでに不動産を親族に名義変更し、銀行口座の残高はゼロでした。裁判所は高額消費制限令を発出しましたが、相手方は他人の口座を使って消費を続け、実際の生活には影響がありませんでした。",
+    adviceJa: [
+      "勝訴したら速やかに強制執行を申請し、相手方に資産移転の時間を与えない",
+      "訴訟段階から財産保全を申請できる",
+      "相手方の執行可能な財産に関する情報を裁判所に提供する",
+      "相手方に能力がありながら執行を拒否する場合、刑事責任の追及を申請できる",
     ],
   },
   {
@@ -563,6 +789,20 @@ export const flags: Flag[] = [
       "Join with other creditors to jointly monitor the administrator's conduct",
       "If the administrator's misconduct is serious, you can apply to have them replaced",
     ],
+    signalJa:
+      "破産管財人の行動が明らかに債務者に有利である",
+    categoryJa: "管財人の不正行為",
+    stageJa: "執行・破産",
+    descriptionJa:
+      "破産管財人は独立かつ公正に手続きを処理すべきです。管財人が債務者の隠匿資産の追跡を積極的に行わない、疑わしい関連取引を調査しない、あるいは債務者の弁済逃れを手助けしている場合、不正な利益供与の可能性があります。",
+    realCaseJa:
+      "破産管財人は、債務者が申立て前6か月間に行った大規模な資産移転を見て見ぬふりをし、法定代理人個人名義の疑わしい財産の調査も行いませんでした。債権者が繰り返し調査を求めましたが、そのたびに「証拠がない」として拒否されました。",
+    adviceJa: [
+      "管財人の業務報告を注意深く監視し、異議を申し立てる",
+      "独自に債務者の資産移転の証拠を収集し、裁判所に提出する",
+      "他の債権者と連携して管財人の行動を共同で監視する",
+      "管財人の不正行為が深刻な場合、交代を申請できる",
+    ],
   },
   {
     slug: "17",
@@ -596,6 +836,20 @@ export const flags: Flag[] = [
       "If the bar association fails to act, you can escalate to the higher judicial administrative authority",
       "Beyond administrative channels, civil litigation remains an option",
     ],
+    signalJa:
+      "苦情申立て後、行政機関が無期限に引き延ばすか、うやむやにする",
+    categoryJa: "行政の不作為",
+    stageJa: "苦情・権利救済",
+    descriptionJa:
+      "弁護士会や司法局への苦情申立て後、長期間結果が出ない場合や、調査がおざなりに処理されている場合、行政機関の不作為かもしれません。または、告発された弁護士に「コネ」がある可能性もあります。諦めず、他の救済手段を活用してください。",
+    realCaseJa:
+      "依頼者は私的口座での請求と職務怠慢について弁護士会に苦情を申し立てました。8か月待った後に届いた回答は「調査の結果、違反は認められませんでした」という曖昧なもので、調査内容の具体的な説明は一切ありませんでした。",
+    adviceJa: [
+      "苦情申立ての際に、送金記録、契約書、通信記録を含む完全な証拠資料を添付する",
+      "苦情が受理された時期を記録し、法定期限を超過したら問い合わせる",
+      "弁護士会が対応しない場合、上級の司法行政機関に苦情を申し立てることができる",
+      "行政的手段のほかに、民事訴訟という選択肢もある",
+    ],
   },
   {
     slug: "18",
@@ -627,6 +881,20 @@ export const flags: Flag[] = [
       "A failed mediation doesn't mean you've lost — it's simply one method of resolution",
       "Statements made during mediation generally do not affect subsequent litigation",
       "If the mediator is clearly biased toward the other side, you can decline mediation",
+    ],
+    signalJa:
+      "調停で譲歩を求められるのは自分だけである",
+    categoryJa: "偏った調停",
+    stageJa: "苦情・権利救済",
+    descriptionJa:
+      "調停は双方の交渉プロセスであるべきです。調停人があなただけに要求を下げるよう圧力をかけ、相手方には一切プレッシャーがない場合、その調停は公正でない可能性があります。調停の不成立は敗北を意味しません。訴訟という選択肢が残っています。",
+    realCaseJa:
+      "弁護士会が主催する調停で、調停人は依頼者に賠償請求額を下げるよう繰り返し圧力をかける一方、弁護士の不正行為は軽く扱いました。依頼者は不利な和解に追い込まれそうになりましたが、最終的に拒否し、法的手段を通じて権利救済を続けました。",
+    adviceJa: [
+      "自分のボトムラインを明確にし、プレッシャーの下で譲歩しない",
+      "調停の不成立は敗北ではなく、単に一つの解決方法に過ぎない",
+      "調停中の発言は、原則としてその後の訴訟に影響しない",
+      "調停人が明らかに相手方に偏っている場合、調停を拒否できる",
     ],
   },
   {
@@ -661,6 +929,20 @@ export const flags: Flag[] = [
       "Hold key evidence back until the most advantageous moment to use it",
       "If you suspect a leak, immediately assess the impact and adjust your strategy",
     ],
+    signalJa:
+      "証拠の弱点を開示した後、相手方の態度が突然変わる",
+    categoryJa: "情報漏洩",
+    stageJa: "苦情・権利救済",
+    descriptionJa:
+      "調停人、行政機関の職員、またはその他の第三者に証拠の弱点を開示した後、相手方の姿勢が目に見えて変化する場合（突然強硬になる、戦略を変えるなど）、あなたの情報が漏洩された可能性が高いです。",
+    realCaseJa:
+      "調停中に、依頼者は重要な書類を保管していなかったことを調停人に話しました。翌日、相手方弁護士はまさにそれを理由に和解を拒否し、その後の審理でこの弱点を集中的に攻撃しました。",
+    adviceJa: [
+      "証拠の弱点は自分の弁護士にのみ開示し、第三者には決して話さない",
+      "調停や苦情申立ての過程で手の内をすべて明かさない",
+      "重要な証拠は最も有利なタイミングまで温存する",
+      "情報漏洩が疑われる場合、直ちに影響を評価し、戦略を調整する",
+    ],
   },
   {
     slug: "20",
@@ -693,6 +975,20 @@ export const flags: Flag[] = [
       "Ask your lawyer to assess whether the other side's procedural motions are legitimate",
       "Don't give up or make concessions simply because the process is dragging on",
       "Prepare financially for a long fight",
+    ],
+    signalJa:
+      "相手方が手続き上の戦術を使って案件を引き延ばし、消耗させようとする",
+    categoryJa: "手続き的遅延",
+    stageJa: "苦情・権利救済",
+    descriptionJa:
+      "一部の相手方は、管轄異議、反訴、再鑑定の申立てなどの手続き的手段を意図的に利用して審理を遅延させます。目的はあなたの時間、労力、資金を消耗させ、諦めさせるか不利な和解条件を受け入れさせることです。",
+    realCaseJa:
+      "相手方は管轄異議、忌避申立て、再鑑定の申立てを次々と行い、そのたびに案件が数か月遅延しました。3年間の遅延の中で、依頼者は膨大な時間、労力、弁護士費用を費やし、最終的に経済的圧力により予想をはるかに下回る和解金額を受け入れざるを得ませんでした。",
+    adviceJa: [
+      "訴訟でよく使われる遅延戦術を学び、精神的・経済的に備える",
+      "相手方の手続き上の申立てが正当かどうか弁護士に評価してもらう",
+      "時間がかかるからといって簡単に諦めたり譲歩しない",
+      "長期戦に備えて経済的な準備をする",
     ],
   },
   {
@@ -727,6 +1023,20 @@ export const flags: Flag[] = [
       "A lawyer who claims to have connections is even less trustworthy",
       "Choose a lawyer based on professional competence, not supposed connections",
     ],
+    signalJa:
+      "弁護士が「特別なコネ」があると主張し、勝訴を保証する",
+    categoryJa: "虚偽の約束",
+    stageJa: "弁護士選び段階",
+    descriptionJa:
+      "どんな弁護士も案件の結果を保証することはできません。裁判官や検察官と「特別な関係」があると主張したり、「必ず勝つ」と約束する弁護士は、あなたのお金を騙し取ろうとしているか、賄賂を示唆しているかのいずれかです。どちらも極めて危険です。",
+    realCaseJa:
+      "弁護士は裁判長と同級生だと主張し、「勝訴を保証する」と言いました。依頼者は高額な費用を支払いました。敗訴後、弁護士は「コネが使えなかった」として返金を拒否しました。後に依頼者は、弁護士がその裁判官を全く知らなかったことを発見しました。",
+    adviceJa: [
+      "勝訴を保証するいかなる約束も信用してはならない",
+      "弁護士が案件の結果を約束することは法律で禁止されている",
+      "コネがあると主張する弁護士はさらに信用できない",
+      "いわゆる人脈ではなく、専門的能力に基づいて弁護士を選ぶ",
+    ],
   },
   {
     slug: "22",
@@ -760,6 +1070,20 @@ export const flags: Flag[] = [
       "If you discover a conflict of interest, switch lawyers immediately",
       "Include a conflict-of-interest disclosure clause in the engagement contract",
     ],
+    signalJa:
+      "弁護士が過去にあなたの相手方またはその関連者を代理したことがある",
+    categoryJa: "潜在的利益相反",
+    stageJa: "弁護士選び段階",
+    descriptionJa:
+      "弁護士が現在相手方を代理していなくても、過去の代理関係により相手方の内部情報を把握していたり、暗黙の了解を保っている可能性があります。この潜在的な利益相反は直接的な紹介関係よりも発見が困難ですが、同様に危険です。",
+    realCaseJa:
+      "依頼者は弁護士を雇いましたが、後にその弁護士が前年に相手方企業の別の案件を担当していたことが判明しました。弁護士は法廷で明らかに消極的で、重要な証拠の提出も怠りました。調査の結果、弁護士と相手方企業の間に継続的なビジネス関係があったことが判明しました。",
+    adviceJa: [
+      "依頼前に、弁護士が相手方またはその関連者を代理したことがあるか確認する",
+      "公開の裁判記録データベースで弁護士の過去の案件を検索する",
+      "利益相反が発見された場合、直ちに弁護士を変更する",
+      "委任契約に利益相反の開示条項を含める",
+    ],
   },
   {
     slug: "23",
@@ -792,6 +1116,20 @@ export const flags: Flag[] = [
       "Be wary of uniformly positive reviews with identical phrasing",
       "Prioritize actual case records from public court databases",
       "Cross-verify the lawyer's reputation through multiple channels",
+    ],
+    signalJa:
+      "弁護士のオンラインレビューがすべて好評で、否定的なフィードバックがゼロ",
+    categoryJa: "偽の評判",
+    stageJa: "弁護士選び段階",
+    descriptionJa:
+      "経験豊富な弁護士が否定的なレビューゼロということはあり得ません。各プラットフォームで好意的なレビューしかなく、その内容が漠然として定型的な場合、それらは有料の偽レビューの可能性が高いです。偽レビュー自体が、その弁護士の職業的誠実さに疑問を呈するものです。",
+    realCaseJa:
+      "依頼者は法律プラットフォームで数百件の五つ星レビューを持つ弁護士を見つけました。レビューのほぼすべてが「専門的、責任感がある、おすすめ」というものでした。依頼後、その弁護士は全く専門的でなく、基本的な法的手続きすら間違えていることが判明しました。",
+    adviceJa: [
+      "好評の数だけでなく、レビューの内容が具体的で真実味があるかを確認する",
+      "一律に好意的で同じ表現のレビューには警戒する",
+      "公開の裁判記録データベースの実際の案件記録を優先的に参考にする",
+      "複数のチャネルを通じて弁護士の評判を交差検証する",
     ],
   },
   {
@@ -828,6 +1166,21 @@ export const flags: Flag[] = [
       "If the lawyer insists on full prepayment, find a different lawyer",
       "Staged payment is the best way to maintain your leverage",
     ],
+    signalJa:
+      "弁護士が全額一括前払いを要求し、段階的な支払いを拒否する",
+    categoryJa: "一括払いの罠",
+    stageJa: "契約・取引",
+    descriptionJa:
+      "段階的支払いは依頼者にとって最も重要な保護手段の一つです。全額を前払いすると、弁護士のサービス提供への意欲は著しく低下し、怠慢になったりあなたに不利に働く可能性すらあります。段階的支払いにより、各段階で交渉力を維持できます。",
+    realCaseJa:
+      "依頼者が弁護士費用を全額前払いした後、弁護士の態度は目に見えて変わりました。返信は遅くなり、審理の準備はいい加減になり、重要な段階では放棄まで勧められました。依頼者は弁護士を変えたくても全額支払い済みで、進退窮まりました。",
+    adviceJa: [
+      "段階的支払いを主張する：契約時に一部、提訴時に一部、審理時に一部、終結時に残額",
+      "契約書に各段階の支払い金額と条件を明記する",
+      "弁護士費用の全額一括払いは絶対にしない",
+      "弁護士が全額前払いを主張する場合、別の弁護士を探す",
+      "段階的支払いは交渉力を維持する最善の方法である",
+    ],
   },
   {
     slug: "25",
@@ -860,6 +1213,20 @@ export const flags: Flag[] = [
       "Refuse any charges outside the contract unless there is written justification",
       "For each additional fee, demand a written breakdown and explanation from the lawyer",
       "If fees are being added frequently, consider whether you need to switch lawyers",
+    ],
+    signalJa:
+      "弁護士が毎回新しい理由をつけて追加費用を請求し続ける",
+    categoryJa: "小出し請求",
+    stageJa: "代理中",
+    descriptionJa:
+      "契約で合意した費用以外に、弁護士が「専門家が必要」「追加調査が必要」「案件が予想より複雑」などさまざまな口実で費用を追加し続けます。一回ごとの金額は少額ですが、累計すると予定をはるかに超えます。これは典型的な小出し請求の手口です。",
+    realCaseJa:
+      "依頼者は契約時に5万人民元の弁護士費用で合意しました。その後、弁護士は「調査費」「専門家相談費」「急ぎ処理費」として4回にわたり費用を追加し、合計3万人民元以上を追加で支払いました。しかし、追加支払いにもかかわらず案件の質は向上しませんでした。",
+    adviceJa: [
+      "契約時にすべての費用を明確に合意する。追加費用の可能性も含めて",
+      "書面での説明と合理的な根拠がない限り、契約外の費用を拒否する",
+      "追加費用が発生するたびに、弁護士に費用明細と理由の書面提出を求める",
+      "費用の追加が頻繁な場合、弁護士の変更を検討する",
     ],
   },
   {
@@ -894,6 +1261,20 @@ export const flags: Flag[] = [
       "Compare whether contingency or fixed-fee billing is more cost-effective for your case",
       "Be wary of contingency contracts with excessively high percentage fees",
     ],
+    signalJa:
+      "成功報酬契約で、弁護士が「勝訴」の基準を極めて低く設定している",
+    categoryJa: "成功報酬の罠",
+    stageJa: "契約・取引",
+    descriptionJa:
+      "成功報酬とは、弁護士が前払い費用をほとんど取らず、勝訴後に一定割合を受け取る仕組みです。しかし一部の弁護士は「勝訴」を極めて広く定義し、相手方からのわずかな支払いでも「勝訴」とみなして高額な報酬を請求します。案件に勝っても経済的には損をすることになります。",
+    realCaseJa:
+      "依頼者は「勝訴時」に回収額の30%を支払う成功報酬契約を締結しました。しかし契約では「勝訴」を「裁判所が有利な判決を下す、または相手方が何らかの支払いをすること」と定義していました。裁判所は請求の一部のみを認め、相手方はわずかな金額しか支払いませんでしたが、弁護士は判決全額の30%を請求しました。",
+    adviceJa: [
+      "成功報酬契約における「勝訴」の定義を注意深く確認する",
+      "弁護士の報酬は判決金額ではなく、実際に受け取った金額に基づいて計算されることを明確にする",
+      "成功報酬と固定報酬のどちらが費用対効果が高いか比較する",
+      "報酬割合が過度に高い成功報酬契約に警戒する",
+    ],
   },
   {
     slug: "27",
@@ -926,6 +1307,20 @@ export const flags: Flag[] = [
       "Demand that breach-of-contract responsibilities apply equally to both sides",
       "If the lawyer refuses to amend unfair clauses, that itself is a warning sign",
       "Refuse to sign any obviously one-sided contract",
+    ],
+    signalJa:
+      "契約の違約金条項があなたにのみ適用され、弁護士には適用されない",
+    categoryJa: "一方的な条項",
+    stageJa: "契約・取引",
+    descriptionJa:
+      "公正な契約は双方を平等に拘束するべきです。契約があなたの違約には罰則を課しながら、弁護士の違約には何の制裁もない場合、その契約自体が不公正です。このような一方的な条項は、弁護士が情報の非対称性を利用して意図的に設けることが多いです。",
+    realCaseJa:
+      "依頼者の委任契約では、依頼者が途中解約する場合は弁護士費用の50%を違約金として支払うと規定されていましたが、弁護士がサービスを終了する場合はいかなる補償も必要ありませんでした。弁護士の怠慢により解約を希望した依頼者は、高額な違約金に縛られました。",
+    adviceJa: [
+      "署名前に、違約金条項と解約条項を注意深く確認する",
+      "契約違反の責任が双方に平等に適用されるよう求める",
+      "弁護士が不公正な条項の修正を拒否する場合、それ自体が警告サインである",
+      "明らかに一方的な契約への署名を拒否する",
     ],
   },
   {
@@ -960,6 +1355,20 @@ export const flags: Flag[] = [
       "Read every page carefully before signing — make sure there are no blank pages",
       "If the lawyer insists on blank documents, switch lawyers immediately and report to the bar association",
     ],
+    signalJa:
+      "弁護士が白紙の書類や委任状への署名を求める",
+    categoryJa: "白紙書類の罠",
+    stageJa: "代理中",
+    descriptionJa:
+      "白紙の書類に署名することは極めて危険です。一度署名すれば、何でも書き込まれる可能性があります。知らないうちに不利な和解合意書、訴えの取り下げ、さらには借用証書に署名してしまう可能性があります。弁護士がどんな理由を述べても、白紙の書類には決して署名すべきではありません。",
+    realCaseJa:
+      "弁護士は「裁判所が特別な書式を要求している」として、依頼者に白紙の委任状への署名を求めました。後に依頼者は、弁護士がその委任状を使って依頼者に代わり非常に不利な和解合意書に署名し、請求の大部分を放棄していたことを発見しました。",
+    adviceJa: [
+      "理由を問わず、白紙の書類には絶対に署名しない",
+      "すべての書類は完全に記入された後に署名する",
+      "署名前に全ページを注意深く読み、白紙のページがないことを確認する",
+      "弁護士が白紙の書類を求める場合、直ちに弁護士を変更し弁護士会に報告する",
+    ],
   },
   {
     slug: "29",
@@ -992,6 +1401,20 @@ export const flags: Flag[] = [
       "Require the lawyer to notify you before making any major decisions",
       "If the lawyer acts beyond their authority, preserve evidence and file a complaint with the bar association",
       "Periodically check the case status with the court directly — don't rely solely on the lawyer",
+    ],
+    signalJa:
+      "弁護士があなたの同意なく重大な決定を下す",
+    categoryJa: "越権行為",
+    stageJa: "代理中",
+    descriptionJa:
+      "弁護士の代理権限には境界があります。和解、訴えの取り下げ、請求の放棄などの重大な決定には依頼者の同意が必要です。弁護士が授権なくこれらの決定を下した場合、越権代理に該当し、弁護士の責任を追及できます。",
+    realCaseJa:
+      "依頼者の知らないうちに、弁護士は相手方と和解合意を結び、依頼者の違約金請求を放棄しました。依頼者は裁判所からの通知を受け取って初めて、自分の案件が和解により終結していたことを知りました。",
+    adviceJa: [
+      "契約書にどの事項について書面での同意が必要かを明記する",
+      "重大な決定を下す前に事前に通知するよう弁護士に求める",
+      "弁護士が越権行為を行った場合、証拠を保全し弁護士会に苦情を申し立てる",
+      "定期的に裁判所で直接案件の状況を確認し、弁護士だけに頼らない",
     ],
   },
   {
@@ -1026,6 +1449,20 @@ export const flags: Flag[] = [
       "If you confirm a confidentiality breach, switch lawyers immediately and preserve evidence",
       "Report the breach of confidentiality to the bar association",
     ],
+    signalJa:
+      "弁護士があなたの案件情報を第三者に漏洩する",
+    categoryJa: "守秘義務違反",
+    stageJa: "代理中",
+    descriptionJa:
+      "弁護士には法定の守秘義務があり、依頼者の案件情報や個人情報を第三者に開示してはなりません。相手方があなたが弁護士にだけ伝えた情報を知っていたり、弁護士が公の場であなたの案件の詳細を話していたりする場合、それは重大な違反です。",
+    realCaseJa:
+      "依頼者は、審理中に相手方がプライベートメッセージで弁護士にだけ共有した戦略の詳細を正確に引用していることを発見しました。調査の結果、双方の弁護士が同じ事務所の異なる部門に所属しており、情報が内部的に漏洩されていたことが判明しました。",
+    adviceJa: [
+      "弁護士にだけ共有した情報を相手方が知っている兆候に注意する",
+      "できる限り暗号化された手段で機密情報をやり取りする",
+      "守秘義務違反が確認された場合、直ちに弁護士を変更し証拠を保全する",
+      "守秘義務違反を弁護士会に報告する",
+    ],
   },
   {
     slug: "31",
@@ -1058,6 +1495,20 @@ export const flags: Flag[] = [
       "If the lawyer is clearly unprofessional in court, address it immediately after the hearing",
       "Consider switching lawyers — courtroom performance directly affects the outcome",
       "Keep court records as evidence of the lawyer's negligence",
+    ],
+    signalJa:
+      "弁護士が法廷で明らかに非専門的である",
+    categoryJa: "重大な怠慢",
+    stageJa: "代理中",
+    descriptionJa:
+      "遅刻する、不完全な資料を提出する、案件に不精通である、法廷で慌てふためく。これらはすべて弁護士があなたの案件を真剣に扱っていない兆候です。高額な費用を支払っている以上、専門的なサービスを受ける権利があります。",
+    realCaseJa:
+      "弁護士は審理に30分遅刻し、提出した証拠には重要な添付書類が欠けており、裁判官の質問に対して何度も的外れな回答をしました。裁判官はその場で補充資料の提出を命じ、案件は延期されました。後に依頼者は、その弁護士が同時に十数件の案件を抱えており、準備する時間が全くなかったことを知りました。",
+    adviceJa: [
+      "審理前に弁護士の準備状況を確認し、提出予定の資料を確認する",
+      "弁護士が法廷で明らかに非専門的だった場合、審理後すぐに話し合う",
+      "弁護士の交代を検討する。法廷でのパフォーマンスは案件の結果に直接影響する",
+      "弁護士の怠慢の証拠として法廷記録を保管する",
     ],
   },
   {
@@ -1092,6 +1543,20 @@ export const flags: Flag[] = [
       "Seek an independent second opinion from another lawyer",
       "A refusal to put an opinion in writing is itself telling",
     ],
+    signalJa:
+      "弁護士が「もう打つ手がない」と言うが、書面にはしない",
+    categoryJa: "案件の投げ出し",
+    stageJa: "苦情・権利救済",
+    descriptionJa:
+      "弁護士が口頭で「もう打つ手がない」「この案件はここまでだ」と言いながら、書面の法的意見書の提出を拒否する場合、案件を投げ出そうとしている可能性が高いです。正当な専門的判断であれば、書面にすることを恐れません。",
+    realCaseJa:
+      "弁護士は依頼者に「この案件は勝てない、これ以上やっても無駄だ」と口頭で伝えましたが、書面での意見書の提出を拒否しました。弁護士を交代した後、新しい弁護士は案件にまだ勝訴の可能性があると判断し、最終的に控訴審で逆転に成功しました。",
+    adviceJa: [
+      "弁護士からの重大な結論については、書面の法的意見書を要求する",
+      "口頭での「もう打つ手がない」を鵜呑みにしない",
+      "別の弁護士に独立した第二の意見を求める",
+      "書面での意見提出の拒否は、それ自体が問題を示している",
+    ],
   },
   {
     slug: "33",
@@ -1124,6 +1589,20 @@ export const flags: Flag[] = [
       "Ask the lawyer to provide a written opinion explaining the legal basis for recommending the settlement",
       "Compare the settlement amount against your actual claim and the strength of your evidence",
       "Get an independent assessment from a second lawyer",
+    ],
+    signalJa:
+      "弁護士が明らかに不合理な和解案の受け入れを強く勧める",
+    categoryJa: "疑わしい和解",
+    stageJa: "苦情・権利救済",
+    descriptionJa:
+      "弁護士が合理的な予想をはるかに下回る和解案の受け入れを強く勧め、しかも急いでいる場合、それは専門的な助言ではないかもしれません。弁護士は相手方と何らかの了解に達しているか、単に早く案件を終わらせて報酬を受け取りたいだけの可能性があります。",
+    realCaseJa:
+      "依頼者の請求額は100万人民元で、証拠も十分でした。しかし弁護士は「手元に入ることが重要」として、相手方が提示した20万人民元の和解案を繰り返し受け入れるよう勧めました。依頼者は拒否して弁護士を交代し、最終的に80万人民元の判決を勝ち取りました。",
+    adviceJa: [
+      "プレッシャーの下で急いで和解を受け入れない",
+      "和解を勧める法的根拠を説明した書面の意見書を弁護士に求める",
+      "和解金額を実際の請求額や証拠の強さと比較する",
+      "別の弁護士に独立した評価を依頼する",
     ],
   },
   {
@@ -1158,6 +1637,20 @@ export const flags: Flag[] = [
       "Any settlement must be in writing, specifying the refund amount, timeline, and method",
       "Remember that the complaint's purpose isn't just a refund — it also protects others from the same lawyer",
     ],
+    signalJa:
+      "苦情を申し立てた後、弁護士が突然連絡してきて「和解」を提案する",
+    categoryJa: "取り下げと引き換えの返金",
+    stageJa: "苦情・権利救済",
+    descriptionJa:
+      "弁護士会に苦情を申し立てた後、告発された弁護士が突然友好的になり、苦情の取り下げと引き換えに費用の一部を返金すると提案してきます。これは通常、あなたに苦情を取り下げさせるためです。取り下げれば弁護士会は調査を中止し、弁護士は処分を免れます。",
+    realCaseJa:
+      "依頼者が弁護士会に苦情を申し立てた後、弁護士は突然、苦情の取り下げと引き換えに弁護士費用の30%を返金すると提案しました。依頼者は同意して苦情を取り下げましたが、弁護士は約束した金額の半分しか返金しませんでした。依頼者が再度苦情を申し立てようとしたところ、同じ件での再受理はできないと告げられました。",
+    adviceJa: [
+      "少額の返金のために苦情を取り下げない",
+      "和解する場合は、取り下げを検討する前に全額返金を確保する",
+      "和解合意は返金額、期限、方法を明記した書面でなければならない",
+      "苦情の目的は返金だけでなく、同じ弁護士から他の人を守ることでもある",
+    ],
   },
   {
     slug: "35",
@@ -1191,6 +1684,20 @@ export const flags: Flag[] = [
       "Prefer lawyers recommended by law firms rather than platforms",
       "Price is just one factor — professional competence and reputation matter more",
     ],
+    signalJa:
+      "オンラインプラットフォームが推薦する弁護士の費用が市場価格よりはるかに安い",
+    categoryJa: "低価格の罠",
+    stageJa: "弁護士選び段階",
+    descriptionJa:
+      "オンライン法律プラットフォームが推薦する「お得な弁護士」は、多くの場合、集客のための手段です。極端に安い見積もりで契約させ、その後さまざまな口実で費用を追加するか、ひどいサービスを提供します。最も安い弁護士が結果的に最も高くつく選択になることがあります。",
+    realCaseJa:
+      "依頼者は法律プラットフォームで市場価格の3分の1の見積もりを出す弁護士を見つけました。契約後、弁護士は「案件の複雑さによりチームのサポートが必要」として繰り返し費用を追加し、最終的な総費用は市場価格を超えました。サービスの質も悪く、基本的な法律文書にも誤りがありました。",
+    adviceJa: [
+      "同種の案件における地域の弁護士費用の相場を調べる",
+      "市場価格よりはるかに安い見積もりには理由を確認する",
+      "プラットフォーム推薦よりも法律事務所推薦の弁護士を優先する",
+      "価格は弁護士選びの一要素にすぎず、専門的能力と評判の方が重要である",
+    ],
   },
   {
     slug: "36",
@@ -1223,6 +1730,20 @@ export const flags: Flag[] = [
       "Demand the lawyer explain specifically what work they've done",
       "A lawyer hinting at bribery is itself illegal — you could be implicated too",
       "Preserve evidence of the lawyer's 'arranged' hints (recordings, chat logs)",
+    ],
+    signalJa:
+      "法廷の外で、弁護士があなたの案件は「すべて手配済み」だとほのめかす",
+    categoryJa: "裏取引の示唆",
+    stageJa: "代理中",
+    descriptionJa:
+      "弁護士が結果は「手配済み」「心配ない」とほのめかしながら、具体的に何をしたかを説明しない場合があります。この示唆はあなたを安心させて支払いを続けさせるための策略か、実際の贈賄を意味しているかのいずれかです。どちらにしても深刻な危険にさらされています。",
+    realCaseJa:
+      "審理前に、弁護士は依頼者に「安心してください、すべて手配済みです」と言いました。依頼者が詳細を尋ねると弁護士ははぐらかしました。敗訴後、弁護士はそのようなことを言ったことを全面的に否定しました。依頼者は、弁護士が何も「手配」しておらず、単に安心させてお金を払わせ続けていたのではないかと疑いました。",
+    adviceJa: [
+      "「手配済み」とほのめかす弁護士は決して信用しない",
+      "具体的にどのような業務を行ったか弁護士に説明を求める",
+      "弁護士が賄賂を示唆すること自体が違法であり、あなたも巻き込まれる可能性がある",
+      "弁護士の「手配済み」という示唆の証拠を保存する（録音、チャット記録）",
     ],
   },
 ];
