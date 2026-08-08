@@ -57,16 +57,18 @@ export function useI18n() {
 
 export function LanguageSwitcher() {
   const { locale, setLocale } = useI18n();
-  const nextIndex = (LOCALES.indexOf(locale) + 1) % LOCALES.length;
-  const nextLocale = LOCALES[nextIndex];
 
   return (
-    <button
-      onClick={() => setLocale(nextLocale)}
-      className="text-[13px] text-[var(--grey)] border border-[var(--rule)] px-2.5 py-1 bg-transparent cursor-pointer hover:border-[var(--grey)] hover:text-[var(--ink)] transition-colors"
-      aria-label="Switch language"
+    <select
+      value={locale}
+      onChange={(e) => setLocale(e.target.value as Locale)}
+      className="text-[13px] text-[var(--grey)] border border-[var(--rule)] px-2 py-1 bg-transparent cursor-pointer hover:border-[var(--grey)] hover:text-[var(--ink)] transition-colors appearance-none pr-6"
+      aria-label="Select language"
+      style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 6px center" }}
     >
-      {LOCALE_LABELS[nextLocale]}
-    </button>
+      {LOCALES.map((l) => (
+        <option key={l} value={l}>{LOCALE_LABELS[l]}</option>
+      ))}
+    </select>
   );
 }
