@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useI18n } from "@/i18n/context";
 
 export default function Footer() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   return (
     <footer className="max-w-[960px] mx-auto px-7 pt-16 pb-12">
@@ -63,6 +63,11 @@ export default function Footer() {
       <div className="mt-8 pt-5 border-t border-[var(--rule-light)] text-xs text-[var(--grey-light)]">
         &copy; 2026 Legal Red Flags &middot; legalredflag.org &middot;{" "}
         {t({ zh: "本项目为公益性质，不以营利为目的", en: "A public interest project, not for profit", ja: "公益プロジェクト、営利目的ではありません" })}
+        {locale === "ja" && (
+          <span className="block mt-2">
+            日本語の翻訳に問題がありましたら、<Link href="/contact" className="underline hover:text-[var(--grey)]">こちら</Link>からご連絡ください。
+          </span>
+        )}
       </div>
     </footer>
   );
