@@ -16,8 +16,8 @@ export async function generateMetadata({
   const flag = getFlagBySlug(slug);
   if (!flag) return {};
   return {
-    title: `#${flag.num} ${flag.signalEn} — ${flag.signal}`,
-    description: `${flag.signalEn} — ${flag.signal}`,
+    title: `Red Flag #${flag.num}: ${flag.signalEn}`,
+    description: `${flag.descriptionEn.substring(0, 155)}`,
   };
 }
 
