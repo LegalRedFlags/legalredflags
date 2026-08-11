@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Submit Your Story — 提交经历",
+  title: "Share Your Legal Experience (100% Anonymous)",
   description:
-    "Submit your legal dispute experience anonymously to help others. 匿名提交你的法律纠纷经历，帮助更多人。",
+    "Share your story anonymously to protect others. Help build our non-profit database of lawyer red flags and hidden billing traps.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Risk Checker — 风险自测",
+  title: "Lawyer Red Flag Checker: Free Tool to Test Your Attorney",
   description:
-    "12 questions to quickly assess your legal risk. 12道问题快速评估你的法律风险。",
+    "Is your attorney ghosting you or overcharging? Use our free, non-profit tool to check if your lawyer's behavior is a major warning sign.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

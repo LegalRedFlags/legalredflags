@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — 联系我们",
+  title: "Contact Legal Red Flags",
   description:
-    "Get in touch with the Legal Red Flags team. 联系 Legal Red Flags 团队。",
+    "Report translation issues, share your story, or suggest new red flags. We read every message.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

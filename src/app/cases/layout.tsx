@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Real Cases — 真实案例",
+  title: "Real Cases: Attorney Fraud & Legal Traps Exposed",
   description:
-    "Real legal cases from firsthand experience, presented after anonymization. 来自当事人亲历的真实法律案例，匿名化处理后呈现。",
+    "Read anonymized real cases of attorney fraud, ghosting, overbilling, and hidden traps. Full-process retrospectives from real people.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

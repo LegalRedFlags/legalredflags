@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Checklist — 检查清单",
+  title: "Free Lawyer Hiring Checklist: 23 Must-Check Items Before You Pay",
   description:
-    "A four-stage legal dispute prevention checklist. Follow step by step — miss nothing. 法律纠纷四阶段防骗检查清单。",
+    "Before signing a retainer, verify these 23 critical points. Audit fee structures, refund clauses, and conflict of interest — based on real legal cases.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

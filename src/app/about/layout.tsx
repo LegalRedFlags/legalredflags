@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — 关于我们",
+  title: "About Legal Red Flags: Real Experience, Not Legal Advice",
   description:
-    "The story and mission behind Legal Red Flags. Legal Red Flags 的创建背景和使命。",
+    "Documenting real attorney warning signs from years of litigation. Not written by lawyers — built from real cases, not theory.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

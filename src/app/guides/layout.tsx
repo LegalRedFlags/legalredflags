@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Scripts & Complaint Guide — 沟通话术与投诉指南",
+  title: "Free Scripts & Guides: How to Deal with Lawyer Misconduct",
   description:
-    "Practical scripts and step-by-step guides for dealing with lawyer misconduct — from refusing personal account payments to filing bar complaints.",
+    "Practical word-for-word scripts and step-by-step guides — refuse personal account payments, demand refunds, and file bar complaints.",
 };
 
 export default function GuidesLayout({
