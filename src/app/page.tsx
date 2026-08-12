@@ -77,7 +77,14 @@ export default function Home() {
             </>
           )}
         </h1>
-        <p className="mt-6 text-[17px] text-[var(--grey)] leading-relaxed max-w-[560px]">
+        <p className="mt-4 text-[20px] text-[var(--ink-soft)] font-serif italic max-w-[560px]">
+          {t({
+            zh: "这些是我在请律师之前就该知道的事。",
+            en: "What I wish I had known before hiring a lawyer.",
+            ja: "弁護士を雇う前に知っておきたかったこと。",
+          })}
+        </p>
+        <p className="mt-4 text-[17px] text-[var(--grey)] leading-relaxed max-w-[560px]">
           {t({
             zh: "我们不告诉你该请哪个律师。我们教你在请律师之前、期间和之后，该注意什么——所有内容来自真实经历，不是套话。",
             en: "We don't tell you which lawyer to hire. We teach you what to watch for — before, during, and after — all from real experience, not boilerplate.",
