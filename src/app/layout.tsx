@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import { I18nProvider } from "@/i18n/context";
 import { WebsiteJsonLd } from "@/components/JsonLd";
 import "./globals.css";
+
+const GA_ID = "G-GRL00BF75N";
 
 const SITE_URL = "https://legalredflag.org";
 
@@ -58,6 +61,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+        </Script>
+      </head>
       <body className="min-h-full">
         <WebsiteJsonLd />
         <I18nProvider>{children}</I18nProvider>
