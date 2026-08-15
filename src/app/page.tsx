@@ -381,9 +381,9 @@ export default function Home() {
           <div>
             <blockquote className="font-serif text-[17px] leading-[1.75] text-[var(--ink-soft)] mb-4">
               {t({
-                zh: "六年时间，三个城市，五个律师。其中两个纯骗，一个被对方收买并亲口承认，两个收了高额费用后消极怠工。我不是法律专业出身，走了无数弯路之后才慢慢看清这些套路。这个网站把我踩过的每一个坑变成你可以提前识别的信号。如果能让哪怕一个人少走一段弯路，这件事就值得做。",
-                en: "Six years, three cities, five lawyers. Two were outright frauds. One was bought by the opposing side — and admitted it. Two charged premium fees and did nothing. I'm not a legal professional. It took me countless wrong turns to see the patterns. This site turns every trap I fell into a signal you can spot in advance. If even one person avoids a single wrong turn, it's worth it.",
-                ja: "6年間、3つの都市、5人の弁護士。そのうち2人は完全な詐欺師。1人は相手方に買収され、本人がそれを認めました。2人は高額な費用を請求しながら何もしませんでした。私は法律の専門家ではありません。数え切れない回り道をしてようやくパターンが見えてきました。このサイトは、私が落ちたすべての罠を、あなたが事前に見抜ける信号に変えたものです。たった一人でも回り道を一つ避けられるなら、やる価値があります。",
+                zh: "六年时间，三个城市，五个律师。其中两个纯骗，一个被对方收买，两个收了高额费用后消极怠工。我不是法律专业出身，走了无数弯路之后才慢慢看清这些套路。这个网站把我踩过的每一个坑变成你可以提前识别的信号。如果能让哪怕一个人少走一段弯路，这件事就值得做。",
+                en: "Six years, three cities, five lawyers. Two were outright frauds. One was bought by the opposing side. Two charged premium fees and did nothing. I'm not a legal professional. It took me countless wrong turns to see the patterns. This site turns every trap I fell into a signal you can spot in advance. If even one person avoids a single wrong turn, it's worth it.",
+                ja: "6年間、3つの都市、5人の弁護士。そのうち2人は完全な詐欺師。1人は相手方に買収されていた。2人は高額な費用を請求しながら何もしませんでした。私は法律の専門家ではありません。数え切れない回り道をしてようやくパターンが見えてきました。このサイトは、私が落ちたすべての罠を、あなたが事前に見抜ける信号に変えたものです。たった一人でも回り道を一つ避けられるなら、やる価値があります。",
               })}
             </blockquote>
             <div className="text-[13px] text-[var(--grey-light)]">
