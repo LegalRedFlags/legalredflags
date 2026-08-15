@@ -284,7 +284,7 @@ export default function Home() {
                 <strong className="text-[var(--red)] font-bold">
                   用个人账户收取了近12万元费用
                 </strong>
-                ，没有正式合同；第二位律师收取了19万元，
+                ，没有正式合同；第二位律师收取了近20万元，
                 <strong className="text-[var(--red)] font-bold">
                   代理期间从未出庭，寄来的发票是空白的
                 </strong>
@@ -296,7 +296,7 @@ export default function Home() {
                 <strong className="text-[var(--red)] font-bold">
                   約12万元を個人口座で受け取り
                 </strong>
-                、正式な契約はありませんでした。2人目は19万元を請求しましたが、
+                、正式な契約はありませんでした。2人目は約20万元を請求しましたが、
                 <strong className="text-[var(--red)] font-bold">
                   一度も出廷せず、送られてきた領収書は白紙
                 </strong>
@@ -308,7 +308,7 @@ export default function Home() {
                 <strong className="text-[var(--red)] font-bold">
                   collected nearly ¥120,000 into a personal account
                 </strong>{" "}
-                with no formal contract. The second charged ¥190,000 but{" "}
+                with no formal contract. The second charged nearly ¥200,000 but{" "}
                 <strong className="text-[var(--red)] font-bold">
                   never appeared in court and sent blank invoices
                 </strong>
