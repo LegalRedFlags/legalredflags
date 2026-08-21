@@ -39,10 +39,6 @@ export default async function FlagDetailPage({
       question: flag.signalEn,
       answer: `${flag.descriptionEn} Advice: ${flag.adviceEn.join(". ")}.`,
     },
-    {
-      question: flag.signal,
-      answer: `${flag.description} 建议：${flag.advice.join("；")}。`,
-    },
   ];
 
   return (
